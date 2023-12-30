@@ -17,7 +17,7 @@ export default function Intro() {
               <h1 className={`capitalize ${styles.heading}`}>
                 Rejaur Rahman
               </h1>
-              <h2 className={`capitalize ${styles.subheading}`}>
+              <h2 className={`font-bold capitalize ${styles.subheading}`}>
                 I live and breathe being a
                 <span
                   className={`flex justify-center uppercase mt-4 ${styles.subheadingText}`}
