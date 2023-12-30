@@ -1,0 +1,62 @@
+// available font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// available font styles
+$font-style-normal: normal;
+
+@font-face {
+  font-display: swap;
+  font-family: "Sketch-Bold";
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  src: url("../../assets/fonts/SketchBlock-Bold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Figtree";
+  font-style: $font-style-normal;
+  font-weight: $font-weight-light;
+  src: url("../../assets/fonts/Figtree-Light.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Figtree";
+  font-style: $font-style-normal;
+  font-weight: $font-style-normal;
+  src: url("../../assets/fonts/Figtree-Regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu";
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  src: url("../../assets/fonts/Ubuntu-Medium.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu";
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  src: url("../../assets/fonts/Ubuntu-Bold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Sothardjo";
+  font-style: $font-style-normal;
+  font-weight: $font-weight-normal;
+  src: url("../../assets/fonts/Sothardjo.woff2")
+    format("woff2");
+}

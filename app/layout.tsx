@@ -1,3 +1,5 @@
+import React from "react"
+
 import type { Metadata } from "next"
 
 import metaImage from "@/assets/images/rejaur-ronny-rahman.png"
