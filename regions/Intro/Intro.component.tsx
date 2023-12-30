@@ -2,12 +2,15 @@ import React from "react"
 import Image from "next/image"
 
 import Container from "@/components/Container/Container.component"
+import Section from "@/components/Section/Section.component"
 
 import styles from "./Intro.module.scss"
 
 export default function Intro() {
   return (
-    <section className="flex flex-wrap h-full">
+    <Section
+      sectionClassName="flex flex-wrap h-full"
+    >
       <div className={`relative w-full h-full overflow-hidden ${styles.introBg}`}>
         <div className={styles.contentWrapper}>
           <Container
@@ -40,6 +43,6 @@ export default function Intro() {
           className={`absolute w-full h-full top-0 left-0 ${styles.overlay}`}
         />
       </div>
-    </section>
+    </Section>
   )
 }
