@@ -10,7 +10,10 @@ import styles from "./Contact.module.scss"
 
 export default function Contact() {
   return (
-    <Section sectionClassName={`py-12 ${styles.wrapper}`}>
+    <Section
+      dataPosition="contact"
+      sectionClassName={`py-12 ${styles.wrapper}`}
+    >
       <HeadingDivider
         dividerLineBg="tertiary"
         icon={<ChatBubbleOvalLeftEllipsisIcon />}

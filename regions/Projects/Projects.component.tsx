@@ -12,6 +12,7 @@ import styles from "./Projects.module.scss"
 export default function Projects() {
   return (
     <Section
+      dataPosition="projects"
       sectionClassName={styles.wrapper}
     >
       <HeadingDivider

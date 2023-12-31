@@ -7,7 +7,9 @@ import Section from "@/components/Section/Section.component"
 
 export default function Skillset() {
   return (
-    <Section>
+    <Section
+      dataPosition="skillset"
+    >
       <HeadingDivider
         background
         dividerLineBg="primary"

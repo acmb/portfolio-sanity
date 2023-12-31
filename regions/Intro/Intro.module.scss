@@ -4,6 +4,9 @@
   @include styles.breakpoint(max-width, desktop) {
     flex-flow: column-reverse;
   }
+
+  flex-flow: wrap;
+  height: 100%;
 }
 
 .introBg {
@@ -23,6 +26,7 @@
 
   background-color: styles.$onyx;
   padding-top: styles.px-to-rem(57);
+  height: 100%;
 }
 
 .introImage {

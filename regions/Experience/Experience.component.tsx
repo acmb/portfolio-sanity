@@ -11,7 +11,9 @@ import styles from "./Experience.module.scss"
 
 export default function Experience() {
   return (
-    <Section>
+    <Section
+      dataPosition="experience"
+    >
       <HeadingDivider
         background
         dividerLineBg="primary"

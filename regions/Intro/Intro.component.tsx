@@ -27,9 +27,10 @@ export default function Intro() {
 
   return (
     <Section
-      sectionClassName={`flex flex-wrap h-full ${styles.wrapper}`}
+      dataPosition="home"
+      sectionClassName={`flex ${styles.wrapper}`}
     >
-      <div className={`relative w-full h-full overflow-hidden ${styles.introBg}`}>
+      <div className={`relative w-full overflow-hidden ${styles.introBg}`}>
         <div className={styles.contentWrapper}>
           <Container
             containerClassName={styles.containerWrapper}

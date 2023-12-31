@@ -10,6 +10,7 @@ import Section from "@/components/Section/Section.component"
 export default function Testimonials() {
   return (
     <Section
+      dataPosition="testimonials"
       sectionClassName="relative"
     >
       <HeadingDivider

@@ -10,7 +10,10 @@ import styles from "./About.module.scss"
 
 export default function About() {
   return (
-    <Section sectionClassName={`pt-12 ${styles.wrapper}`}>
+    <Section
+      dataPosition="about"
+      sectionClassName={`pt-12 ${styles.wrapper}`}
+    >
       <HeadingDivider
         dividerLineBg="secondary"
         icon={<LightBulbIcon />}

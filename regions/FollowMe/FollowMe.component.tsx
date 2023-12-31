@@ -7,7 +7,9 @@ import Section from "@/components/Section/Section.component"
 
 export default function FollowMe() {
   return (
-    <Section>
+    <Section
+      dataPosition="follow"
+    >
       <HeadingDivider
         background
         dividerLineBg="primary"

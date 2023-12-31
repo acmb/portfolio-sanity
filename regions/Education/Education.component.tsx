@@ -11,7 +11,9 @@ import styles from "./Education.module.scss"
 
 export default function Education() {
   return (
-    <Section>
+    <Section
+      dataPosition="education"
+    >
       <HeadingDivider
         background
         dividerLineBg="primary"
