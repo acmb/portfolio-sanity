@@ -1,12 +1,15 @@
 "use client"
 
 import Link from "next/link"
-import React, { useState } from "react"
+import React, {
+  useEffect,
+  useState
+} from "react"
 
 import styles from "./HeaderMenu.module.scss"
 
 export default function HeaderMenu() {
-  const [activeSection, setActiveSection] = useState("")
+  const [activeSection, setActiveSection] = useState("home")
 
   const scrollToSection = (section: string) => (
     e: React.MouseEvent<HTMLAnchorElement>
@@ -24,6 +27,41 @@ export default function HeaderMenu() {
       })
     }
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "about",
+        "education",
+        "experience",
+        "skillset",
+        "projects",
+        "testimonials",
+        "contact"
+      ]
+
+      const currentSection = sections.find(section => {
+        const element = document.querySelector(`[data-position="${section}"]`)
+
+        if (element) {
+          const rect = element.getBoundingClientRect()
+
+          return rect.top >= 0 && rect.top <= window.innerHeight / 2
+        }
+
+        return false
+      })
+
+      if (currentSection) {
+        setActiveSection(currentSection)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <nav className={styles.navbar}>
