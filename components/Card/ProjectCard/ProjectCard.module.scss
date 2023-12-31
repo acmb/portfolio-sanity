@@ -43,3 +43,10 @@
 .iconLink + .iconLink {
   margin-left: styles.px-to-rem(10);
 }
+
+.button {
+  font-family: styles.$font-figtree;
+  background-color: styles.$white;
+  font-size: styles.px-to-rem(13);
+  box-shadow: 0 0 styles.px-to-rem(4) rgba(styles.$chinese-black, 0.08), 0 styles.px-to-rem(4) styles.px-to-rem(6) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.1), 0 styles.px-to-rem(2) styles.px-to-rem(4) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.06);
+}

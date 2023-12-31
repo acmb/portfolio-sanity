@@ -68,7 +68,7 @@
   background-color: styles.$white;
   border-width: styles.px-to-rem(5);
   border-style: solid;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08), 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 styles.px-to-rem(4) rgba(styles.$chinese-black, 0.08), 0px styles.px-to-rem(4) styles.px-to-rem(6) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.1), 0 styles.px-to-rem(2) styles.px-to-rem(4) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.06);
 
   img {
     align-self: center;
