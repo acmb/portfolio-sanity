@@ -1,6 +1,7 @@
 import React from "react"
 
 import About from "@/regions/About/About.component"
+import BackToTop from "@/components/BackToTop/BackToTop.component"
 import Contact from "@/regions/Contact/Contact.component"
 import Education from "@/regions/Education/Education.component"
 import Experience from "@/regions/Experience/Experience.component"
@@ -22,6 +23,7 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <FollowMe />
+      <BackToTop />
     </>
   )
 }
