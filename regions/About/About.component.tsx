@@ -40,7 +40,6 @@ export default function About() {
           <Badge />
           <Image
             alt="Rejaur Rahman"
-            className=""
             height={458}
             loading="lazy"
             src="https://loremflickr.com/592/458"
