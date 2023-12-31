@@ -7,10 +7,10 @@ import useTotalExperience from "@/hooks/useTotalExperience"
 
 import { LightBulbIcon } from "@heroicons/react/24/solid"
 
-import Badge from "@/components/Badge/Badge.component"
-import Container from "@/components/Container/Container.component"
-import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
-import Section from "@/components/Section/Section.component"
+import Badge from "@/components/App/Badge/Badge.component"
+import Container from "@/components/App/Container/Container.component"
+import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
+import Section from "@/components/App/Section/Section.component"
 
 import styles from "./About.module.scss"
 

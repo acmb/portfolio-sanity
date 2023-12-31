@@ -3,11 +3,11 @@ import React from "react"
 
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
 
-import ContactList from "@/components/ContactList/ContactList.component"
-import Container from "@/components/Container/Container.component"
-import Form from "@/components/Form/Form.component"
-import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
-import Section from "@/components/Section/Section.component"
+import ContactList from "@/components/App/ContactList/ContactList.component"
+import Container from "@/components/App/Container/Container.component"
+import Form from "@/components/App/Form/Form.component"
+import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
+import Section from "@/components/App/Section/Section.component"
 
 import styles from "./Contact.module.scss"
 

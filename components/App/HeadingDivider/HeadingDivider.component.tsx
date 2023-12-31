@@ -4,7 +4,7 @@ import React, {
   ReactElement
 } from "react"
 
-import Container from "@/components/Container/Container.component"
+import Container from "@/components/App/Container/Container.component"
 
 import PatternTop from "@/assets/images/pattern-top.png"
 import PatternBottom from "@/assets/images/pattern-bottom.png"

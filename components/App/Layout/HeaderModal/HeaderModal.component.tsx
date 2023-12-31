@@ -4,7 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog"
 import { motion } from "framer-motion"
 import React, { useState } from "react"
 
-import HeaderMenu from "@/components/Layout/HeaderMenu/HeaderMenu.component"
+import HeaderMenu from "@/components/App/Layout/HeaderMenu/HeaderMenu.component"
 
 import styles from "./HeaderModal.module.scss"
 

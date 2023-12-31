@@ -3,10 +3,10 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import React from "react"
 
-import Container from "@/components/Container/Container.component"
-import HeaderLogo from "@/components/Layout/HeaderLogo/HeaderLogo.component"
-import HeaderMenu from "@/components/Layout/HeaderMenu/HeaderMenu.component"
-import HeaderModal from "@/components/Layout/HeaderModal/HeaderModal.component"
+import Container from "@/components/App/Container/Container.component"
+import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component"
+import HeaderMenu from "@/components/App/Layout/HeaderMenu/HeaderMenu.component"
+import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.component"
 
 import styles from "./Header.module.scss"
 

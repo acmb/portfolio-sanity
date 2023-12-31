@@ -17,11 +17,11 @@ import { ChevronLeftIcon } from "@heroicons/react/24/solid"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import { BookOpenIcon } from "@heroicons/react/24/solid"
 
-import Container from "@/components/Container/Container.component"
-import EducationCard from "@/components/Card/EducationCard/EducationCard.component"
-import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
-import InnerSection from "@/components/InnerSection/InnerSection.component"
-import Section from "@/components/Section/Section.component"
+import Container from "@/components/App/Container/Container.component"
+import EducationCard from "@/components/App/Card/EducationCard/EducationCard.component"
+import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
+import InnerSection from "@/components/App/InnerSection/InnerSection.component"
+import Section from "@/components/App/Section/Section.component"
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import "swiper/css"

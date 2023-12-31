@@ -2,9 +2,9 @@ import React from "react"
 
 import { UserGroupIcon } from "@heroicons/react/24/solid"
 
-import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
-import Section from "@/components/Section/Section.component"
-import SocialBox from "@/components/SocialBox/SocialBox.component"
+import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
+import Section from "@/components/App/Section/Section.component"
+import SocialBox from "@/components/App/SocialBox/SocialBox.component"
 
 import styles from "./FollowMe.module.scss"
 

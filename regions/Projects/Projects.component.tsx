@@ -2,11 +2,11 @@ import React from "react"
 
 import { HashtagIcon } from "@heroicons/react/24/solid"
 
-import Container from "@/components/Container/Container.component"
-import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
-import InnerSection from "@/components/InnerSection/InnerSection.component"
-import ProjectCard from "@/components/Card/ProjectCard/ProjectCard.component"
-import Section from "@/components/Section/Section.component"
+import Container from "@/components/App/Container/Container.component"
+import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
+import InnerSection from "@/components/App/InnerSection/InnerSection.component"
+import ProjectCard from "@/components/App/Card/ProjectCard/ProjectCard.component"
+import Section from "@/components/App/Section/Section.component"
 
 import styles from "./Projects.module.scss"
 
