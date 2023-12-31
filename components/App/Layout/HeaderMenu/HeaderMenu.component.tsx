@@ -6,7 +6,7 @@ import React, {
   useState
 } from "react"
 
-import modalStyles from "@/components/Layout/HeaderModal/HeaderModal.module.scss"
+import modalStyles from "@/components/App/Layout/HeaderModal/HeaderModal.module.scss"
 import styles from "./HeaderMenu.module.scss"
 
 interface Props {
