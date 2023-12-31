@@ -42,3 +42,11 @@
     }
   }
 }
+
+.linkActive {
+  @include styles.breakpoint(min-width, desktop) {
+    color: styles.$white;
+    border-bottom: styles.px-to-rem(10) solid styles.$amaranth-pink;
+    background-color: styles.$british-racing-green;
+  }
+}
