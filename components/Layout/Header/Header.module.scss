@@ -1,0 +1,6 @@
+@use "../../../styles/base.scss" as styles;
+
+.header {
+  border-bottom: 1px solid styles.$amaranth-pink;
+  background-color: styles.$linen;
+}

@@ -8,6 +8,7 @@ import {
 } from "react-simple-typewriter"
 
 import Container from "@/components/Container/Container.component"
+import Header from "@/components/Layout/Header/Header.component"
 import IntroShapeBottom from "./IntroShapeBottom/IntroShapeBottom.component"
 import Section from "@/components/Section/Section.component"
 
@@ -68,6 +69,7 @@ export default function Intro() {
           <IntroShapeBottom />
         </div>
       </div>
+      <Header />
     </Section>
   )
 }
