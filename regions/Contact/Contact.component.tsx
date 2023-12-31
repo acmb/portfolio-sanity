@@ -3,6 +3,7 @@ import React from "react"
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
 
 import Container from "@/components/Container/Container.component"
+import Form from "@/components/Form/Form.component"
 import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
 import Section from "@/components/Section/Section.component"
 
@@ -19,8 +20,10 @@ export default function Contact() {
         icon={<ChatBubbleOvalLeftEllipsisIcon />}
         title="Get In Touch"
       />
-      <Container>
-        <p>Contact</p>
+      <Container
+        containerClassName={`flex items-center ${styles.container}`}
+      >
+        <Form />
       </Container>
     </Section>
   )

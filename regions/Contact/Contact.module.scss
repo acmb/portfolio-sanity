@@ -4,8 +4,56 @@
   background-color: styles.$sky-blue;
 }
 
-.containerWrapper {
+.container,
+.form {
+  flex-flow: column;
+}
+
+.form {
+  max-width: styles.px-to-rem(800);
+}
+
+.copy {
+  font-family: styles.$font-figtree;
+  color: styles.$british-racing-green;
+}
+
+.input,
+.textarea {
+  box-shadow: 0 0 styles.px-to-rem(4) rgba(styles.$chinese-black, 0.08), 0px styles.px-to-rem(4) styles.px-to-rem(6) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.1), 0 styles.px-to-rem(2) styles.px-to-rem(4) styles.px-to-rem(-1) rgba(styles.$chinese-black, 0.06);
+  font-family: styles.$font-figtree;
+  background-color: styles.$seashell;
+  border-color: styles.$spanish-yellow;
+  color: styles.$sky-blue;
+}
+
+.group {
+  @include styles.breakpoint(max-width, desktop) {
+    flex-flow: column;
+  }
+
   @include styles.breakpoint(min-width, desktop) {
-    display: flex;
+    justify-content: flex-start;
+  }
+
+  .input {
+    @include styles.breakpoint(min-width, desktop) {
+      width: calc(50% - styles.$global-spacing-xxs * 2);
+    }
+
+    + .input {
+      margin-left: styles.px-to-rem(16);
+    }
+  }
+}
+
+.button {
+  color: styles.$seashell;
+  background-color: styles.$spanish-yellow;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: styles.$white;
+    background-color: darken(styles.$spanish-yellow, 10%);
   }
 }
