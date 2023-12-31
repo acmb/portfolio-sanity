@@ -6,8 +6,8 @@ import Intro from "@/regions/Intro/Intro.component"
 export default function Home() {
   return (
     <>
-      <About />
       <Intro />
+      <About />
     </>
   )
 }
