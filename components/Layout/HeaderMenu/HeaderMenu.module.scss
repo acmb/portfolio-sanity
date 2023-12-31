@@ -3,6 +3,18 @@
 .navbar {
   @include styles.breakpoint(max-width, desktop) {
     display: none;
+    padding-top: styles.px-to-rem(54);
+  }
+}
+
+.list {
+  @include styles.breakpoint(max-width, desktop) {
+    border-top: styles.px-to-rem(1) solid styles.$amaranth-pink;
+    flex-flow: column;
+  }
+
+  @include styles.breakpoint(min-width, desktop) {
+    justify-content: flex-end;
   }
 }
 
@@ -44,6 +56,11 @@
 }
 
 .linkActive {
+  @include styles.breakpoint(max-width, desktop) {
+    color: styles.$white;
+    background-color: styles.$british-racing-green;
+  }
+
   @include styles.breakpoint(min-width, desktop) {
     color: styles.$white;
     border-bottom: styles.px-to-rem(10) solid styles.$amaranth-pink;

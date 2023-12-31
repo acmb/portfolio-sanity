@@ -6,9 +6,14 @@ import React, {
   useState
 } from "react"
 
+import modalStyles from "@/components/Layout/HeaderModal/HeaderModal.module.scss"
 import styles from "./HeaderMenu.module.scss"
 
-export default function HeaderMenu() {
+interface Props {
+  setOpen?: (open: boolean) => void
+}
+
+export default function HeaderMenu({ setOpen } : Props) {
   const [activeSection, setActiveSection] = useState("home")
 
   const scrollToSection = (section: string) => (
@@ -17,6 +22,10 @@ export default function HeaderMenu() {
     e.preventDefault()
 
     setActiveSection(section)
+
+    if (setOpen) {
+      setOpen(false)
+    }
 
     const targetSection = document.querySelector(`[data-position="${section}"]`) as HTMLElement | null
 
@@ -64,8 +73,8 @@ export default function HeaderMenu() {
   }, [])
 
   return (
-    <nav className={styles.navbar}>
-      <ul className="flex">
+    <nav className={`${styles.navbar} ${modalStyles.navbar}`}>
+      <ul className={`flex ${styles.list}`}>
         <li>
           <Link
             aria-label="View home section of page"

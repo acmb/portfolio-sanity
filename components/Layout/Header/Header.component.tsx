@@ -6,6 +6,7 @@ import React from "react"
 import Container from "@/components/Container/Container.component"
 import HeaderLogo from "@/components/Layout/HeaderLogo/HeaderLogo.component"
 import HeaderMenu from "@/components/Layout/HeaderMenu/HeaderMenu.component"
+import HeaderModal from "@/components/Layout/HeaderModal/HeaderModal.component"
 
 import styles from "./Header.module.scss"
 
@@ -20,6 +21,7 @@ export default function Header() {
         >
           <HeaderLogo />
           <HeaderMenu />
+          <HeaderModal />
         </Container>
       </NavigationMenu.Root>
     </header>
