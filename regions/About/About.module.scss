@@ -64,6 +64,11 @@
 }
 
 .right {
+  @include styles.breakpoint(max-width, desktop) {
+    margin-top: styles.px-to-rem(30);
+    align-items: center;
+  }
+
   position: relative;
   display: flex;
   flex-flow: column;

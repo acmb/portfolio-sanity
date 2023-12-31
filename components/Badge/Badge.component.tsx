@@ -2,14 +2,16 @@
 
 import React from "react"
 
+import useMediaQuery from "@/hooks/useMediaQuery"
 import useTotalExperience from "@/hooks/useTotalExperience"
 
 import styles from "./Badge.module.scss"
 
 export default function Badge() {
+  const isTablet = useMediaQuery(`(min-width: 768px)`)
   const years = useTotalExperience()
 
-  return (
+  return isTablet ? (
     <div
       className={`absolute flex justify-center items-center text-center top-0 left-0 uppercase ${styles.badge}`}
     >
@@ -33,5 +35,5 @@ export default function Badge() {
         {years}+ years
       </span>
     </div>
-  )
+  ) : null
 }
