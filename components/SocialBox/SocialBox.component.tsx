@@ -40,8 +40,7 @@ export default function SocialBox({
         className={`flex items-center justify-center w-40 h-40 my-0 mx-auto rounded-full ${styles.circle}`}
       >
         <Image
-          alt={title}
-          className=""
+          alt=""
           height={100}
           loading="lazy"
           src={imageUrl}

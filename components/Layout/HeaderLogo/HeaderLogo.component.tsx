@@ -11,7 +11,7 @@ export default function HeaderLogo() {
       href="/"
     >
       <Image
-        alt="Rejaur Rahman"
+        alt=""
         height={43}
         src="https://loremflickr.com/43/43"
         width={43}

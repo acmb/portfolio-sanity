@@ -31,7 +31,7 @@ export default function Language({
             style={{backgroundColor: `${brandColor}`}}
           />
           <Image
-            alt={title}
+            alt=""
             className="relative"
             height={100}
             loading="lazy"

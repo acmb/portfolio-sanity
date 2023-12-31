@@ -72,7 +72,7 @@ export default function ExperienceCard({
         className={`relative p-4 rounded-lg ${styles.content}`}
       >
         <Image
-          alt={companyName}
+          alt=""
           height={43}
           loading="lazy"
           src={companyLogo}
@@ -133,7 +133,7 @@ export default function ExperienceCard({
           className={`flex relative justify-center items-center rounded-full ${styles.iconWrapper}`}
         >
           <Image
-            alt={companyName}
+            alt=""
             className={styles.icon}
             height={32}
             loading="lazy"

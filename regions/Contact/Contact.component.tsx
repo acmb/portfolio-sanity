@@ -51,7 +51,7 @@ export default function Contact() {
           <div className={`relative px-4 ${styles.right}`}>
             <div className={`relative mx-auto ${styles.imageWrapper}`}>
               <Image
-                alt="Enfield Island Village Area"
+                alt=""
                 className="relative z-10"
                 height={532}
                 loading="lazy"

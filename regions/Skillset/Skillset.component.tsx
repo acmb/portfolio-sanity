@@ -47,7 +47,7 @@ export default function Skillset() {
         innerContentClass="relative overflow-hidden"
       >
         <Image
-          alt="Code viewed on Editor"
+          alt=""
           className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
           height={1080}
           loading="lazy"

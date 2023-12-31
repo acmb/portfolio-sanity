@@ -54,7 +54,7 @@ export default function ProjectCard({
         </div>
         <div className="relative">
           <Image
-            alt={title}
+            alt=""
             height={500}
             loading="lazy"
             src={coverImage}
