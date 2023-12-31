@@ -70,6 +70,7 @@
 .heading,
 .subheading {
   color: styles.$white;
+  text-transform: capitalize;
 }
 
 .heading {
@@ -110,8 +111,6 @@
 }
 
 .subheading {
-  font-family: styles.$font-ubuntu;
-
   @include styles.breakpoint(max-width, mobile) {
     margin-top: styles.px-to-rem(20);
   }
@@ -119,15 +118,30 @@
   @include styles.breakpoint(min-width, mobile) {
     margin-top: styles.px-to-rem(50);
   }
+
+  font-family: styles.$font-ubuntu;
+  font-weight: 700;
 }
 
 .subheadingText {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: styles.px-to-rem(16);
   color: styles.$vivid-cerise;
   font-family: styles.$font-sketch-bold;
 }
 
 .containerWrapper {
+  height: 100%;
   flex-flow: column;
+}
+
+.containerWrapper,
+.textWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shape {
