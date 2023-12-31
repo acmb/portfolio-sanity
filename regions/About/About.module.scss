@@ -9,3 +9,63 @@
     display: flex;
   }
 }
+
+.left,
+.right {
+  @include styles.breakpoint(max-width, desktop) {
+    width: auto;
+  }
+
+  @include styles.breakpoint(min-width, desktop) {
+    width: 50%;
+  }
+}
+
+.left {
+  padding: {
+    top: styles.px-to-rem(0);
+    right: styles.px-to-rem(15);
+    bottom: styles.px-to-rem(50);
+    left: styles.px-to-rem(0);
+  }
+
+  p {
+    @include styles.breakpoint(max-width, tablet) {
+      margin-bottom: styles.px-to-rem(15);
+    }
+
+    @include styles.breakpoint(min-width, tablet) {
+      margin-bottom: styles.px-to-rem(25);
+    }
+
+    font-family: styles.$font-figtree;
+    margin-top: styles.px-to-rem(15);
+    color: styles.$british-racing-green;
+
+    &:last-child {
+      margin-bottom: styles.px-to-rem(0);
+    }
+  }
+}
+
+.highlighted {
+  @include styles.breakpoint(max-width, tablet) {
+    font-size: styles.px-to-rem(22);
+    line-height: styles.px-to-rem(28);
+  }
+
+  @include styles.breakpoint(min-width, tablet) {
+    font-size: styles.px-to-rem(46);
+    line-height: styles.px-to-rem(53);
+  }
+
+  font-family: styles.$font-ubuntu;
+  text-transform: uppercase;
+}
+
+.right {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+}

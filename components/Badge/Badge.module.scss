@@ -1,5 +1,5 @@
 
-@use "../../../styles/base.scss" as styles;
+@use "../../styles/base.scss" as styles;
 
 .badge {
   @include styles.breakpoint(min-width, tablet) {
