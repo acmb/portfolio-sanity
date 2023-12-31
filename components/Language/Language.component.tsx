@@ -5,12 +5,14 @@ import styles from "./Language.module.scss"
 
 type LanguageProps = {
   brandColor: string
+  category: "html-css" | "js" | "cms" | "other"
   icon: string
   title: string
 }
 
 export default function Language({
   brandColor,
+  category,
   icon,
   title
 }: LanguageProps) {
@@ -18,6 +20,7 @@ export default function Language({
     <div
       aria-label={title}
       className={`relative w-full px-4 ${styles.language}`}
+      data-category={category}
     >
       <div className="my-4">
         <div

@@ -11,6 +11,6 @@
 
   @include styles.breakpoint(min-width, desktop) {
     width: auto;
-    padding: styles.px-to-rem(0);
+    padding: 0;
   }
 }
