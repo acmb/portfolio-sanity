@@ -58,7 +58,7 @@ export default function Intro() {
           className={`relative block top-0 left-0 my-0 mx-auto ${styles.introImage}`}
           height={950}
           priority
-          src="https://placehold.co/950x916"
+          src="https://loremflickr.com/950/916"
           width={916}
         />
         <div
