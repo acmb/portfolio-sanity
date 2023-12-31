@@ -23,10 +23,7 @@ export default function ModalCard({
   modalTitle,
   skills = []
 }: ModalCardProps) {
-  const formattedSkills = skills
-  .sort()
-  .join(", ")
-  .replace(/, ([^,]*)$/, ' and $1')
+  const formattedSkills = skills.sort().join(", ").replace(/, ([^,]*)$/, " and $1")
 
   return (
     <Dialog.Portal>
