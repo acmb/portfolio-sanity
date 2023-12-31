@@ -2,6 +2,7 @@ import React from "react"
 
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
 
+import ContactList from "@/components/ContactList/ContactList.component"
 import Container from "@/components/Container/Container.component"
 import Form from "@/components/Form/Form.component"
 import HeadingDivider from "@/components/HeadingDivider/HeadingDivider.component"
@@ -24,6 +25,29 @@ export default function Contact() {
         containerClassName={`flex items-center ${styles.container}`}
       >
         <Form />
+        <div className="flex flex-wrap items-center">
+          <div className={`relative px-4 ${styles.left}`}>
+            <p
+              className={`text-center font-light ${styles.subCopy}`}
+            >
+              Other ways to contact me are mentioned below:
+            </p>
+            <div className={`flex ${styles.methods}`}>
+              <ContactList
+                icon="https://loremflickr.com/44/44"
+                text="rejaur-rahman@hotmail.co.uk"
+              />
+              <ContactList
+                icon="https://loremflickr.com/44/44"
+                text="Contact me via email or Linkedin to get my mobile number"
+              />
+              <ContactList
+                icon="https://loremflickr.com/44/44"
+                text="Based in Enfield Island Village, London ... Shown on this section"
+              />
+            </div>
+          </div>
+        </div>
       </Container>
     </Section>
   )
