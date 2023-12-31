@@ -1,0 +1,11 @@
+@use "../../styles/base.scss" as styles;
+
+.wrapper {
+  background-color: styles.$sky-blue;
+}
+
+.containerWrapper {
+  @include styles.breakpoint(min-width, desktop) {
+    display: flex;
+  }
+}

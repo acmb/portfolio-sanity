@@ -1,6 +1,7 @@
 import React from "react"
 
 import About from "@/regions/About/About.component"
+import Contact from "@/regions/Contact/Contact.component"
 import Education from "@/regions/Education/Education.component"
 import Experience from "@/regions/Experience/Experience.component"
 import Intro from "@/regions/Intro/Intro.component"
@@ -18,6 +19,7 @@ export default function Home() {
       <Skillset />
       <Projects />
       <Testimonials />
+      <Contact />
     </>
   )
 }
