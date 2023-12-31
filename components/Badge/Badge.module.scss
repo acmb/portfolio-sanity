@@ -13,7 +13,7 @@
   filter: drop-shadow(0.25em 0.7em 0.95em rgba(styles.$british-racing-green, 0.8));
   transition: 300ms all ease;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -33,7 +33,7 @@
     text-decoration: none;
     transform: rotate(-10deg) scale(1.05);
 
-    &:before {
+    &::before {
       opacity: 0.9;
     }
 
