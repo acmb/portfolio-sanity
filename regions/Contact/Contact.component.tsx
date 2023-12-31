@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
@@ -45,6 +46,19 @@ export default function Contact() {
                 icon="https://loremflickr.com/44/44"
                 text="Based in Enfield Island Village, London ... Shown on this section"
               />
+            </div>
+          </div>
+          <div className={`relative px-4 ${styles.right}`}>
+            <div className={`relative mx-auto ${styles.imageWrapper}`}>
+              <Image
+                alt="Enfield Island Village Area"
+                className="relative z-10"
+                height={532}
+                loading="lazy"
+                src="https://loremflickr.com/1280/532"
+                width={1280}
+              />
+              <div className={`absolute w-full h-full ${styles.shadow}`} />
             </div>
           </div>
         </div>
