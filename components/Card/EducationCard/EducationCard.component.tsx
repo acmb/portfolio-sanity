@@ -7,7 +7,7 @@ import styles from "./EducationCard.module.scss"
 type EducationCardProps = {
   boxImage: string
   brandColor: string
-  buttonPDF: string
+  buttonPDF?: string
   companyName: string
   courseTitle: string
   date: {
@@ -15,10 +15,10 @@ type EducationCardProps = {
     endDate?: string
     startDate: string
   }
+  languages?: string
   location: string
   mainImage: string
   modules: string,
-  languages: string
 }
 
 export default function EducationCard({
@@ -91,14 +91,16 @@ export default function EducationCard({
             </p>
           </>
         )}
-        <Link
-          aria-label="View Excel With Business App Course Certificate"
-          className={`flex items-center justify-center uppercase w-52 rounded-lg py-2.5 px-4 ${styles.button}`}
-          href={buttonPDF}
-          target="_blank"
-        >
-          View Certificate
-        </Link>
+        {buttonPDF && (
+          <Link
+            aria-label="View Excel With Business App Course Certificate"
+            className={`flex items-center justify-center uppercase w-52 rounded-lg py-2.5 px-4 ${styles.button}`}
+            href={buttonPDF}
+            target="_blank"
+          >
+            View Certificate
+          </Link>
+        )}
       </div>
       <div
         className={`flex justify-center relative pt-10 ${styles.right}`}
