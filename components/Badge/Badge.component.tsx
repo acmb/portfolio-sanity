@@ -1,8 +1,14 @@
+"use client"
+
 import React from "react"
+
+import useTotalExperience from "@/hooks/useTotalExperience"
 
 import styles from "./Badge.module.scss"
 
 export default function Badge() {
+  const years = useTotalExperience()
+
   return (
     <div
       className={`absolute flex justify-center items-center text-center top-0 left-0 uppercase ${styles.badge}`}
@@ -24,7 +30,7 @@ export default function Badge() {
       <span
         className={`block uppercase z-10 ${styles.text}`}
       >
-        + years
+        {years}+ years
       </span>
     </div>
   )

@@ -1,5 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import React from "react"
+
+import useTotalExperience from "@/hooks/useTotalExperience"
 
 import { LightBulbIcon } from "@heroicons/react/24/solid"
 
@@ -11,6 +15,8 @@ import Section from "@/components/Section/Section.component"
 import styles from "./About.module.scss"
 
 export default function About() {
+  const years = useTotalExperience()
+
   return (
     <Section
       dataPosition="about"
@@ -28,7 +34,7 @@ export default function About() {
           <p>People also know me as <span className={`font-bold ${styles.highlighted}`}>RONNY</span>.</p>
           <p><span className={`font-bold ${styles.highlighted}`}>labor omnia vincit</span> is latin phrase written which means <span>hardwork conquers all</span> which I truly believe and follow in every day to day activities.</p>
           <p>This has helped me build my repertoire and progress as <span className={`font-bold ${styles.highlighted}`}>Front End Web Developer</span>.</p>
-          <p>By gaining <span className={`font-bold ${styles.highlighted}`}>over <span className={`font-bold ${styles.highlighted}`}></span>+ years</span> commercial experience I have always shown to be a enthusiastic Developer with the eagerness to improve my current skillset, as well as going outside my comfort zone and finding creative solutions to any problems.</p>
+          <p>By gaining <span className={`font-bold ${styles.highlighted}`}>over {years}+ years</span> commercial experience I have always shown to be a enthusiastic Developer with the eagerness to improve my current skillset, as well as going outside my comfort zone and finding creative solutions to any problems.</p>
         </div>
         <div className={styles.right}>
           <Badge />
