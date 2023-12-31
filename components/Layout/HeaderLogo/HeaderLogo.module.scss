@@ -1,0 +1,18 @@
+@use "../../../styles/base.scss" as styles;
+
+.wrapper {
+  @include styles.breakpoint(max-width, desktop) {
+    width: 100%;
+    padding: {
+      top: styles.px-to-rem(5);
+      right: styles.px-to-rem(15);
+      bottom: styles.px-to-rem(5);
+      left: styles.px-to-rem(15);
+    }
+  }
+
+  @include styles.breakpoint(min-width, desktop) {
+    width: auto;
+    padding: styles.px-to-rem(0);
+  }
+}
