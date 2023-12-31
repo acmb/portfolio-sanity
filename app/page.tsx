@@ -6,6 +6,7 @@ import Experience from "@/regions/Experience/Experience.component"
 import Intro from "@/regions/Intro/Intro.component"
 import Projects from "@/regions/Projects/Projects.component"
 import Skillset from "@/regions/Skillset/Skillset.component"
+import Testimonials from "@/regions/Testimonials/Testimonials.component"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <Skillset />
       <Projects />
+      <Testimonials />
     </>
   )
 }
