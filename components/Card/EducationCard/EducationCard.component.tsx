@@ -53,7 +53,7 @@ export default function EducationCard({
           {courseTitle}
         </h4>
         <span
-          className={`inline-block font-bold py-2.5 px-4 my-5 rounded-lg ${styles.date}`}
+          className="inline-block font-bold py-2.5 px-4 my-5 rounded-lg border border-solid"
           style={
             {
               color: `${brandColor}`,

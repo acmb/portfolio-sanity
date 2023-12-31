@@ -3,3 +3,14 @@
 .wrapper {
   background-color: styles.$amaranth-pink;
 }
+
+.subheading {
+  font-family: styles.$font-figtree;
+  color: styles.$british-racing-green;
+  font-size: styles.px-to-rem(25);
+  line-height: styles.px-to-rem(32);
+  margin: {
+    top: styles.px-to-rem(25);
+    bottom: styles.px-to-rem(25);
+  }
+}
