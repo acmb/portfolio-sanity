@@ -19,7 +19,7 @@ export default defineType({
       type: "string"
     }),
     defineField({
-      name: "heroBg",
+      name: "heroBgColor",
       title: "Hero Bg Color",
       type: "color"
     }),
@@ -29,7 +29,14 @@ export default defineType({
       type: "image",
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     }),
     defineField({
       name: "logo",
@@ -37,7 +44,14 @@ export default defineType({
       type: "image",
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     }),
     defineField({
       name: "menu",
@@ -69,7 +83,7 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "Social"
+            type: "social"
           }
         }
       ]

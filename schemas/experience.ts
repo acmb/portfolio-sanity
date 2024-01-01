@@ -24,7 +24,14 @@ export default defineType({
       type: "image",
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     }),
     defineField({
       name: "companyLogo",
@@ -32,7 +39,14 @@ export default defineType({
       type: "image",
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     }),
     defineField({
       name: "currentlyWorkplace",
@@ -57,7 +71,7 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "Skill"
+            type: "skill"
           }
         }
       ]
@@ -68,7 +82,7 @@ export default defineType({
       type: "array",
       of: [
         {
-          type: "String"
+          type: "text"
         }
       ]
     })
