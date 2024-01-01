@@ -1,6 +1,10 @@
 @use "../../../../styles/base.scss" as styles;
 
 .header {
+  @include styles.breakpoint(max-width, desktop) {
+    position: fixed;
+  }
+
   border-bottom: styles.px-to-rem(1) solid styles.$amaranth-pink;
   background-color: styles.$linen;
 }

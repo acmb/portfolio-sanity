@@ -4,6 +4,7 @@
   @include styles.breakpoint(max-width, desktop) {
     display: none;
     padding-top: styles.px-to-rem(54);
+    width: 100%;
   }
 }
 
@@ -11,10 +12,17 @@
   @include styles.breakpoint(max-width, desktop) {
     border-top: styles.px-to-rem(1) solid styles.$amaranth-pink;
     flex-flow: column;
+    width: 100%;
   }
 
   @include styles.breakpoint(min-width, desktop) {
     justify-content: flex-end;
+  }
+}
+
+.listItem {
+  @include styles.breakpoint(max-width, desktop) {
+    width: 100%;
   }
 }
 
@@ -31,6 +39,7 @@
       left: styles.px-to-rem(10) solid styles.$amaranth-pink;
     }
     justify-content: center;
+    width: 100%;
   }
 
   @include styles.breakpoint(min-width, desktop) {

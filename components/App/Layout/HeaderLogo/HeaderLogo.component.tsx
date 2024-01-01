@@ -7,7 +7,7 @@ import styles from "./Headerlogo.module.scss"
 export default function HeaderLogo() {
   return (
     <Link
-      className={`flex items-center justify-center ${styles.wrapper}`}
+      className={`flex items-center ${styles.wrapper}`}
       href="/"
     >
       <Image

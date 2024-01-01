@@ -30,8 +30,12 @@ export default function HeaderMenu({ setOpen } : Props) {
     const targetSection = document.querySelector(`[data-position="${section}"]`) as HTMLElement | null
 
     if (targetSection) {
+      const navbarHeight = window.innerWidth > 1025 ? 75 : 54
+
+      const positionToScroll = targetSection.offsetTop - navbarHeight
+
       window.scrollTo({
-        top: targetSection.offsetTop,
+        top: positionToScroll,
         behavior: "smooth"
       })
     }
@@ -75,7 +79,7 @@ export default function HeaderMenu({ setOpen } : Props) {
   return (
     <nav className={`${styles.navbar} ${modalStyles.navbar}`}>
       <ul className={`flex ${styles.list}`}>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View home section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "home" ? styles.linkActive : ""}`.trim()}
@@ -85,7 +89,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Home
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View about section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "about" ? styles.linkActive : ""}`.trim()}
@@ -95,7 +99,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             About
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View education section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "education" ? styles.linkActive : ""}`.trim()}
@@ -105,7 +109,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Education
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View experience section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "experience" ? styles.linkActive : ""}`.trim()}
@@ -115,7 +119,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Experience
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View skillset section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "skillset" ? styles.linkActive : ""}`.trim()}
@@ -125,7 +129,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Skillset
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View projects section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "projects" ? styles.linkActive : ""}`.trim()}
@@ -135,7 +139,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Projects
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View testimonials section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "testimonials" ? styles.linkActive : ""}`.trim()}
@@ -145,7 +149,7 @@ export default function HeaderMenu({ setOpen } : Props) {
             Testimonials
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link
             aria-label="View contact section of page"
             className={`flex capitalize box-content ${styles.link} ${activeSection === "contact" ? styles.linkActive : ""}`.trim()}

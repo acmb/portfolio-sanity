@@ -13,7 +13,7 @@ import styles from "./Header.module.scss"
 export default function Header() {
   return (
     <header
-      className={`sticky w-full top-0 z-50 ${styles.header}`}
+      className={`w-full top-0 z-50 ${styles.header}`}
     >
       <NavigationMenu.Root>
         <Container
