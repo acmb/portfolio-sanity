@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { BookIcon } from "@sanity/icons"
+
 export default defineType({
   name: "education",
   title: "Education",
   type: "document",
+  icon: BookIcon,
   fields: [
     defineField({
       name: "brandColor",

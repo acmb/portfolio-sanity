@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { CubeIcon } from "@sanity/icons"
+
 export default defineType({
   name: "skill",
   title: "Skill",
   type: "document",
+  icon: CubeIcon,
   fields: [
     defineField({
       name: "brandColor",

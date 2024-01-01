@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { TextIcon } from "@sanity/icons"
+
 export default defineType({
   name: "testimonial",
   title: "Testimonial",
   type: "document",
+  icon: TextIcon,
   fields: [
     defineField({
       name: "author",

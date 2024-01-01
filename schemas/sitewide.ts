@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { EarthGlobeIcon } from "@sanity/icons"
+
 export default defineType({
   name: "sitewide",
   title: "Sitewide",
   type: "document",
+  icon: EarthGlobeIcon,
   fields: [
     defineField({
       name: "name",

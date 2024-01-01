@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { TwitterIcon } from "@sanity/icons"
+
 export default defineType({
   name: "social",
   title: "Social",
   type: "document",
+  icon: TwitterIcon,
   fields: [
     defineField({
       name: "socialTitle",

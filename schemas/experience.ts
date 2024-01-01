@@ -3,10 +3,13 @@ import {
   defineType
 } from "sanity"
 
+import { DashboardIcon } from "@sanity/icons"
+
 export default defineType({
   name: "experience",
   title: "Experience",
   type: "document",
+  icon: DashboardIcon,
   fields: [
     defineField({
       name: "jobTitle",
