@@ -1,3 +1,4 @@
+import { colorInput } from "@sanity/color-input"
 import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
 import { portfolioTheme } from "./theme"
@@ -15,6 +16,7 @@ export default defineConfig({
   dataset,
   name: "PORTFOLIO_Content_Studio",
   plugins: [
+    colorInput(),
     deskTool(),
     visionTool()
   ],
