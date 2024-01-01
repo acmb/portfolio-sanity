@@ -9,6 +9,11 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
+      name: "brandColor",
+      title: "Brand Colour",
+      type: "color"
+    }),
+    defineField({
       name: "projectTitle",
       title: "Project Title",
       type: "string"
