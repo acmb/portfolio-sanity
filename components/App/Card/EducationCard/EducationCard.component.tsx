@@ -18,7 +18,7 @@ type EducationCardProps = {
   languages?: string
   location: string
   mainImage: string
-  modules: string,
+  modules: string
 }
 
 export default function EducationCard({

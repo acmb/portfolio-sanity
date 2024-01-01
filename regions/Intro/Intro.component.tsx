@@ -30,7 +30,14 @@ export default function Intro() {
       dataPosition="home"
       sectionClassName={`flex ${styles.wrapper}`}
     >
-      <div className={`relative w-full overflow-hidden ${styles.introBg}`}>
+      <div
+        className={`relative w-full overflow-hidden ${styles.introBg}`}
+        style={
+          {
+            backgroundColor: "#393341"
+          }
+        }
+      >
         <div className={styles.contentWrapper}>
           <Container
             containerClassName={styles.containerWrapper}
