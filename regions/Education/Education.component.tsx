@@ -75,6 +75,7 @@ export default function Education() {
       >
         <Container>
           <Swiper
+            autoHeight
             className={styles.slider}
             enabled
             loop
