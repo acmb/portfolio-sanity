@@ -7,4 +7,10 @@
 
   border-bottom: styles.px-to-rem(1) solid styles.$amaranth-pink;
   background-color: styles.$linen;
+
+  &.sticky {
+    @include styles.breakpoint(min-width, desktop) {
+      position: fixed;
+    }
+  }
 }
