@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.39",
     "@heroicons/react": "^2.1.1",
     "@portabletext/react": "^3.0.11",
     "@radix-ui/react-dialog": "^1.0.5",
