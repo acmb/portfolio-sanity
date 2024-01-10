@@ -60,7 +60,7 @@ export default function Contact({}: Props) {
         >
           Thank you for submitting your message!
         </h3>
-        <p>Someone from our team will reach out to you within 48 hours.</p>
+        <p>I should be able to reach out to you within 48 hours.</p>
       </div>
     )
   }
