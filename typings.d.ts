@@ -59,7 +59,7 @@ export interface Experience extends SanityBody {
   dateEnded: date
   dateStarted: date
   description: string[]
-  technologies: Skill
+  technologies: Skill[]
   role: string
 }
 
@@ -72,7 +72,7 @@ export interface Project extends SanityBody {
   previewURL: string
   projectBackground: string
   summary: string
-  technologies: Skill
+  technologies: Skill[]
   title: string
 }
 
