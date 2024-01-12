@@ -12,6 +12,12 @@ export default defineType({
   icon: CubeIcon,
   fields: [
     defineField({
+      description: "Display skill on skillset region",
+      name: "activeSkill",
+      title: "Active Skill",
+      type: "boolean"
+    }),
+    defineField({
       name: "brandColor",
       title: "Brand Colour",
       type: "color"

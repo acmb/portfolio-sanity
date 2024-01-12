@@ -78,6 +78,7 @@ export interface Project extends SanityBody {
 
 export interface Skill extends SanityBody {
   _type: "skill"
+  activeSkill: boolean
   brandColor: Color
   category: string
   logo: Image
