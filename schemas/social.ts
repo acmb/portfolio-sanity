@@ -3,27 +3,27 @@ import {
   defineType
 } from "sanity"
 
-import { TwitterIcon } from "@sanity/icons"
+import { MobileDeviceIcon } from "@sanity/icons"
 
 export default defineType({
   name: "social",
   title: "Social",
   type: "document",
-  icon: TwitterIcon,
+  icon: MobileDeviceIcon,
   fields: [
     defineField({
-      name: "socialTitle",
-      title: "Social Title",
+      name: "title",
+      title: "Title",
       type: "string"
     }),
     defineField({
-      name: "socialUrl",
-      title: "Social Url",
+      name: "url",
+      title: "Url",
       type: "url"
     }),
     defineField({
-      name: "SocialIcon",
-      title: "Social Icon",
+      name: "icon",
+      title: "Icon",
       type: "image",
       options: {
         hotspot: true

@@ -17,8 +17,8 @@ export default defineType({
       type: "color"
     }),
     defineField({
-      name: "courseTitle",
-      title: "Course Title",
+      name: "title",
+      title: "Title",
       type: "string"
     }),
     defineField({

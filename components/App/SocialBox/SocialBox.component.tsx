@@ -5,7 +5,7 @@ import React from "react"
 import styles from "./SocialBox.module.scss"
 
 type SocialBoxProps = {
-  imageUrl: string
+  image: string
   primaryColor: string
   secondaryColor: string
   title: string
@@ -13,7 +13,7 @@ type SocialBoxProps = {
 }
 
 export default function SocialBox({
-  imageUrl,
+  image,
   primaryColor,
   secondaryColor,
   title,
@@ -43,7 +43,7 @@ export default function SocialBox({
           alt=""
           height={100}
           loading="lazy"
-          src={imageUrl}
+          src={image}
           width={100}
         />
       </div>

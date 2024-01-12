@@ -3,13 +3,13 @@ import {
   defineType
 } from "sanity"
 
-import { CodeIcon } from "@sanity/icons"
+import { CodeBlockIcon } from "@sanity/icons"
 
 export default defineType({
   name: "project",
   title: "Project",
   type: "document",
-  icon: CodeIcon,
+  icon: CodeBlockIcon,
   fields: [
     defineField({
       name: "brandColor",
@@ -17,8 +17,8 @@ export default defineType({
       type: "color"
     }),
     defineField({
-      name: "projectTitle",
-      title: "Project Title",
+      name: "title",
+      title: "Title",
       type: "string"
     }),
     defineField({

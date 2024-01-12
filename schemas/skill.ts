@@ -17,8 +17,8 @@ export default defineType({
       type: "color"
     }),
     defineField({
-      name: "technologyTitle",
-      title: "Technology Title",
+      name: "title",
+      title: "Title",
       type: "string"
     }),
     defineField({
@@ -47,8 +47,8 @@ export default defineType({
       }
     }),
     defineField({
-      name: "technologyLogo",
-      title: "technologyLogo",
+      name: "logo",
+      title: "Logo",
       type: "image",
       options: {
         hotspot: true

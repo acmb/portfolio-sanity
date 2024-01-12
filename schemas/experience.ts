@@ -3,18 +3,24 @@ import {
   defineType
 } from "sanity"
 
-import { DashboardIcon } from "@sanity/icons"
+import { HomeIcon } from "@sanity/icons"
 
 export default defineType({
   name: "experience",
   title: "Experience",
   type: "document",
-  icon: DashboardIcon,
+  icon: HomeIcon,
   fields: [
     defineField({
-      name: "jobTitle",
-      title: "Job Title",
+      name: "role",
+      title: "Role",
       type: "string"
+    }),
+    defineField({
+      description: "Select true if Contract role",
+      name: "contractRole",
+      title: "Contract Role?",
+      type: "boolean"
     }),
     defineField({
       name: "company",
@@ -85,7 +91,7 @@ export default defineType({
       type: "array",
       of: [
         {
-          type: "text"
+          type: "string"
         }
       ]
     })

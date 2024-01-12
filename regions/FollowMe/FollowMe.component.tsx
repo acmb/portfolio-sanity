@@ -21,14 +21,14 @@ export default function FollowMe() {
       />
       <div className={styles.wrapper}>
         <SocialBox
-          imageUrl="https://loremflickr.com/50/50"
+          image="https://loremflickr.com/50/50"
           primaryColor="#6cc644"
           secondaryColor="#333"
           title="Github"
           url="https://github.com/RejaurRahman"
         />
         <SocialBox
-          imageUrl="https://loremflickr.com/50/50"
+          image="https://loremflickr.com/50/50"
           primaryColor="#0a66c2"
           secondaryColor="#f0b6a8"
           title="Linkedin"
