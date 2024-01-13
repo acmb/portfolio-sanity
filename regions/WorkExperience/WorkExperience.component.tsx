@@ -8,9 +8,9 @@ import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.compo
 import InnerSection from "@/components/App/InnerSection/InnerSection.component"
 import Section from "@/components/App/Section/Section.component"
 
-import styles from "./Experience.module.scss"
+import styles from "./WorkExperience.module.scss"
 
-export default function Experience() {
+export default function WorkExperience() {
   return (
     <Section
       dataPosition="experience"

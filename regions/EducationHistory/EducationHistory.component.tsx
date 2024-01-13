@@ -26,11 +26,11 @@ import Section from "@/components/App/Section/Section.component"
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import "swiper/css"
 
-import styles from "./Education.module.scss"
+import styles from "./EducationHistory.module.scss"
 
 import type SwiperCore from "swiper"
 
-export default function Education() {
+export default function EducationHistory() {
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
 

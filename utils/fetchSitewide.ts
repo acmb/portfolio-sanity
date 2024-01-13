@@ -8,7 +8,7 @@ export const fetchSitewide = async() => {
   )
 
   const data = await res.json()
-  const sitewide: Sitewide[] = data.sitewide
+  const sitewide: Sitewide = data.sitewide
 
   return sitewide
 }
