@@ -90,9 +90,12 @@ export interface Sitewide extends SanityBody {
   heroBgColor: Color
   heroImage: BaseImage
   logo: BaseImage
+  logoLink: string
   menu: MenuItem[]
   name: string
   subTitle: string
+  typingColor: Color
+  typingText: string[]
 }
 
 export interface Social extends SanityBody {

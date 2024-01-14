@@ -57,6 +57,12 @@ export default defineType({
       ]
     }),
     defineField({
+      name: "logoLink",
+      title: "Logo Link",
+      type: "string",
+      validation: (Rule) => Rule.lowercase()
+    }),
+    defineField({
       name: "menu",
       title: "Menu",
       type: "array",
@@ -72,9 +78,25 @@ export default defineType({
             {
               name: "slug",
               title: "Slug",
-              type: "string"
+              type: "string",
+              validation: (Rule) => Rule.lowercase()
             }
           ]
+        }
+      ]
+    }),
+    defineField({
+      name: "typingColor",
+      title: "Typing Text Color",
+      type: "color"
+    }),
+    defineField({
+      name: "typingText",
+      title: "Typing Text",
+      type: "array",
+      of: [
+        {
+          type: "string"
         }
       ]
     })

@@ -3,6 +3,8 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import React from "react"
 
+import { Sitewide } from "@/typings"
+
 import useSticky from "@/hooks/useSticky"
 
 import Container from "@/components/App/Container/Container.component"
@@ -12,7 +14,13 @@ import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.compone
 
 import styles from "./Header.module.scss"
 
-export default function Header() {
+type Props = {
+  sitewide: Sitewide
+}
+
+export default function Header({
+  sitewide
+}: Props) {
   const { sticky, stickyRef } = useSticky()
 
   return (
@@ -24,9 +32,15 @@ export default function Header() {
         <Container
           containerClassName="flex items-center justify-between"
         >
-          <HeaderLogo />
-          <HeaderMenu />
-          <HeaderModal />
+          <HeaderLogo
+            sitewide={sitewide}
+          />
+          <HeaderMenu
+            sitewide={sitewide}
+          />
+          <HeaderModal
+            sitewide={sitewide}
+          />
         </Container>
       </NavigationMenu.Root>
     </header>

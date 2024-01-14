@@ -40,7 +40,9 @@ export default async function Home() {
 
   return (
     <>
-      <Intro />
+      <Intro
+        sitewide={sitewide}
+      />
       <About />
       <EducationHistory />
       <WorkExperience />

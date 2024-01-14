@@ -6,14 +6,20 @@ import React, {
   useState
 } from "react"
 
+import { Sitewide } from "@/typings"
+
 import modalStyles from "@/components/App/Layout/HeaderModal/HeaderModal.module.scss"
 import styles from "./HeaderMenu.module.scss"
 
 interface Props {
   setOpen?: (open: boolean) => void
+  sitewide: Sitewide
 }
 
-export default function HeaderMenu({ setOpen } : Props) {
+export default function HeaderMenu({
+  setOpen,
+  sitewide
+} : Props) {
   const [activeSection, setActiveSection] = useState("home")
 
   const scrollToSection = (section: string) => (
@@ -30,7 +36,7 @@ export default function HeaderMenu({ setOpen } : Props) {
     const targetSection = document.querySelector(`[data-position="${section}"]`) as HTMLElement | null
 
     if (targetSection) {
-      const navbarHeight = window.innerWidth > 1025 ? 75 : 54
+      const navbarHeight = window.innerWidth > 1025 ? 90 : 54
 
       const positionToScroll = targetSection.offsetTop - navbarHeight
 
@@ -79,86 +85,23 @@ export default function HeaderMenu({ setOpen } : Props) {
   return (
     <nav className={`${styles.navbar} ${modalStyles.navbar}`}>
       <ul className={`flex ${styles.list}`}>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View home section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "home" ? styles.linkActive : ""}`.trim()}
-            href="#home"
-            onClick={scrollToSection("home")}
-          >
-            Home
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View about section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "about" ? styles.linkActive : ""}`.trim()}
-            href="#about"
-            onClick={scrollToSection("about")}
-          >
-            About
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View education section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "education" ? styles.linkActive : ""}`.trim()}
-            href="#education"
-            onClick={scrollToSection("education")}
-          >
-            Education
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View experience section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "experience" ? styles.linkActive : ""}`.trim()}
-            href="#experience"
-            onClick={scrollToSection("experience")}
-          >
-            Experience
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View skillset section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "skillset" ? styles.linkActive : ""}`.trim()}
-            href="#skillset"
-            onClick={scrollToSection("skillset")}
-          >
-            Skillset
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View projects section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "projects" ? styles.linkActive : ""}`.trim()}
-            href="#projects"
-            onClick={scrollToSection("projects")}
-          >
-            Projects
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View testimonials section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "testimonials" ? styles.linkActive : ""}`.trim()}
-            href="#testimonials"
-            onClick={scrollToSection("testimonials")}
-          >
-            Testimonials
-          </Link>
-        </li>
-        <li className={styles.listItem}>
-          <Link
-            aria-label="View contact section of page"
-            className={`flex capitalize box-content ${styles.link} ${activeSection === "contact" ? styles.linkActive : ""}`.trim()}
-            href="#contact"
-            onClick={scrollToSection("contact")}
-          >
-            Contact
-          </Link>
-        </li>
+        {
+          sitewide?.menu?.map((item) => (
+            <li
+              className={styles.listItem}
+              key={item._key}
+            >
+            <Link
+              aria-label={`View ${item.menuName} section of page`}
+              className={`flex capitalize box-content ${styles.link} ${activeSection === item.slug ? styles.linkActive : ""}`.trim()}
+              href={`#${item.slug}`}
+              onClick={scrollToSection(`${item.slug}`)}
+            >
+              {item.menuName}
+            </Link>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   )
