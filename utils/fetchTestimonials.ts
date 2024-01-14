@@ -1,6 +1,6 @@
 import { Testimonial } from "@/typings"
 
-export const fetchTestimonials = async() => {
+export const fetchTestimonials = async () => {
   const res = await fetch(
     `
       ${process.env.NEXT_PUBLIC_BASE_URL}/api/getTestimonial

@@ -62,11 +62,11 @@ After that you can delete sanity folder created
 Add .env.local file if does not exist in root of project or update the variables in the file:
 
 ```bash
+NEXT_PUBLIC_BASE_URL="{LOCALHOST URL}"
 NEXT_PUBLIC_SANITY_PROJECT_ID="{SANITY PROJECT ID}"
 NEXT_PUBLIC_SANITY_DATASET="{USUALLY SET TO PRODUCTION}"
 NEXT_PUBLIC_SANITY_API_VERSION="{SANITY API VERSION - FOR EXAMPLE DATE PROJECT STARTED}"
 SANITY_API_READ_TOKEN="{SANITY API TOKEN}"
-SITE_URL="{PRODUCTIONSITE URL}"
 ```
 
 This will need to be added to netlify or server environment variables where the site is deployed.

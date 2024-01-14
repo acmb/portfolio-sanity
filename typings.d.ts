@@ -11,7 +11,7 @@ interface Color {
   hex: string
 }
 
-interface Image {
+interface BaseImage {
   _type: "image"
   asset: {
     _ref: string
@@ -36,10 +36,10 @@ interface PDF {
 export interface Education extends SanityBody {
   _type: "education"
   brandColor: Color
-  buildingImage: Image
+  buildingImage: BaseImage
   certificateFile: PDF
   companyName: string
-  companyIcon: Image
+  companyIcon: BaseImage
   currentlyStudying: boolean
   dateEnded: date
   dateStarted: date
@@ -52,8 +52,8 @@ export interface Education extends SanityBody {
 export interface Experience extends SanityBody {
   _type: "experience"
   company: string
-  companyIcon: Image
-  companyLogo: Image
+  companyIcon: BaseImage
+  companyLogo: BaseImage
   contractRole: boolean
   currentlyWorkplace: boolean
   dateEnded: date
@@ -67,7 +67,7 @@ export interface Project extends SanityBody {
   _type: "project"
   brandColor: Color
   codeURL: string
-  coverImage: Image
+  coverImage: BaseImage
   futureUse: string
   previewURL: string
   projectBackground: string
@@ -78,18 +78,18 @@ export interface Project extends SanityBody {
 
 export interface Skill extends SanityBody {
   _type: "skill"
-  activeSkill: boolean
+  activeSkill?: boolean
   brandColor: Color
   category: string
-  logo: Image
+  logo: BaseImage
   title: string
 }
 
 export interface Sitewide extends SanityBody {
   _type: "sitewide"
   heroBgColor: Color
-  heroImage: Image
-  logo: Image
+  heroImage: BaseImage
+  logo: BaseImage
   menu: MenuItem[]
   name: string
   subTitle: string
@@ -97,7 +97,7 @@ export interface Sitewide extends SanityBody {
 
 export interface Social extends SanityBody {
   _type: "social"
-  icon: Image
+  icon: BaseImage
   primaryColor: Color
   secondaryColor: Color
   title: string

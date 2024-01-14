@@ -7,6 +7,8 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
+import { Social } from "@/typings"
+
 import { UserGroupIcon } from "@heroicons/react/24/solid"
 
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
@@ -15,7 +17,13 @@ import SocialBox from "@/components/App/SocialBox/SocialBox.component"
 
 import styles from "./FollowMe.module.scss"
 
-export default function FollowMe() {
+type Props = {
+  socials: Social[]
+}
+
+export default function FollowMe({
+  socials
+}: Props) {
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
     animatedWrapper, {
@@ -51,20 +59,16 @@ export default function FollowMe() {
             ease: "easeInOut"
           }}
         >
-          <SocialBox
-            image="https://loremflickr.com/50/50"
-            primaryColor="#6cc644"
-            secondaryColor="#333"
-            title="Github"
-            url="https://github.com/RejaurRahman"
-          />
-          <SocialBox
-            image="https://loremflickr.com/50/50"
-            primaryColor="#0a66c2"
-            secondaryColor="#f0b6a8"
-            title="Linkedin"
-            url="https://www.linkedin.com/in/rejaur-rahman-a938a657"
-          />
+          {socials.map((social) => (
+            <SocialBox
+              key={social._id}
+              icon="https://loremflickr.com/50/50"
+              primaryColor={social.primaryColor.hex}
+              secondaryColor={social.secondaryColor.hex}
+              title={social.title}
+              url={social.url}
+            />
+          ))}
         </motion.div>
       </Section>
     </AnimatePresence>

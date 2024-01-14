@@ -1,6 +1,6 @@
 import { Sitewide} from "@/typings"
 
-export const fetchSitewide = async() => {
+export const fetchSitewide = async () => {
   const res = await fetch(
     `
       ${process.env.NEXT_PUBLIC_BASE_URL}/api/getSitewide
