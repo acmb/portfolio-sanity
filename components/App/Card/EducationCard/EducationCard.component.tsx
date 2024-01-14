@@ -40,7 +40,9 @@ export default function EducationCard({
       <div className={`relative ${styles.left}`}>
         <h3
           className={`uppercase ${styles.company}`}
-          style={{ color: `${brandColor}` }}
+          style={{
+            color: `${brandColor}`
+          }}
         >
           {companyName}
         </h3>
@@ -54,12 +56,10 @@ export default function EducationCard({
         </h4>
         <span
           className="inline-block font-bold py-2.5 px-4 my-5 rounded-lg border border-solid"
-          style={
-            {
-              color: `${brandColor}`,
-              borderColor: `${brandColor}`
-            }
-          }
+          style={{
+            color: `${brandColor}`,
+            borderColor: `${brandColor}`
+          }}
         >
           {date.startDate}
           {" "}-{" "}
@@ -107,7 +107,9 @@ export default function EducationCard({
       >
         <div
           className={`flex items-center justify-center absolute right-0 w-14 h-14 ${styles.box}`}
-          style={{borderColor: `${brandColor}`}}
+          style={{
+            borderColor: `${brandColor}`
+          }}
         >
           <Image
             alt=""

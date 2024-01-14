@@ -12,16 +12,7 @@ import React, {
 
 import styles from "@/regions/Contact/Contact.module.scss"
 
-type Inputs = {
-  name: string
-  email: string
-  message: string
-  subject: string
-}
-
-type Props = {}
-
-export default function Contact({}: Props) {
+export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [clientRendered, setClientRendered] = useState(false)
   const [loading, setLoading] = useState(false)

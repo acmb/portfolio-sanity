@@ -1,23 +1,4 @@
-import { GetStaticProps } from "next"
 import React from "react"
-
-import {
-  Education,
-  Experience,
-  Project,
-  Sitewide,
-  Skill,
-  Social,
-  Testimonial
-} from "@/typings"
-
-import { fetchEducations } from "@/utils/fetchEducations"
-import { fetchExperiences } from "@/utils/fetchExperiences"
-import { fetchProjects } from "@/utils/fetchProjects"
-import { fetchSitewide } from "@/utils/fetchSitewide"
-import { fetchSkills } from "@/utils/fetchSkills"
-import { fetchSocials } from "@/utils/fetchSocials"
-import { fetchTestimonials } from "@/utils/fetchTestimonials"
 
 import About from "@/regions/About/About.component"
 import BackToTop from "@/components/App/BackToTop/BackToTop.component"
@@ -30,25 +11,7 @@ import Skillset from "@/regions/Skillset/Skillset.component"
 import Testimonials from "@/regions/Testimonials/Testimonials.component"
 import WorkExperience from "@/regions/WorkExperience/WorkExperience.component"
 
-type Props = {
-  educations: Education[]
-  experiences: Experience[]
-  projects: Project[]
-  sitewide: Sitewide
-  skills: Skill[]
-  socials: Social[]
-  testimonials: Testimonial[]
-}
-
-export default function Home({
-  educations,
-  experiences,
-  projects,
-  sitewide,
-  skills,
-  socials,
-  testimonials
-}: Props) {
+export default function Home() {
   return (
     <>
       <Intro />
@@ -63,27 +26,4 @@ export default function Home({
       <BackToTop />
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const educations: Education[] = await fetchEducations()
-  const experiences: Experience[] = await fetchExperiences()
-  const projects: Project[] = await fetchProjects()
-  const sitewide: Sitewide = await fetchSitewide()
-  const skills: Skill[] = await fetchSkills()
-  const socials: Social[] = await fetchSocials()
-  const testimonials: Testimonial[] = await fetchTestimonials()
-
-  return {
-    props: {
-      educations,
-      experiences,
-      projects,
-      sitewide,
-      skills,
-      socials,
-      testimonials
-    },
-    revalidate: 10
-  }
 }
