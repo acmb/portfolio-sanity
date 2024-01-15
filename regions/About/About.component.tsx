@@ -59,8 +59,7 @@ export default function About() {
           }}
           ref={animatedWrapper}
           transition={{
-            delay: 0.1,
-            duration: 0.3,
+            duration: 0.8,
             ease: "easeInOut"
           }}
         >
@@ -85,8 +84,8 @@ export default function About() {
               }}
               ref={animatedWrapper}
               transition={{
-                delay: 0.2,
-                duration: 0.3,
+                delay: 0.5,
+                duration: 0.8,
                 ease: "easeInOut"
               }}
             >
@@ -105,8 +104,8 @@ export default function About() {
                 }}
                 ref={animatedBadge}
                 transition={{
-                  delay: 0.6,
-                  duration: 0.5,
+                  delay: 0.8,
+                  duration: 0.8,
                   ease: "easeInOut"
                 }}
               >
@@ -123,8 +122,8 @@ export default function About() {
                 }}
                 ref={animatedImage}
                 transition={{
-                  delay: 0.5,
-                  duration: 0.5,
+                  delay: 1,
+                  duration: 0.8,
                   ease: "easeInOut"
                 }}
               >

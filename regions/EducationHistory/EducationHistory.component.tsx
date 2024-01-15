@@ -97,8 +97,7 @@ export default function EducationHistory() {
             }}
             ref={animatedWrapper}
             transition={{
-              delay: 0.5,
-              duration: 0.3,
+              duration: 0.8,
               ease: "easeInOut"
             }}
           >

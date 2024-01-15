@@ -50,8 +50,8 @@ export default function Contact() {
           }}
           ref={animatedWrapper}
           transition={{
-            delay: 0.2,
-            duration: 0.3,
+            delay: 0.5,
+            duration: 0.8,
             ease: "easeInOut"
           }}
         >
@@ -98,8 +98,8 @@ export default function Contact() {
                 }}
                 ref={animatedImage}
                 transition={{
-                  delay: 0.7,
-                  duration: 0.5,
+                  delay: 0.8,
+                  duration: 0.8,
                   ease: "easeInOut"
                 }}
               >
