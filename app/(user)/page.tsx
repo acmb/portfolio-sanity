@@ -53,7 +53,9 @@ export default async function Home() {
       <Skillset
         skills={skills}
       />
-      <Projects />
+      <Projects
+        projects={projects}
+      />
       <Testimonials />
       <Contact />
       <FollowMe
