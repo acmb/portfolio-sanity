@@ -64,10 +64,10 @@ export default function FollowMe({
             <SocialBox
               key={social._id}
               icon={urlFor(social?.icon).url()}
-              primaryColor={social.primaryColor.hex}
-              secondaryColor={social.secondaryColor.hex}
-              title={social.title}
-              url={social.url}
+              primaryColor={social?.primaryColor.hex}
+              secondaryColor={social?.secondaryColor.hex}
+              title={social?.title}
+              url={social?.url}
             />
           ))}
         </motion.div>

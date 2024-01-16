@@ -50,7 +50,9 @@ export default async function Home() {
       <WorkExperience
         experiences={experiences}
       />
-      <Skillset />
+      <Skillset
+        skills={skills}
+      />
       <Projects />
       <Testimonials />
       <Contact />

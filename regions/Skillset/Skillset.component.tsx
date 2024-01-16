@@ -11,6 +11,9 @@ import React, {
   useState
 } from "react"
 
+import { Skill } from "@/typings"
+import { urlFor } from "@/sanity"
+
 import { PaintBrushIcon } from "@heroicons/react/24/solid"
 
 import Container from "@/components/App/Container/Container.component"
@@ -22,7 +25,13 @@ import Section from "@/components/App/Section/Section.component"
 
 import styles from "./Skillset.module.scss"
 
-export default function Skillset() {
+type Props = {
+  skills: Skill[]
+}
+
+export default function Skillset({
+  skills
+}: Props) {
   const [activeCategory, setActiveCategory] = useState("all")
 
   const animatedWrapper = useRef(null)
@@ -123,156 +132,15 @@ export default function Skillset() {
                   setActiveFilter={handleCategoryChange}
                 />
               </div>
-              <Language
-                brandColor="#075b8a"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="AJAX"
-              />
-              <Language
-                brandColor="#7952b3"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="Bootstrap"
-              />
-              <Language
-                brandColor="#00947e"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="Bulma"
-              />
-              <Language
-                brandColor="#2965f1"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="CSS3"
-              />
-              <Language
-                brandColor="#002d64"
-                category="other"
-                icon="https://loremflickr.com/100/100"
-                title="Docker"
-              />
-              <Language
-                brandColor="#074e68"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="Foundation"
-              />
-              <Language
-                brandColor="#11081f"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="Gatsby.JS"
-              />
-              <Language
-                brandColor="#202020"
-                category="other"
-                icon="https://loremflickr.com/100/100"
-                title="GraphQL"
-              />
-              <Language
-                brandColor="#e48632"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="Grunt.JS"
-              />
-              <Language
-                brandColor="#9a2829"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="Gulp.JS"
-              />
-              <Language
-                brandColor="#ef652a"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="HTML5"
-              />
-              <Language
-                brandColor="#dab92d"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="JavaScript"
-              />
-              <Language
-                brandColor="#0769ad"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="jQuery"
-              />
-              <Language
-                brandColor="#00c1d0"
-                category="other"
-                icon="https://loremflickr.com/100/100"
-                title="Kubernetes"
-              />
-              <Language
-                brandColor="#a8b9c0"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="Next.JS"
-              />
-              <Language
-                brandColor="#282c34"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="React.JS"
-              />
-              <Language
-                brandColor="#63c2ba"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="Responsive Web Design"
-              />
-              <Language
-                brandColor="#c03226"
-                category="cms"
-                icon="https://loremflickr.com/100/100"
-                title="Sanity.io"
-              />
-              <Language
-                brandColor="#bf4080"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="SASS"
-              />
-              <Language
-                brandColor="#db7533"
-                category="other"
-                icon="https://loremflickr.com/100/100"
-                title="SQL"
-              />
-              <Language
-                brandColor="#271fe0"
-                category="cms"
-                icon="https://loremflickr.com/100/100"
-                title="Strapi.io"
-              />
-              <Language
-                brandColor="#94dae2"
-                category="html-css"
-                icon="https://loremflickr.com/100/100"
-                title="Tailwind CSS"
-              />
-              <Language
-                brandColor="#3178c6"
-                category="js"
-                icon="https://loremflickr.com/100/100"
-                title="TypeScript"
-              />
-              <Language
-                brandColor="#1762a5"
-                category="other"
-                icon="https://loremflickr.com/100/100"
-                title="Webpack"
-              />
-              <Language
-                brandColor="#0073aa"
-                category="cms"
-                icon="https://loremflickr.com/100/100"
-                title="WordPress"
-              />
+              {skills.map((skill: Skill) => (
+                <Language
+                  brandColor={skill?.brandColor.hex}
+                  category="js"
+                  key={skill._id}
+                  icon={urlFor(skill?.logo).url()}
+                  title={skill?.title}
+                />
+              ))}
             </Container>
           </motion.div>
         </InnerSection>
