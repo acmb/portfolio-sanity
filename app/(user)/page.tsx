@@ -56,7 +56,9 @@ export default async function Home() {
       <Projects
         projects={projects}
       />
-      <Testimonials />
+      <Testimonials
+        testimonials={testimonials}
+      />
       <Contact />
       <FollowMe
         socials={socials}
