@@ -47,7 +47,9 @@ export default async function Home() {
       <EducationHistory
         educations={educations}
       />
-      <WorkExperience />
+      <WorkExperience
+        experiences={experiences}
+      />
       <Skillset />
       <Projects />
       <Testimonials />
