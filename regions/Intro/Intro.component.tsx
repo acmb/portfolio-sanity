@@ -8,6 +8,7 @@ import {
 } from "react-simple-typewriter"
 
 import { Sitewide } from "@/typings"
+import { urlFor } from "@/sanity"
 
 import Container from "@/components/App/Container/Container.component"
 import Header from "@/components/App/Layout/Header/Header.component"
@@ -69,7 +70,7 @@ export default function Intro({
           className={`relative block top-0 left-0 my-0 mx-auto ${styles.introImage}`}
           height={950}
           priority
-          src="https://loremflickr.com/950/916"
+          src={urlFor(sitewide?.heroImage).url()}
           width={916}
         />
         <div

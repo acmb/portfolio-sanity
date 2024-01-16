@@ -36,10 +36,10 @@ interface PDF {
 export interface Education extends SanityBody {
   _type: "education"
   brandColor: Color
-  buildingImage: BaseImage
+  buildingImage: BaseImage | Image
   certificateFile: PDF
   companyName: string
-  companyIcon: BaseImage
+  companyIcon: BaseImage | Image
   currentlyStudying: boolean
   dateEnded: date
   dateStarted: date
@@ -52,8 +52,8 @@ export interface Education extends SanityBody {
 export interface Experience extends SanityBody {
   _type: "experience"
   company: string
-  companyIcon: BaseImage
-  companyLogo: BaseImage
+  companyIcon: BaseImage | Image
+  companyLogo: BaseImage | Image
   contractRole: boolean
   currentlyWorkplace: boolean
   dateEnded: date
@@ -67,7 +67,7 @@ export interface Project extends SanityBody {
   _type: "project"
   brandColor: Color
   codeURL: string
-  coverImage: BaseImage
+  coverImage: BaseImage | Image
   futureUse: string
   previewURL: string
   projectBackground: string
@@ -81,15 +81,15 @@ export interface Skill extends SanityBody {
   activeSkill?: boolean
   brandColor: Color
   category: string
-  logo: BaseImage
+  logo: BaseImage | Image
   title: string
 }
 
 export interface Sitewide extends SanityBody {
   _type: "sitewide"
   heroBgColor: Color
-  heroImage: BaseImage
-  logo: BaseImage
+  heroImage: BaseImage | Image
+  logo: BaseImage | Image
   logoLink: string
   menu: MenuItem[]
   name: string

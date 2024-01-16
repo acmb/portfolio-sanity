@@ -3,6 +3,7 @@ import Link from "next/link"
 import React from "react"
 
 import { Sitewide } from "@/typings"
+import { urlFor } from "@/sanity"
 
 import styles from "./Headerlogo.module.scss"
 
@@ -21,7 +22,7 @@ export default function HeaderLogo({
       <Image
         alt=""
         height={43}
-        src="https://loremflickr.com/43/43"
+        src={urlFor(sitewide?.logo).url()}
         width={43}
       />
     </Link>

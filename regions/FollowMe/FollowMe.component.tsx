@@ -7,8 +7,8 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { urlFor } from "@/sanity"
 import { Social } from "@/typings"
+import { urlFor } from "@/sanity"
 
 import { UserGroupIcon } from "@heroicons/react/24/solid"
 
