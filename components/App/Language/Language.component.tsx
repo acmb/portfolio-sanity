@@ -9,6 +9,7 @@ import React, { useRef } from "react"
 import styles from "./Language.module.scss"
 
 type LanguageProps = {
+  activeSkill?: boolean
   animation?: {
     opacity: number
     scale: number;
@@ -22,6 +23,7 @@ type LanguageProps = {
 }
 
 export default function Language({
+  activeSkill,
   animation = {
     opacity: 1,
     scale: 1,
@@ -46,7 +48,7 @@ export default function Language({
     y
   } = animation
 
-  return (
+  return activeSkill ? (
     <AnimatePresence>
       <motion.div
         animate={isInViewSkill ? {
@@ -103,5 +105,5 @@ export default function Language({
         </div>
       </motion.div>
     </AnimatePresence>
-  )
+  ) : null
 }

@@ -134,6 +134,7 @@ export default function Skillset({
               </div>
               {skills.map((skill: Skill) => (
                 <Language
+                  activeSkill={skill?.activeSkill}
                   brandColor={skill?.brandColor.hex}
                   category="js"
                   key={skill._id}
