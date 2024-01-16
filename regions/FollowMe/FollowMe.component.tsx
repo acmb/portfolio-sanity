@@ -7,6 +7,7 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
+import { urlFor } from "@/sanity"
 import { Social } from "@/typings"
 
 import { UserGroupIcon } from "@heroicons/react/24/solid"
@@ -59,10 +60,10 @@ export default function FollowMe({
             ease: "easeInOut"
           }}
         >
-          {socials.map((social) => (
+          {socials.map((social: Social) => (
             <SocialBox
               key={social._id}
-              icon="https://loremflickr.com/50/50"
+              icon={urlFor(social?.icon).url()}
               primaryColor={social.primaryColor.hex}
               secondaryColor={social.secondaryColor.hex}
               title={social.title}

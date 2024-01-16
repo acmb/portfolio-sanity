@@ -6,7 +6,7 @@ interface SanityBody {
 }
 
 interface Color {
-  _type: "color",
+  _type: "color"
   alpha: number
   hex: string
 }
@@ -100,7 +100,7 @@ export interface Sitewide extends SanityBody {
 
 export interface Social extends SanityBody {
   _type: "social"
-  icon: BaseImage
+  icon: BaseImage | Image
   primaryColor: Color
   secondaryColor: Color
   title: string
