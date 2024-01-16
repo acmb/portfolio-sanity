@@ -69,12 +69,18 @@ export default defineType({
     defineField({
       name: "dateStarted",
       title: "Date Started",
-      type: "date"
+      type: "date",
+      options: {
+        dateFormat: "MM/YYYY"
+      }
     }),
     defineField({
       name: "dateEnded",
       title: "Date Ended",
-      type: "date"
+      type: "date",
+      options: {
+        dateFormat: "MM/YYYY"
+      }
     }),
     defineField({
       name: "modules",

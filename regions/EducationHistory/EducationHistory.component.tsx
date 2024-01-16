@@ -18,6 +18,9 @@ import {
   SwiperSlide
 } from "swiper/react"
 
+import { Education } from "@/typings"
+import { urlFor } from "@/sanity"
+
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import { BookOpenIcon } from "@heroicons/react/24/solid"
@@ -35,7 +38,13 @@ import styles from "./EducationHistory.module.scss"
 
 import type SwiperCore from "swiper"
 
-export default function EducationHistory() {
+type Props = {
+  educations: Education[]
+}
+
+export default function EducationHistory({
+  educations
+}: Props) {
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
 
@@ -130,73 +139,28 @@ export default function EducationHistory() {
                   />
                   {renderNextButton()}
                 </div>
-                <SwiperSlide className={styles.slide}>
-                  <EducationCard
-                    boxImage="https://loremflickr.com/32/32"
-                    brandColor="#e52dad"
-                    companyName="Just IT Training"
-                    courseTitle="Development Professional Programme"
-                    date={{
-                      current: false,
-                      endDate: "04/2014",
-                      startDate: "09/2015"
-                    }}
-                    location="Algate, London"
-                    mainImage="https://loremflickr.com/530/298"
-                    modules="HTML5 Fundamentals, JavaScript Fundamentals, Introduction to CSS and HTML5 Advanced Topics and Building HTML5 and JavaScript Apps with MVVM and Knockout."
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={styles.slide}>
-                  <EducationCard
-                    boxImage="https://loremflickr.com/32/32"
-                    brandColor="#10793f"
-                    buttonPDF="#"
-                    companyName="Excel With Business"
-                    courseTitle="EWB Online App Design Course, Online Completion Certificate"
-                    date={{
-                      current: false,
-                      endDate: "02/2014",
-                      startDate: "02/2014"
-                    }}
-                    location="Online"
-                    mainImage="https://loremflickr.com/530/298"
-                    modules="HTML, Introduction to CSS, User Interface Design, eCommerce, Social Media Integration and Search Engine Optimization."
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={styles.slide}>
-                  <EducationCard
-                    boxImage="https://loremflickr.com/32/32"
-                    brandColor="#10793f"
-                    buttonPDF="#"
-                    companyName="Excel With Business"
-                    courseTitle="EWB Online Web Design Course, Online Completion Certificate"
-                    date={{
-                      current: false,
-                      endDate: "12/2013",
-                      startDate: "02/2014"
-                    }}
-                    location="Online"
-                    mainImage="https://loremflickr.com/530/298"
-                    modules="HTML, Introduction to CSS, User Interface Design, eCommerce, Social Media Integration and Search Engine Optimization."
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={styles.slide}>
-                  <EducationCard
-                    boxImage="https://loremflickr.com/32/32"
-                    brandColor="#9c5fb5"
-                    companyName="University of Hertfordshire"
-                    courseTitle="BA/BSc (Hons) Joint Honours Degree in Computing / Business"
-                    date={{
-                      current: false,
-                      endDate: "09/2010",
-                      startDate: "07/2013"
-                    }}
-                    languages="PHP, SQL, Oracle, HTML, CSS, ASP.NET and Java."
-                    location="Hatfield, Hertfordshire"
-                    mainImage="https://loremflickr.com/530/298"
-                    modules="Programming Principles, Data Management and Applications, Information Technology Development Exercise and Web Application Development A (Design)."
-                  />
-                </SwiperSlide>
+                {educations.map((education: Education) => (
+                  <SwiperSlide
+                    className={styles.slide}
+                    key={education._id}
+                  >
+                    <EducationCard
+                      boxImage={urlFor(education?.companyIcon).url()}
+                      brandColor={education?.brandColor.hex}
+                      companyName={education?.companyName}
+                      courseTitle={education?.title}
+                      date={{
+                        current: education?.currentlyStudying,
+                        endDate: !education.currentlyStudying && education?.dateEnded,
+                        startDate: education?.dateStarted
+                      }}
+                      languages={education?.languages || undefined}
+                      location={education?.location}
+                      mainImage={urlFor(education?.buildingImage).url()}
+                      modules={education?.modules}
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </Container>
           </motion.div>

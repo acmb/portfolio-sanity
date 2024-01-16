@@ -44,7 +44,9 @@ export default async function Home() {
         sitewide={sitewide}
       />
       <About />
-      <EducationHistory />
+      <EducationHistory
+        educations={educations}
+      />
       <WorkExperience />
       <Skillset />
       <Projects />
