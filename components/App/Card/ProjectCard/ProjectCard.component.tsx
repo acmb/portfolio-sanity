@@ -23,14 +23,12 @@ type ProjectCardProps = {
   coverImage: string
   futureUseText?: string
   github?: {
-    display: boolean
     url: string
   }
   skills?: string[]
   text: string
   title: string
   website: {
-    display: boolean
     url: string
   }
 }

@@ -79,8 +79,7 @@ export default function Projects({
                     coverImage={urlFor(project?.coverImage).url()}
                     futureUseText={project?.futureUse || undefined}
                     github={{
-                      display: true,
-                      url: "https://github.com/RejaurRahman/blog-camp"
+                      url: project?.codeURL
                     }}
                     key={project._id}
                     skills={[
@@ -92,8 +91,7 @@ export default function Projects({
                     text={project?.summary}
                     title={project?.title}
                     website={{
-                      display: true,
-                      url: "https://blog-camp.netlify.app/"
+                      url: project?.previewURL
                     }}
                   />
                 ))}
