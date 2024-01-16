@@ -82,12 +82,7 @@ export default function Projects({
                       url: project?.codeURL
                     }}
                     key={project._id}
-                    skills={[
-                      "React",
-                      "Stripe",
-                      "Firebase",
-                      "Test 1"
-                    ]}
+                    skills={project?.technologies.map(skill => skill.title) || []}
                     text={project?.summary}
                     title={project?.title}
                     website={{

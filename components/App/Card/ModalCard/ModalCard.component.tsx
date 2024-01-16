@@ -31,7 +31,7 @@ export default function ModalCard({
         className={`absolute w-full h-full top-0 left-0 z-40 ${styles.overlay}`}
       />
       <Dialog.Content
-        className={`fixed overflow-y-scroll z-50 ${styles.popup}`}
+        className={`fixed w-full overflow-y-scroll z-50 ${styles.popup}`}
       >
         <div
           className={`flex relative items-center justify-between p-4 ${styles.header}`}
