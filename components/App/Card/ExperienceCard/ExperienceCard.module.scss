@@ -117,17 +117,27 @@
   }
 }
 
+.heading,
+.roleType {
+  color: styles.$british-racing-green;
+}
+
 .heading {
   font-family: styles.$font-ubuntu;
-  color: styles.$british-racing-green;
   font-size: styles.px-to-rem(25);
   line-height: styles.px-to-rem(30);
+}
+
+.roleType {
+  font-size: styles.px-to-rem(18);
+  line-height: styles.px-to-rem(24);
 }
 
 .button,
 .date,
 .description,
-.listItem {
+.listItem,
+.roleType {
   font-family: styles.$font-figtree;
 }
 

@@ -25,6 +25,7 @@ type ExperienceCardProps = {
   companyIcon: string
   companyLogo: string
   companyName: string
+  contractType: boolean
   date: {
     current: boolean
     endDate?: string
@@ -45,6 +46,7 @@ export default function ExperienceCard({
   companyIcon,
   companyLogo,
   companyName,
+  contractType,
   date,
   description = [],
   role,
@@ -135,6 +137,11 @@ export default function ExperienceCard({
           >
             {role}
           </h4>
+          <h5
+            className={`uppercase font-medium my-2.5 ${styles.roleType}`}
+          >
+            {contractType ? "Contract Role" : "Full-Time Role"}
+          </h5>
           {!isDesktop && (
             <div
               className={`relative uppercase min-w-max ${styles.date}`}

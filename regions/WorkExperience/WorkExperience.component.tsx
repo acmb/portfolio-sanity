@@ -72,6 +72,7 @@ export default function WorkExperience({
                   companyIcon={urlFor(experience?.companyIcon).url()}
                   companyLogo={urlFor(experience?.companyLogo).url()}
                   companyName={experience?.company}
+                  contractType={experience?.contractRole}
                   date={{
                     current: experience?.currentlyWorkplace,
                     endDate: !experience?.currentlyWorkplace && experience.dateEnded,
