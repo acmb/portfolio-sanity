@@ -82,7 +82,7 @@ export default function Language({
               }}
             />
             <Image
-              alt=""
+              alt={title}
               className="relative"
               height={100}
               loading="lazy"

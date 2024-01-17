@@ -72,7 +72,7 @@ export default function Skillset({
           innerContentClass="relative overflow-hidden"
         >
           <Image
-            alt=""
+            alt="Skillset region background image"
             className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
             height={1080}
             loading="lazy"

@@ -169,7 +169,7 @@ export default function EducationCard({
             }}
           >
             <Image
-              alt=""
+              alt={companyName}
               height={32}
               loading="lazy"
               src={boxImage}
@@ -177,7 +177,7 @@ export default function EducationCard({
             />
           </div>
           <Image
-            alt=""
+            alt={companyName}
             height={298}
             loading="lazy"
             src={mainImage}

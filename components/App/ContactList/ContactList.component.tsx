@@ -67,7 +67,7 @@ export default function ContactList({
           className={`flex relative items-center justify-center mx-auto rounded-full ${styles.methodsCircle}`}
         >
           <Image
-            alt=""
+            alt="Contact method icon"
             className={styles.icon}
             height={44}
             loading="lazy"

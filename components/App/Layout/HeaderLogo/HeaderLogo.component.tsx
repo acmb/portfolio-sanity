@@ -20,7 +20,7 @@ export default function HeaderLogo({
       href={`#${sitewide.logoLink}`}
     >
       <Image
-        alt=""
+        alt="Rejaur Rahman"
         height={43}
         src={urlFor(sitewide?.logo).url()}
         width={43}

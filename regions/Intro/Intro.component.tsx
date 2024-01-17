@@ -66,7 +66,7 @@ export default function Intro({
           </Container>
         </div>
         <Image
-          alt=""
+          alt="Rejaur Rahman"
           className={`relative block top-0 left-0 my-0 mx-auto ${styles.introImage}`}
           height={950}
           priority

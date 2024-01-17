@@ -70,7 +70,7 @@ export default function Testimonials({
           innerContentClass="relative overflow-hidden"
         >
           <Image
-            alt=""
+            alt="Testimonials region background image"
             className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
             height={1080}
             loading="lazy"

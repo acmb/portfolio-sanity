@@ -105,7 +105,7 @@ export default function Contact() {
               >
                 <div className={`relative mx-auto ${styles.imageWrapper}`}>
                   <Image
-                    alt=""
+                    alt="Area Location where I live"
                     className="relative z-10"
                     height={532}
                     loading="lazy"
