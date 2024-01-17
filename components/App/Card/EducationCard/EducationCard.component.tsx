@@ -63,6 +63,15 @@ export default function EducationCard({
     x
   } = animation
 
+  const formatDate = (dateString: string): string => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "2-digit"
+    }
+
+    return new Date(dateString).toLocaleDateString(undefined, options)
+  }
+
   return (
     <AnimatePresence>
       <motion.div
@@ -109,13 +118,13 @@ export default function EducationCard({
               borderColor: `${brandColor}`
             }}
           >
-            {date.startDate}
+            {formatDate(date.startDate)}
             {" "}-{" "}
             {date.current ? (
                 "current"
               ) : (
                 <>
-                  {date.endDate}
+                  {formatDate(date.endDate || "")}
                 </>
             )}
           </span>
