@@ -80,12 +80,7 @@ export default function WorkExperience({
                   description={experience?.description}
                   key={experience._id}
                   role={experience?.role}
-                  skills={[
-                    "React",
-                    "Stripe",
-                    "Firebase",
-                    "Test 1"
-                  ]}
+                  skills={experience?.technologies.map(skill => skill.title) || []}
                 />
               ))}
             </Container>

@@ -151,10 +151,10 @@ export default function ExperienceCard({
             </div>
           )}
           {skills.length > 0 && (
-            <ul className="flex mb-4">
+            <ul className="flex flex-wrap mb-4">
               {sortedSkills.map((skill, index) => (
                 <li
-                  className={`p-1 mt-1.5 mr-1.5 ${styles.listItem}`}
+                  className={`min-w-fit h-fit p-1 mt-1.5 mr-1.5 ${styles.listItem}`}
                   key={index}
                 >
                   {skill}
