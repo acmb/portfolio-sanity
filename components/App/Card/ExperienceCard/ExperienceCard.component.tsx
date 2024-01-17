@@ -101,6 +101,18 @@ export default function ExperienceCard({
     setShowContent(!showContent)
   }
 
+  const formatDate = (dateString: string): string => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "short"
+    }
+
+    const date = new Date(dateString)
+    const formattedDate = date.toLocaleDateString(undefined, options)
+
+    return `${formattedDate.toUpperCase()}`
+  }
+
   return (
     <AnimatePresence>
       <motion.div
@@ -146,13 +158,13 @@ export default function ExperienceCard({
             <div
               className={`relative uppercase min-w-max ${styles.date}`}
             >
-              {date.startDate}
+              {formatDate(date.startDate)}
               {" "}-{" "}
               {date.current ? (
                 "current"
               ) : (
                 <>
-                  {date.endDate}
+                  {formatDate(date.endDate || "")}
                 </>
               )}
             </div>
@@ -204,13 +216,13 @@ export default function ExperienceCard({
             <div
               className={`flex relative items-center uppercase min-w-max ${styles.date}`}
             >
-              {date.startDate}
+              {formatDate(date.startDate)}
               {" "}-{" "}
               {date.current ? (
                 "current"
               ) : (
                 <>
-                  {date.endDate}
+                  {formatDate(date.endDate || "")}
                 </>
               )}
             </div>
