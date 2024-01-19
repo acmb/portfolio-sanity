@@ -9,7 +9,7 @@ import { sanityClient } from "../../sanity"
 import { Testimonial } from "@/typings"
 
 const query = groq`
-  *[_type == "testimonial"]
+  *[_type == "testimonial"] | order(_createdAt desc)
 `
 
 type Data = {
