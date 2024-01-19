@@ -17,6 +17,7 @@ type ContactListProps = {
   }
   icon: string
   text: string
+  type: string
 }
 
 export default function ContactList({
@@ -27,7 +28,8 @@ export default function ContactList({
     y: 0
   },
   icon,
-  text
+  text,
+  type
 }: ContactListProps) {
   const animatedList = useRef(null)
   const isInViewList = useInView(
@@ -67,7 +69,7 @@ export default function ContactList({
           className={`flex relative items-center justify-center mx-auto rounded-full ${styles.methodsCircle}`}
         >
           <Image
-            alt="Contact method icon"
+            alt={type}
             className={styles.icon}
             height={44}
             loading="lazy"

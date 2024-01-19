@@ -1,3 +1,4 @@
+import contact from "./contact"
 import education from "./education"
 import experience from "./experience"
 import project from "./project"
@@ -7,6 +8,7 @@ import social from "./social"
 import testimonial from "./testimonial"
 
 export const schemaTypes = [
+  contact,
   education,
   experience,
   project,

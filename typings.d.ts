@@ -33,6 +33,13 @@ interface PDF {
   }
 }
 
+export interface ContactMethod extends SanityBody {
+  _type: "contact"
+  icon: BaseImage | Image
+  title: string
+  type: string
+}
+
 export interface Education extends SanityBody {
   _type: "education"
   brandColor: Color
