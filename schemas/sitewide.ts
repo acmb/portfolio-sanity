@@ -102,7 +102,7 @@ export default defineType({
     }),
     defineField({
       name: "aboutImage",
-      title: "About image",
+      title: "About Image",
       type: "image",
       options: {
         hotspot: true
@@ -115,5 +115,35 @@ export default defineType({
         }
       ]
     }),
+    defineField({
+      name: "aboutContent",
+      title: "About Content",
+      type: "array",
+      of: [
+        {
+          type: 'block'
+        }
+      ]
+    }),
+    defineField({
+      name: "contactListText",
+      title: "Contact Text List",
+      type: "string"
+    }),
+    defineField({
+      name: "locationArea",
+      title: "Location Area",
+      type: "image",
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
+    })
   ]
 })

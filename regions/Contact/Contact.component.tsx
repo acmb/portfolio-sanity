@@ -8,6 +8,9 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
+import { Sitewide } from "@/typings"
+import { urlFor } from "@/sanity"
+
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
 
 import ContactList from "@/components/App/ContactList/ContactList.component"
@@ -18,7 +21,13 @@ import Section from "@/components/App/Section/Section.component"
 
 import styles from "./Contact.module.scss"
 
-export default function Contact() {
+type Props = {
+  sitewide: Sitewide
+}
+
+export default function Contact({
+  sitewide
+}: Props) {
   const animatedImage = useRef(null)
   const animatedWrapper = useRef(null)
 
@@ -69,7 +78,7 @@ export default function Contact() {
                 <p
                   className={`text-center font-light ${styles.subCopy}`}
                 >
-                  Other ways to contact me are mentioned below:
+                  {sitewide?.contactListText}
                 </p>
                 <div className={`flex ${styles.methods}`}>
                   <ContactList
@@ -109,7 +118,7 @@ export default function Contact() {
                     className="relative z-10"
                     height={532}
                     loading="lazy"
-                    src="https://loremflickr.com/1280/532"
+                    src={urlFor(sitewide?.locationArea).url()}
                     width={1280}
                   />
                   <div className={`absolute w-full h-full ${styles.shadow}`} />

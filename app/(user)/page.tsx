@@ -61,7 +61,9 @@ export default async function Home() {
       <Testimonials
         testimonials={testimonials}
       />
-      <Contact />
+      <Contact
+        sitewide={sitewide}
+      />
       <FollowMe
         socials={socials}
       />

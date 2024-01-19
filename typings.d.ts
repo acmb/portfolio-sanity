@@ -88,8 +88,10 @@ export interface Skill extends SanityBody {
 export interface Sitewide extends SanityBody {
   _type: "sitewide"
   aboutImage: BaseImage | Image
+  contactListText: string
   heroBgColor: Color
   heroImage: BaseImage | Image
+  locationArea: BaseImage | Image
   logo: BaseImage | Image
   logoLink: string
   menu: MenuItem[]
