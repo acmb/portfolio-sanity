@@ -8,6 +8,9 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
+import { Sitewide } from "@/typings"
+import { urlFor } from "@/sanity"
+
 import useTotalExperience from "@/hooks/useTotalExperience"
 
 import { LightBulbIcon } from "@heroicons/react/24/solid"
@@ -19,7 +22,13 @@ import Section from "@/components/App/Section/Section.component"
 
 import styles from "./About.module.scss"
 
-export default function About() {
+type Props = {
+  sitewide: Sitewide
+}
+
+export default function About({
+  sitewide
+}: Props) {
   const years = useTotalExperience()
 
   const animatedBadge = useRef(null)
@@ -131,7 +140,7 @@ export default function About() {
                   alt="Rejaur Rahman"
                   height={458}
                   loading="lazy"
-                  src="https://loremflickr.com/592/458"
+                  src={urlFor(sitewide?.aboutImage).url()}
                   width={592}
                 />
               </motion.div>

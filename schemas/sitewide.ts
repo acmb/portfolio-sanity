@@ -99,6 +99,21 @@ export default defineType({
           type: "string"
         }
       ]
-    })
+    }),
+    defineField({
+      name: "aboutImage",
+      title: "About image",
+      type: "image",
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
+    }),
   ]
 })
