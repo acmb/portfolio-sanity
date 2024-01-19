@@ -84,14 +84,17 @@ export default function Contact({
                   <ContactList
                     icon="https://loremflickr.com/44/44"
                     text="rejaur-rahman@hotmail.co.uk"
+                    type="Email"
                   />
                   <ContactList
                     icon="https://loremflickr.com/44/44"
                     text="Contact me via email or Linkedin to get my mobile number"
+                    type="Phone"
                   />
                   <ContactList
                     icon="https://loremflickr.com/44/44"
                     text="Based in Enfield Island Village, London ... Shown on this section"
+                    type="Location"
                   />
                 </div>
               </div>
