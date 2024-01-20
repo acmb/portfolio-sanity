@@ -46,21 +46,21 @@
       margin-bottom: 0;
     }
   }
-}
 
-.highlighted {
-  @include styles.breakpoint(max-width, tablet) {
-    font-size: styles.px-to-rem(22);
-    line-height: styles.px-to-rem(28);
+  strong {
+    @include styles.breakpoint(max-width, tablet) {
+      font-size: styles.px-to-rem(22);
+      line-height: styles.px-to-rem(28);
+    }
+
+    @include styles.breakpoint(min-width, tablet) {
+      font-size: styles.px-to-rem(46);
+      line-height: styles.px-to-rem(53);
+    }
+
+    font-family: styles.$font-ubuntu;
+    text-transform: uppercase;
   }
-
-  @include styles.breakpoint(min-width, tablet) {
-    font-size: styles.px-to-rem(46);
-    line-height: styles.px-to-rem(53);
-  }
-
-  font-family: styles.$font-ubuntu;
-  text-transform: uppercase;
 }
 
 .right {

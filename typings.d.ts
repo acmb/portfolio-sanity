@@ -5,6 +5,14 @@ interface SanityBody {
   _updatedAt: string
 }
 
+interface Block {
+  _key: string
+  _type: "block"
+  children: Span[]
+  markDefs: []
+  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote"
+}
+
 interface Color {
   _type: "color"
   alpha: number
@@ -31,6 +39,13 @@ interface PDF {
     _ref: string
     _type: "reference"
   }
+}
+
+interface Span {
+  _key: string
+  _type: "span"
+  marks: string[]
+  text: string
 }
 
 export interface ContactMethod extends SanityBody {
@@ -94,6 +109,7 @@ export interface Skill extends SanityBody {
 
 export interface Sitewide extends SanityBody {
   _type: "sitewide"
+  aboutContent: Block
   aboutImage: BaseImage | Image
   contactListText: string
   heroBgColor: Color
