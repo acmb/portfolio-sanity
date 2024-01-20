@@ -75,6 +75,7 @@ export default defineType({
       }
     }),
     defineField({
+      hidden: ({ document }) => document?.currentlyStudying === true,
       name: "dateEnded",
       title: "Date Ended",
       type: "date",

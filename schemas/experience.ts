@@ -71,6 +71,7 @@ export default defineType({
       }
     }),
     defineField({
+      hidden: ({ document }) => document?.currentlyWorkplace === true,
       name: "dateEnded",
       title: "Date Ended",
       type: "date",
