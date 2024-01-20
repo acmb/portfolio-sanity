@@ -18,7 +18,7 @@ import styles from "./ExperienceCard.module.scss"
 type ExperienceCardProps = {
   animation?: {
     opacity: number
-    scale: number;
+    scale: number
     x: number
     y: number
   }

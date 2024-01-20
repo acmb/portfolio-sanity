@@ -30,13 +30,13 @@ import Testimonials from "@/regions/Testimonials/Testimonials.component"
 import WorkExperience from "@/regions/WorkExperience/WorkExperience.component"
 
 export default async function Home() {
-  const educations: Education[] = await fetchEducations();
-  const experiences: Experience[] = await fetchExperiences();
-  const projects: Project[] = await fetchProjects();
-  const sitewide: Sitewide = await fetchSitewide();
-  const skills: Skill[] = await fetchSkills();
-  const socials: Social[] = await fetchSocials();
-  const testimonials: Testimonial[] = await fetchTestimonials();
+  const educations: Education[] = await fetchEducations()
+  const experiences: Experience[] = await fetchExperiences()
+  const projects: Project[] = await fetchProjects()
+  const sitewide: Sitewide = await fetchSitewide()
+  const skills: Skill[] = await fetchSkills()
+  const socials: Social[] = await fetchSocials()
+  const testimonials: Testimonial[] = await fetchTestimonials()
 
   return (
     <>

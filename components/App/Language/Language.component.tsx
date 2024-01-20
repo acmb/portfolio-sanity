@@ -12,7 +12,7 @@ type LanguageProps = {
   activeSkill?: boolean
   animation?: {
     opacity: number
-    scale: number;
+    scale: number
     x: number
     y: number
   }

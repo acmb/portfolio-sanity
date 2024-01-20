@@ -27,6 +27,11 @@ interface BaseImage {
   }
 }
 
+interface FileReference {
+  _ref: string
+  _type: "reference"
+}
+
 interface MenuItem {
   _key: string
   menuName: string
@@ -35,10 +40,7 @@ interface MenuItem {
 
 interface PDF {
   _type: "file"
-  asset: {
-    _ref: string
-    _type: "reference"
-  }
+  asset: FileReference
 }
 
 interface Span {

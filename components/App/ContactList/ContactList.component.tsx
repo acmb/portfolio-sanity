@@ -11,7 +11,7 @@ import styles from "@/regions/Contact/Contact.module.scss"
 type ContactListProps = {
   animation?: {
     opacity: number
-    scale: number;
+    scale: number
     x: number
     y: number
   }
