@@ -19,51 +19,30 @@
   }
 }
 
-.pagination {
-  :global(.swiper-pagination-bullet) {
-    @include styles.breakpoint(max-width, tablet) {
-      width: styles.px-to-rem(30);
-      height: styles.px-to-rem(30);
-      margin: {
-        right: styles.px-to-rem(15);
-        left: styles.px-to-rem(15);
-      }
-    }
-
-    @include styles.breakpoint(min-width, tablet) {
-      width: styles.px-to-rem(50);
-      height: styles.px-to-rem(50);
-      margin: {
-        right: styles.px-to-rem(25);
-        left: styles.px-to-rem(25);
-      }
-    }
-
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-
-    &:first-child {
-      background-color: styles.$justit;
-    }
-
-    &:nth-child(2) {
-      background-color: styles.$ewb;
-    }
-
-    &:nth-child(3) {
-      background-color: styles.$ewb;
-    }
-
-    &:nth-child(4) {
-      background-color: styles.$uh;
+.paginationDot {
+  @include styles.breakpoint(max-width, tablet) {
+    width: styles.px-to-rem(30);
+    height: styles.px-to-rem(30);
+    margin: {
+      right: styles.px-to-rem(15);
+      left: styles.px-to-rem(15);
     }
   }
 
-  :global(.swiper-pagination-bullet-active) {
-    transform: scale(1.25);
+  @include styles.breakpoint(min-width, tablet) {
+    width: styles.px-to-rem(50);
+    height: styles.px-to-rem(50);
+    margin: {
+      right: styles.px-to-rem(25);
+      left: styles.px-to-rem(25);
+    }
   }
 
-  display: flex;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.paginationActive {
+  transform: scale(1.25);
 }
 

@@ -6,8 +6,10 @@ import {
   useInView
 } from "framer-motion"
 import React, {
+  useEffect,
   useId,
-  useRef
+  useRef,
+  useState
 } from "react"
 import {
   Navigation,
@@ -48,6 +50,8 @@ export default function EducationHistory({
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
 
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
     animatedWrapper, {
@@ -80,6 +84,18 @@ export default function EducationHistory({
       </button>
     )
   }
+
+  useEffect(() => {
+    const onSlideChange = () => {
+      setActiveSlideIndex(swiperRef.current?.realIndex || 0)
+    }
+
+    swiperRef.current?.on("slideChange", onSlideChange)
+
+    return () => {
+      swiperRef.current?.off("slideChange", onSlideChange)
+    }
+  }, [])
 
   return (
     <AnimatePresence>
@@ -123,10 +139,7 @@ export default function EducationHistory({
                 onBeforeInit={(swiper) => {
                   swiperRef.current = swiper
                 }}
-                pagination={{
-                  el: `[data-id="${id}"]`,
-                  clickable: true
-                }}
+                pagination={false}
                 slidesPerView="auto"
               >
                 <div
@@ -134,9 +147,24 @@ export default function EducationHistory({
                 >
                   {renderPrevButton()}
                   <div
-                    className={styles.pagination}
+                    className="flex"
                     data-id={id}
-                  />
+                  >
+                    {educations.map((education: Education, index: number) => (
+                      <span
+                        key={education._id}
+                        className={`rounded-full ${styles.paginationDot} ${
+                          index === activeSlideIndex ? styles.paginationActive : ""
+                        }`.trim()}
+                        style={{
+                          backgroundColor: `${education.brandColor.hex}`
+                        }}
+                        onClick={() => {
+                          swiperRef.current?.slideTo(index)
+                        }}
+                      />
+                    ))}
+                  </div>
                   {renderNextButton()}
                 </div>
                 {educations.map((education: Education) => (
