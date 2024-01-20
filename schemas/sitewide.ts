@@ -1,4 +1,5 @@
 import {
+  defineArrayMember,
   defineField,
   defineType
 } from "sanity"

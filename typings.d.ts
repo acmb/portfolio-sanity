@@ -62,6 +62,7 @@ export interface Education extends SanityBody {
   brandColor: Color
   buildingImage: BaseImage | Image
   certificateFile: PDF
+  certificateUrl: string
   companyName: string
   companyIcon: BaseImage | Image
   currentlyStudying: boolean

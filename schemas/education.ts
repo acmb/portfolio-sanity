@@ -100,6 +100,11 @@ export default defineType({
       options: {
         accept: ".pdf"
       }
+    }),
+    defineField({
+      name: "certificateUrl",
+      title: "Certificate URL",
+      type: "url"
     })
   ]
 })

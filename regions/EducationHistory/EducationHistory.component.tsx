@@ -147,7 +147,7 @@ export default function EducationHistory({
                     <EducationCard
                       boxImage={urlFor(education?.companyIcon).url()}
                       brandColor={education?.brandColor.hex}
-                      buttonPDF={education?.certificateFile}
+                      buttonPDF={education?.certificateUrl}
                       companyName={education?.companyName}
                       courseTitle={education?.title}
                       date={{

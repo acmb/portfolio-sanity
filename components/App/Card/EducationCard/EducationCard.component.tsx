@@ -9,8 +9,6 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { PDF } from "@/typings"
-
 import styles from "./EducationCard.module.scss"
 
 type EducationCardProps = {
@@ -21,7 +19,7 @@ type EducationCardProps = {
   }
   boxImage: string
   brandColor: string
-  buttonPDF?: PDF
+  buttonPDF?: string
   companyName: string
   courseTitle: string
   date: {
@@ -154,7 +152,7 @@ export default function EducationCard({
             <Link
               aria-label="View Excel With Business App Course Certificate"
               className={`flex items-center justify-center uppercase w-52 rounded-lg py-2.5 px-4 ${styles.button}`}
-              href={buttonPDF.asset._ref}
+              href={buttonPDF}
               target="_blank"
             >
               View Certificate
