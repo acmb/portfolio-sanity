@@ -101,6 +101,19 @@ export interface Project extends SanityBody {
   title: string
 }
 
+export interface Section extends SanityBody {
+  _type: "section"
+  addSectionColor: boolean
+  displayInNav: boolean
+  heading?: string
+  menuTitle: string
+  menuUrl: string
+  sectionBackground: BaseImage | Image
+  sectionColor: Color
+  subText?: string
+  title: string
+}
+
 export interface Skill extends SanityBody {
   _type: "skill"
   activeSkill?: boolean

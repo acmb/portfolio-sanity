@@ -38,7 +38,10 @@ export default defineType({
             type: "skillCategory"
           }
         }
-      ]
+      ],
+      validation: (Rule) => Rule.max(1).error(
+        "You can select a maximum of 1 category."
+      )
     }),
     defineField({
       name: "logo",

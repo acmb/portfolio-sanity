@@ -2,6 +2,7 @@ import contact from "./contact"
 import education from "./education"
 import experience from "./experience"
 import project from "./project"
+import section from "./section"
 import sitewide from "./sitewide"
 import skill from "./skill"
 import skillCategory from "./skillCategory"
@@ -13,6 +14,7 @@ export const schemaTypes = [
   education,
   experience,
   project,
+  section,
   skill,
   skillCategory,
   sitewide,
