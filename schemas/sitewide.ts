@@ -1,5 +1,4 @@
 import {
-  defineArrayMember,
   defineField,
   defineType
 } from "sanity"
@@ -122,7 +121,7 @@ export default defineType({
       type: "array",
       of: [
         {
-          type: 'block'
+          type: "block"
         }
       ]
     }),

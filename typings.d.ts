@@ -105,8 +105,14 @@ export interface Skill extends SanityBody {
   _type: "skill"
   activeSkill?: boolean
   brandColor: Color
-  category: string
+  category: SkillCategory
   logo: BaseImage | Image
+  title: string
+}
+
+export interface SkillCategory extends SanityBody {
+  _type: "skillCategory"
+  slug: string
   title: string
 }
 

@@ -30,27 +30,15 @@ export default defineType({
     defineField({
       name: "category",
       title: "Category",
-      type: "string",
-      options: {
-        list: [
-          {
-            title: "HTML/CSS",
-            value: "html-css"
-          },
-          {
-            title: "CMS",
-            value: "cms"
-          },
-          {
-            title: "JS",
-            value: "js"
-          },
-          {
-            title: "Other",
-            value: "other"
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: {
+            type: "skillCategory"
           }
-        ]
-      }
+        }
+      ]
     }),
     defineField({
       name: "logo",
