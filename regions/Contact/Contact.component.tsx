@@ -8,7 +8,10 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Sitewide } from "@/typings"
+import {
+  ContactMethod,
+  Sitewide
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
@@ -22,10 +25,12 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Contact.module.scss"
 
 type Props = {
+  contacts: ContactMethod[]
   sitewide: Sitewide
 }
 
 export default function Contact({
+  contacts,
   sitewide
 }: Props) {
   const animatedImage = useRef(null)
@@ -81,21 +86,14 @@ export default function Contact({
                   {sitewide?.contactListText}
                 </p>
                 <div className={`flex ${styles.methods}`}>
-                  <ContactList
-                    icon="https://loremflickr.com/44/44"
-                    text="rejaur-rahman@hotmail.co.uk"
-                    type="Email"
-                  />
-                  <ContactList
-                    icon="https://loremflickr.com/44/44"
-                    text="Contact me via email or Linkedin to get my mobile number"
-                    type="Phone"
-                  />
-                  <ContactList
-                    icon="https://loremflickr.com/44/44"
-                    text="Based in Enfield Island Village, London ... Shown on this section"
-                    type="Location"
-                  />
+                  {contacts.map((contact: ContactMethod) => (
+                    <ContactList
+                      key={contact._id}
+                      icon={urlFor(contact?.icon).url()}
+                      text={contact?.title}
+                      type={contact?.type}
+                    />
+                  ))}
                 </div>
               </div>
               <motion.div

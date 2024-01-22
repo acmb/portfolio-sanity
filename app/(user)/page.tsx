@@ -1,6 +1,7 @@
 import React from "react"
 
 import {
+  ContactMethod,
   Education,
   Experience,
   Project,
@@ -10,6 +11,7 @@ import {
   Testimonial
 } from "@/typings"
 
+import { fetchContact } from "@/utils/fetchContacts"
 import { fetchEducations } from "@/utils/fetchEducations"
 import { fetchExperiences } from "@/utils/fetchExperiences"
 import { fetchProjects } from "@/utils/fetchProjects"
@@ -30,6 +32,7 @@ import Testimonials from "@/regions/Testimonials/Testimonials.component"
 import WorkExperience from "@/regions/WorkExperience/WorkExperience.component"
 
 export default async function Home() {
+  const contacts: ContactMethod[] = await fetchContact()
   const educations: Education[] = await fetchEducations()
   const experiences: Experience[] = await fetchExperiences()
   const projects: Project[] = await fetchProjects()
@@ -62,6 +65,7 @@ export default async function Home() {
         testimonials={testimonials}
       />
       <Contact
+        contacts={contacts}
         sitewide={sitewide}
       />
       <FollowMe
