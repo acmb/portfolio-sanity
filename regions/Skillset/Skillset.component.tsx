@@ -11,7 +11,10 @@ import React, {
   useState
 } from "react"
 
-import { Skill } from "@/typings"
+import {
+  Skill,
+  SkillCategory
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { PaintBrushIcon } from "@heroicons/react/24/solid"
@@ -27,10 +30,12 @@ import styles from "./Skillset.module.scss"
 
 type Props = {
   skills: Skill[]
+  skillCategories: SkillCategory[]
 }
 
 export default function Skillset({
-  skills
+  skills,
+  skillCategories
 }: Props) {
   const [activeCategory, setActiveCategory] = useState("all")
 
@@ -107,36 +112,21 @@ export default function Skillset({
                   label="All"
                   setActiveFilter={handleCategoryChange}
                 />
-                <FilterButton
-                  category="html-css"
-                  isActive={activeCategory === "html-css"}
-                  label="Html/Css"
-                  setActiveFilter={handleCategoryChange}
-                />
-                <FilterButton
-                  category="js"
-                  isActive={activeCategory === "js"}
-                  label="JS"
-                  setActiveFilter={handleCategoryChange}
-                />
-                <FilterButton
-                  category="cms"
-                  isActive={activeCategory === "cms"}
-                  label="CMS"
-                  setActiveFilter={handleCategoryChange}
-                />
-                <FilterButton
-                  category="other"
-                  isActive={activeCategory === "other"}
-                  label="Other"
-                  setActiveFilter={handleCategoryChange}
-                />
+                {skillCategories.map((category: SkillCategory) => (
+                  <FilterButton
+                    category={category?.slug}
+                    isActive={activeCategory === category?.slug}
+                    key={category._id}
+                    label={category?.title}
+                    setActiveFilter={handleCategoryChange}
+                  />
+                ))}
               </div>
               {skills.map((skill: Skill) => (
                 <Language
                   activeSkill={skill?.activeSkill}
                   brandColor={skill?.brandColor.hex}
-                  category="js"
+                  category={skill?.category?.slug}
                   key={skill._id}
                   icon={urlFor(skill?.logo).url()}
                   title={skill?.title}

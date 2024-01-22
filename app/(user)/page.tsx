@@ -7,6 +7,7 @@ import {
   Project,
   Sitewide,
   Skill,
+  SkillCategory,
   Social,
   Testimonial
 } from "@/typings"
@@ -16,6 +17,7 @@ import { fetchEducations } from "@/utils/fetchEducations"
 import { fetchExperiences } from "@/utils/fetchExperiences"
 import { fetchProjects } from "@/utils/fetchProjects"
 import { fetchSitewide } from "@/utils/fetchSitewide"
+import { fetchSkillCategories } from "@/utils/fetchSkillCategories"
 import { fetchSkills } from "@/utils/fetchSkills"
 import { fetchSocials } from "@/utils/fetchSocials"
 import { fetchTestimonials } from "@/utils/fetchTestimonials"
@@ -37,6 +39,7 @@ export default async function Home() {
   const experiences: Experience[] = await fetchExperiences()
   const projects: Project[] = await fetchProjects()
   const sitewide: Sitewide = await fetchSitewide()
+  const skillCategories: SkillCategory[] = await fetchSkillCategories()
   const skills: Skill[] = await fetchSkills()
   const socials: Social[] = await fetchSocials()
   const testimonials: Testimonial[] = await fetchTestimonials()
@@ -56,6 +59,7 @@ export default async function Home() {
         experiences={experiences}
       />
       <Skillset
+        skillCategories={skillCategories}
         skills={skills}
       />
       <Projects

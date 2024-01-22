@@ -17,7 +17,7 @@ type LanguageProps = {
     y: number
   }
   brandColor: string
-  category: "html-css" | "js" | "cms" | "other"
+  category: string
   icon: string
   title: string
 }
