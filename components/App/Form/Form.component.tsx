@@ -12,7 +12,13 @@ import React, {
 
 import styles from "@/regions/Contact/Contact.module.scss"
 
-export default function Contact() {
+type Props = {
+  subText: string
+}
+
+export default function Contact({
+  subText
+}: Props) {
   const [submitted, setSubmitted] = useState(false)
   const [clientRendered, setClientRendered] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -61,7 +67,7 @@ export default function Contact() {
       {clientRendered && (
         <>
           <p className={`text-center mb-7 font-light ${styles.copy}`}>
-            If you need to get in contact with me, Let&apos;s talk
+            {subText}
           </p>
           <form
             className={`flex w-full ${styles.form}`}

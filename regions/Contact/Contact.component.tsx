@@ -26,12 +26,16 @@ import styles from "./Contact.module.scss"
 
 type Props = {
   contacts: ContactMethod[]
+  heading: string
   sitewide: Sitewide
+  subText: string
 }
 
 export default function Contact({
   contacts,
-  sitewide
+  heading,
+  sitewide,
+  subText
 }: Props) {
   const animatedImage = useRef(null)
   const animatedWrapper = useRef(null)
@@ -72,12 +76,14 @@ export default function Contact({
           <HeadingDivider
             dividerLineBg="tertiary"
             icon={<ChatBubbleOvalLeftEllipsisIcon />}
-            title="Get In Touch"
+            title={heading}
           />
           <Container
             containerClassName={`flex items-center ${styles.container}`}
           >
-            <Form />
+            <Form
+              subText={subText}
+            />
             <div className="flex flex-wrap items-center">
               <div className={`relative px-4 ${styles.left}`}>
                 <p

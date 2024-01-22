@@ -21,11 +21,13 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./WorkExperience.module.scss"
 
 type Props = {
-  experiences: Experience[]
+  experiences: Experience[],
+  heading: string
 }
 
 export default function WorkExperience({
-  experiences
+  experiences,
+  heading
 }: Props) {
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
@@ -43,7 +45,7 @@ export default function WorkExperience({
           background
           dividerLineBg="primary"
           icon={<BuildingOffice2Icon />}
-          title="Experience History"
+          title={heading}
         />
         <InnerSection
           innerContentClass={styles.wrapper}

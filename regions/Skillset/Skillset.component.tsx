@@ -29,11 +29,13 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Skillset.module.scss"
 
 type Props = {
+  heading: string
   skills: Skill[]
   skillCategories: SkillCategory[]
 }
 
 export default function Skillset({
+  heading,
   skills,
   skillCategories
 }: Props) {
@@ -71,7 +73,7 @@ export default function Skillset({
           background
           dividerLineBg="primary"
           icon={<PaintBrushIcon />}
-          title="Technical Palette"
+          title={heading}
         />
         <InnerSection
           innerContentClass="relative overflow-hidden"

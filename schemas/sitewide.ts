@@ -12,16 +12,6 @@ export default defineType({
   icon: EarthGlobeIcon,
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
-      type: "string"
-    }),
-    defineField({
-      name: "subTitle",
-      title: "Sub Title",
-      type: "string"
-    }),
-    defineField({
       name: "heroBgColor",
       title: "Hero Bg Color",
       type: "color"
@@ -145,5 +135,13 @@ export default defineType({
         }
       ]
     })
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        media: EarthGlobeIcon,
+        title: "Sitewide Data"
+      }
+    }
+  }
 })

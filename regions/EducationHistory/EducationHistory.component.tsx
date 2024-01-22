@@ -42,10 +42,12 @@ import type SwiperCore from "swiper"
 
 type Props = {
   educations: Education[]
+  heading: string
 }
 
 export default function EducationHistory({
-  educations
+  educations,
+  heading
 }: Props) {
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
@@ -106,7 +108,7 @@ export default function EducationHistory({
           background
           dividerLineBg="primary"
           icon={<BookOpenIcon />}
-          title="Education Timeline"
+          title={heading}
         />
         <InnerSection
           innerContentClass={styles.wrapper}

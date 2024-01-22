@@ -24,10 +24,12 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./About.module.scss"
 
 type Props = {
+  heading: string
   sitewide: Sitewide
 }
 
 export default function About({
+  heading,
   sitewide
 }: Props) {
   const years = useTotalExperience()
@@ -76,7 +78,7 @@ export default function About({
           <HeadingDivider
             dividerLineBg="secondary"
             icon={<LightBulbIcon />}
-            title="About Myself"
+            title={heading}
           />
           <Container
             containerClassName={styles.containerWrapper}

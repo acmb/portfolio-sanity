@@ -21,11 +21,15 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Projects.module.scss"
 
 type Props = {
+  heading: string
   projects: Project[]
+  subText: string
 }
 
 export default function Projects({
-  projects
+  heading,
+  projects,
+  subText
 }: Props) {
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
@@ -44,7 +48,7 @@ export default function Projects({
           background
           dividerLineBg="primary"
           icon={<HashtagIcon />}
-          title="Projects Showcase"
+          title={heading}
         />
         <motion.div
           animate={isInViewWrapper ? {
@@ -67,7 +71,7 @@ export default function Projects({
               <p
                 className={`text-center ${styles.subheading}`}
               >
-                All projects have been created by myself for educational purposes.
+                {subText}
               </p>
               <div
                 className="flex justify-center items-start flex-wrap"

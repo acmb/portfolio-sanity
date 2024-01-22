@@ -114,6 +114,21 @@ export interface Section extends SanityBody {
   title: string
 }
 
+export interface Sitewide extends SanityBody {
+  _type: "sitewide"
+  aboutContent: Block
+  aboutImage: BaseImage | Image
+  contactListText: string
+  heroBgColor: Color
+  heroImage: BaseImage | Image
+  locationArea: BaseImage | Image
+  logo: BaseImage | Image
+  logoLink: string
+  menu: MenuItem[]
+  typingColor: Color
+  typingText: string[]
+}
+
 export interface Skill extends SanityBody {
   _type: "skill"
   activeSkill?: boolean
@@ -127,23 +142,6 @@ export interface SkillCategory extends SanityBody {
   _type: "skillCategory"
   slug: string
   title: string
-}
-
-export interface Sitewide extends SanityBody {
-  _type: "sitewide"
-  aboutContent: Block
-  aboutImage: BaseImage | Image
-  contactListText: string
-  heroBgColor: Color
-  heroImage: BaseImage | Image
-  locationArea: BaseImage | Image
-  logo: BaseImage | Image
-  logoLink: string
-  menu: MenuItem[]
-  name: string
-  subTitle: string
-  typingColor: Color
-  typingText: string[]
 }
 
 export interface Social extends SanityBody {

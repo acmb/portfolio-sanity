@@ -19,10 +19,12 @@ import SocialBox from "@/components/App/SocialBox/SocialBox.component"
 import styles from "./FollowMe.module.scss"
 
 type Props = {
+  heading: string
   socials: Social[]
 }
 
 export default function FollowMe({
+  heading,
   socials
 }: Props) {
   const animatedWrapper = useRef(null)
@@ -41,7 +43,7 @@ export default function FollowMe({
           background
           dividerLineBg="primary"
           icon={<UserGroupIcon />}
-          title="Follow Me or My Work"
+          title={heading}
         />
         <motion.div
           animate={isInViewWrapper ? {

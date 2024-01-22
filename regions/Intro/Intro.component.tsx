@@ -18,11 +18,15 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Intro.module.scss"
 
 type Props = {
+  heading: string
   sitewide: Sitewide
+  subText: string
 }
 
 export default function Intro({
-  sitewide
+  heading,
+  sitewide,
+  subText
 }: Props) {
   const [text] = useTypewriter({
     delaySpeed: 2000,
@@ -47,10 +51,10 @@ export default function Intro({
           >
             <div className={`relative z-10 text-center ${styles.text}`}>
               <h1 className={styles.heading}>
-                {sitewide?.name}
+                {heading}
               </h1>
               <h2 className={styles.subheading}>
-                {sitewide?.subTitle}
+                {subText}
                 <span className={styles.textWrapper}>
                   <span
                     className={styles.subheadingText}

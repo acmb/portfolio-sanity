@@ -37,10 +37,14 @@ import styles from "./Testimonials.module.scss"
 import type SwiperCore from "swiper"
 
 type Props = {
+  heading: string
+  subText: string
   testimonials: Testimonial[]
 }
 
 export default function Testimonials({
+  heading,
+  subText,
   testimonials
 }: Props) {
   const id = useId()
@@ -64,7 +68,7 @@ export default function Testimonials({
           dividerLineBg="primary"
           icon={<HandThumbUpIcon />}
           pattern
-          title="Testimonials"
+          title={heading}
         />
         <InnerSection
           innerContentClass="relative overflow-hidden"
@@ -97,7 +101,7 @@ export default function Testimonials({
               <p
                 className={`relative mb-4 font-light ${styles.info}`}
               >
-                Recommendations I have received on Linkedin from my network connections at the role they wrote the message. To view the full recommendation click on view quote in full link and sign in to Linkedin to view it on my profile.
+                {subText}
               </p>
               <Swiper
                 autoplay={{
