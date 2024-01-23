@@ -37,16 +37,22 @@ import styles from "./Testimonials.module.scss"
 import type SwiperCore from "swiper"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   subText: string
   testimonials: Testimonial[]
 }
 
 export default function Testimonials({
+  displayInNav,
   heading,
+  menuUrl,
   subText,
   testimonials
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
 
@@ -60,7 +66,7 @@ export default function Testimonials({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="testimonials"
+        dataPosition={dataPosition}
         sectionClassName="relative"
       >
         <HeadingDivider

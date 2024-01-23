@@ -26,17 +26,23 @@ import styles from "./Contact.module.scss"
 
 type Props = {
   contacts: ContactMethod[]
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   sitewide: Sitewide
   subText: string
 }
 
 export default function Contact({
   contacts,
+  displayInNav,
   heading,
+  menuUrl,
   sitewide,
   subText
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const animatedImage = useRef(null)
   const animatedWrapper = useRef(null)
 
@@ -54,7 +60,7 @@ export default function Contact({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="contact"
+        dataPosition={dataPosition}
         sectionClassName={`py-12 ${styles.wrapper}`}
       >
         <motion.div

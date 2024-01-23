@@ -18,16 +18,22 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Intro.module.scss"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   sitewide: Sitewide
   subText: string
 }
 
 export default function Intro({
+  displayInNav,
   heading,
+  menuUrl,
   sitewide,
   subText
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const [text] = useTypewriter({
     delaySpeed: 2000,
     loop: true,
@@ -36,7 +42,7 @@ export default function Intro({
 
   return (
     <Section
-      dataPosition="home"
+      dataPosition={dataPosition}
       sectionClassName={`flex ${styles.wrapper}`}
     >
       <div

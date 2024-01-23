@@ -21,14 +21,20 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./WorkExperience.module.scss"
 
 type Props = {
+  displayInNav: boolean
   experiences: Experience[],
   heading: string
+  menuUrl: string
 }
 
 export default function WorkExperience({
+  displayInNav,
   experiences,
-  heading
+  heading,
+  menuUrl
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
     animatedWrapper, {
@@ -39,7 +45,7 @@ export default function WorkExperience({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="experience"
+        dataPosition={dataPosition}
       >
         <HeadingDivider
           background

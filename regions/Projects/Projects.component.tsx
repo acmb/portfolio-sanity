@@ -21,16 +21,22 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Projects.module.scss"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   projects: Project[]
   subText: string
 }
 
 export default function Projects({
+  displayInNav,
   heading,
+  menuUrl,
   projects,
   subText
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
     animatedWrapper, {
@@ -41,7 +47,7 @@ export default function Projects({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="projects"
+        dataPosition={dataPosition}
         sectionClassName={styles.wrapper}
       >
         <HeadingDivider

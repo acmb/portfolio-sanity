@@ -29,16 +29,22 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Skillset.module.scss"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   skills: Skill[]
   skillCategories: SkillCategory[]
 }
 
 export default function Skillset({
+  displayInNav,
   heading,
+  menuUrl,
   skills,
   skillCategories
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const [activeCategory, setActiveCategory] = useState("all")
 
   const animatedWrapper = useRef(null)
@@ -67,7 +73,7 @@ export default function Skillset({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="skillset"
+        dataPosition={dataPosition}
       >
         <HeadingDivider
           background

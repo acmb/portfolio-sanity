@@ -51,7 +51,9 @@ export default async function Home() {
     const section = sections.find((section) => section.title === title)
 
     return {
+      displayInNav: section?.displayInNav || false,
       heading: section?.heading || "",
+      menuUrl: section?.menuUrl || "",
       subText: section?.subText || ""
     }
   }

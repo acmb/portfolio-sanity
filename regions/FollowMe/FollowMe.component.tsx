@@ -19,14 +19,20 @@ import SocialBox from "@/components/App/SocialBox/SocialBox.component"
 import styles from "./FollowMe.module.scss"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   socials: Social[]
 }
 
 export default function FollowMe({
+  displayInNav,
   heading,
+  menuUrl,
   socials
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
     animatedWrapper, {
@@ -37,7 +43,7 @@ export default function FollowMe({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="follow"
+        dataPosition={dataPosition}
       >
         <HeadingDivider
           background

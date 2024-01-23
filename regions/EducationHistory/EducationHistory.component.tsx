@@ -41,14 +41,20 @@ import styles from "./EducationHistory.module.scss"
 import type SwiperCore from "swiper"
 
 type Props = {
+  displayInNav: boolean
   educations: Education[]
   heading: string
+  menuUrl: string
 }
 
 export default function EducationHistory({
+  displayInNav,
   educations,
-  heading
+  heading,
+  menuUrl
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const id = useId()
   const swiperRef = useRef<SwiperCore>()
 
@@ -102,7 +108,7 @@ export default function EducationHistory({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="education"
+        dataPosition={dataPosition}
       >
         <HeadingDivider
           background

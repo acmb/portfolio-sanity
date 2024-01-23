@@ -24,14 +24,20 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./About.module.scss"
 
 type Props = {
+  displayInNav: boolean
   heading: string
+  menuUrl: string
   sitewide: Sitewide
 }
 
 export default function About({
+  displayInNav,
   heading,
+  menuUrl,
   sitewide
 }: Props) {
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+
   const years = useTotalExperience()
 
   const animatedBadge = useRef(null)
@@ -57,7 +63,7 @@ export default function About({
   return (
     <AnimatePresence>
       <Section
-        dataPosition="about"
+        dataPosition={dataPosition}
         sectionClassName={`pt-12 ${styles.wrapper}`}
       >
         <motion.div
