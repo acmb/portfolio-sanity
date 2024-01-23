@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import {
   AnimatePresence,
   motion,
@@ -7,7 +8,10 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Project } from "@/typings"
+import {
+  BaseImage,
+  Project
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { HashtagIcon } from "@heroicons/react/24/solid"
@@ -21,19 +25,25 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Projects.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   heading: string
   menuUrl: string
   projects: Project[]
+  sectionBackground: BaseImage
   subText: string
+  title: string
 }
 
 export default function Projects({
+  addSectionColor,
   displayInNav,
   heading,
   menuUrl,
   projects,
-  subText
+  sectionBackground,
+  subText,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -56,26 +66,38 @@ export default function Projects({
           icon={<HashtagIcon />}
           title={heading}
         />
-        <motion.div
-          animate={isInViewWrapper ? {
-            opacity: 1,
-            y: 0
-          } : {}}
-          initial={{
-            opacity: 0,
-            y: 100
-          }}
-          ref={animatedWrapper}
-          transition={{
-            delay: 0.2,
-            duration: 0.3,
-            ease: "easeInOut"
-          }}
+        <InnerSection
+          innerContentClass="relative overflow-hidden"
         >
-          <InnerSection>
+          {!addSectionColor && sectionBackground && (
+            <Image
+              alt={`${title} region background image`}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              height={1080}
+              loading="lazy"
+              src={urlFor(sectionBackground.asset).url()}
+              width={1920}
+            />
+          )}
+          <motion.div
+            animate={isInViewWrapper ? {
+              opacity: 1,
+              y: 0
+            } : {}}
+            initial={{
+              opacity: 0,
+              y: 100
+            }}
+            ref={animatedWrapper}
+            transition={{
+              delay: 0.2,
+              duration: 0.3,
+              ease: "easeInOut"
+            }}
+          >
             <Container>
               <p
-                className={`text-center ${styles.subheading}`}
+                className={`relative text-center ${styles.subheading}`}
               >
                 {subText}
               </p>
@@ -102,8 +124,8 @@ export default function Projects({
                 ))}
               </div>
             </Container>
-          </InnerSection>
-        </motion.div>
+          </motion.div>
+        </InnerSection>
       </Section>
     </AnimatePresence>
   )

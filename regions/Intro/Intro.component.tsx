@@ -1,13 +1,16 @@
 "use client"
 
-import React from "react"
 import Image from "next/image"
+import React from "react"
 import {
   Cursor,
   useTypewriter
 } from "react-simple-typewriter"
 
-import { Sitewide } from "@/typings"
+import {
+  BaseImage,
+  Sitewide
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import Container from "@/components/App/Container/Container.component"
@@ -18,19 +21,25 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Intro.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   heading: string
   menuUrl: string
   sitewide: Sitewide
+  sectionBackground: BaseImage
   subText: string
+  title: string
 }
 
 export default function Intro({
+  addSectionColor,
   displayInNav,
   heading,
   menuUrl,
+  sectionBackground,
   sitewide,
-  subText
+  subText,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -51,6 +60,15 @@ export default function Intro({
           backgroundColor: `${sitewide?.heroBgColor?.hex}`
         }}
       >
+        {!addSectionColor && sectionBackground && (
+          <Image
+            alt={`${title} region background image`}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            height={1080}
+            src={urlFor(sectionBackground.asset).url()}
+            width={1920}
+          />
+        )}
         <div className={styles.contentWrapper}>
           <Container
             containerClassName={styles.containerWrapper}

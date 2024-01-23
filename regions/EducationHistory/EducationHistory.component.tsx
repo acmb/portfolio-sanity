@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import {
   AnimatePresence,
   motion,
@@ -20,7 +21,10 @@ import {
   SwiperSlide
 } from "swiper/react"
 
-import { Education } from "@/typings"
+import {
+  BaseImage,
+  Education
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"
@@ -41,17 +45,23 @@ import styles from "./EducationHistory.module.scss"
 import type SwiperCore from "swiper"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   educations: Education[]
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage
+  title: string
 }
 
 export default function EducationHistory({
+  addSectionColor,
   displayInNav,
   educations,
   heading,
-  menuUrl
+  menuUrl,
+  sectionBackground,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -117,8 +127,18 @@ export default function EducationHistory({
           title={heading}
         />
         <InnerSection
-          innerContentClass={styles.wrapper}
+          innerContentClass={`relative overflow-hidden ${styles.wrapper}`}
         >
+          {!addSectionColor && sectionBackground && (
+            <Image
+              alt={`${title} region background image`}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              height={1080}
+              loading="lazy"
+              src={urlFor(sectionBackground.asset).url()}
+              width={1920}
+            />
+          )}
           <motion.div
             animate={isInViewWrapper ? {
               opacity: 1,

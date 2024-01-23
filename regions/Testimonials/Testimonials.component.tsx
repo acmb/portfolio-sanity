@@ -19,7 +19,11 @@ import {
   SwiperSlide
 } from "swiper/react"
 
-import { Testimonial } from "@/typings"
+import {
+  BaseImage,
+  Testimonial
+} from "@/typings"
+import { urlFor } from "@/sanity"
 
 import { HandThumbUpIcon } from "@heroicons/react/24/solid"
 
@@ -37,19 +41,25 @@ import styles from "./Testimonials.module.scss"
 import type SwiperCore from "swiper"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage,
   subText: string
   testimonials: Testimonial[]
+  title: string
 }
 
 export default function Testimonials({
+  addSectionColor,
   displayInNav,
   heading,
   menuUrl,
+  sectionBackground,
   subText,
-  testimonials
+  testimonials,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -79,14 +89,16 @@ export default function Testimonials({
         <InnerSection
           innerContentClass="relative overflow-hidden"
         >
-          <Image
-            alt="Testimonials region background image"
-            className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
-            height={1080}
-            loading="lazy"
-            src="https://loremflickr.com/1920/1080"
-            width={1920}
-          />
+          {!addSectionColor && sectionBackground && (
+            <Image
+              alt={`${title} region background image`}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              height={1080}
+              loading="lazy"
+              src={urlFor(sectionBackground.asset).url()}
+              width={1920}
+            />
+          )}
           <motion.div
             animate={isInViewWrapper ? {
               opacity: 1,

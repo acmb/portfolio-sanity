@@ -51,10 +51,13 @@ export default async function Home() {
     const section = sections.find((section) => section.title === title)
 
     return {
+      addSectionColor: section?.addSectionColor || false,
       displayInNav: section?.displayInNav || false,
       heading: section?.heading || "",
       menuUrl: section?.menuUrl || "",
-      subText: section?.subText || ""
+      sectionBackground: section?.sectionBackground || "",
+      subText: section?.subText || "",
+      title: section?.title || ""
     }
   }
 

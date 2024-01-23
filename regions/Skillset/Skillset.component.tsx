@@ -12,6 +12,7 @@ import React, {
 } from "react"
 
 import {
+  BaseImage,
   Skill,
   SkillCategory
 } from "@/typings"
@@ -29,19 +30,25 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Skillset.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage
   skills: Skill[]
   skillCategories: SkillCategory[]
+  title: string
 }
 
 export default function Skillset({
+  addSectionColor,
   displayInNav,
   heading,
   menuUrl,
+  sectionBackground,
   skills,
-  skillCategories
+  skillCategories,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -84,14 +91,16 @@ export default function Skillset({
         <InnerSection
           innerContentClass="relative overflow-hidden"
         >
-          <Image
-            alt="Skillset region background image"
-            className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
-            height={1080}
-            loading="lazy"
-            src="https://loremflickr.com/1920/1080"
-            width={1920}
-          />
+          {!addSectionColor && sectionBackground && (
+            <Image
+              alt={`${title} region background image`}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              height={1080}
+              loading="lazy"
+              src={urlFor(sectionBackground.asset).url()}
+              width={1920}
+            />
+          )}
           <motion.div
             animate={isInViewWrapper ? {
               opacity: 1,

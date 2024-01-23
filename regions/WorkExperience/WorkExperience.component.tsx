@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import {
   AnimatePresence,
   motion,
@@ -7,7 +8,10 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Experience } from "@/typings"
+import {
+  BaseImage,
+  Experience
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
@@ -21,17 +25,23 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./WorkExperience.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
-  experiences: Experience[],
+  experiences: Experience[]
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage
+  title: string
 }
 
 export default function WorkExperience({
+  addSectionColor,
   displayInNav,
   experiences,
   heading,
-  menuUrl
+  menuUrl,
+  sectionBackground,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
 
@@ -54,8 +64,18 @@ export default function WorkExperience({
           title={heading}
         />
         <InnerSection
-          innerContentClass={styles.wrapper}
+          innerContentClass={`relative overflow-hidden ${styles.wrapper}`}
         >
+          {!addSectionColor && sectionBackground && (
+            <Image
+              alt={`${title} region background image`}
+              className={`absolute top-0 left-0 w-full h-full ${styles.background}`}
+              height={1080}
+              loading="lazy"
+              src={urlFor(sectionBackground.asset).url()}
+              width={1920}
+            />
+          )}
           <motion.div
             animate={isInViewWrapper ? {
               opacity: 1,

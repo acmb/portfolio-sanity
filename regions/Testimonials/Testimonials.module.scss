@@ -7,10 +7,6 @@
   }
 }
 
-.background {
-  object-fit: cover;
-}
-
 .info {
   @include styles.breakpoint(max-width, mobile) {
     display: none;
