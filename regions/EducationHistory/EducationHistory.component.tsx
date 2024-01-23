@@ -63,7 +63,7 @@ export default function EducationHistory({
   sectionBackground,
   title
 }: Props) {
-  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
   const id = useId()
   const swiperRef = useRef<SwiperCore>()

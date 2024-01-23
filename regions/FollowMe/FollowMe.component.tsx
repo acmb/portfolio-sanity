@@ -31,7 +31,7 @@ export default function FollowMe({
   menuUrl,
   socials
 }: Props) {
-  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(

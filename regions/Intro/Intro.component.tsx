@@ -41,7 +41,7 @@ export default function Intro({
   subText,
   title
 }: Props) {
-  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
   const [text] = useTypewriter({
     delaySpeed: 2000,

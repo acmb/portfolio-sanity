@@ -2,7 +2,7 @@ import React, { ReactNode } from "react"
 
 type SectionProps = {
   children: ReactNode
-  dataPosition: string
+  dataPosition: string | null
   sectionClassName?: string
 }
 

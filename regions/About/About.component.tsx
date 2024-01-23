@@ -12,8 +12,6 @@ import React, { useRef } from "react"
 import { Sitewide } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import useTotalExperience from "@/hooks/useTotalExperience"
-
 import { LightBulbIcon } from "@heroicons/react/24/solid"
 
 import Badge from "@/components/App/Badge/Badge.component"
@@ -36,9 +34,7 @@ export default function About({
   menuUrl,
   sitewide
 }: Props) {
-  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : ""
-
-  const years = useTotalExperience()
+  const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
   const animatedBadge = useRef(null)
   const animatedImage = useRef(null)
