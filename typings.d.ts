@@ -125,6 +125,8 @@ export interface Sitewide extends SanityBody {
   logo: BaseImage | Image
   logoLink: string
   menu: MenuItem[]
+  successFormCopy: string
+  successFormHeading: string
   typingColor: Color
   typingText: string[]
 }

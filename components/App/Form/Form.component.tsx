@@ -10,13 +10,17 @@ import React, {
   useState
 } from "react"
 
+import { Sitewide } from "@/typings"
+
 import styles from "@/regions/Contact/Contact.module.scss"
 
 type Props = {
+  sitewide: Sitewide
   subText: string
 }
 
 export default function Contact({
+  sitewide,
   subText
 }: Props) {
   const [submitted, setSubmitted] = useState(false)
@@ -55,9 +59,9 @@ export default function Contact({
         <h3
           className="text-3xl font-bold pb-1.5"
         >
-          Thank you for submitting your message!
+          {sitewide?.successFormHeading}
         </h3>
-        <p>I should be able to reach out to you within 48 hours.</p>
+        <p>{sitewide?.successFormCopy}</p>
       </div>
     )
   }

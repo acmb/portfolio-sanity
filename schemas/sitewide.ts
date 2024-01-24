@@ -134,6 +134,16 @@ export default defineType({
           title: "Alternative Text"
         }
       ]
+    }),
+    defineField({
+      name: "successFormHeading",
+      title: "Success Form Heading",
+      type: "string"
+    }),
+    defineField({
+      name: "successFormCopy",
+      title: "Success Form Copy",
+      type: "text"
     })
   ],
   preview: {

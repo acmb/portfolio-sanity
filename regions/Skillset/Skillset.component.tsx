@@ -52,7 +52,7 @@ export default function Skillset({
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
-  const [activeCategory, setActiveCategory] = useState("all")
+  const [activeCategory, setActiveCategory] = useState<string>("all")
 
   const animatedWrapper = useRef(null)
   const isInViewWrapper = useInView(
@@ -143,7 +143,7 @@ export default function Skillset({
                 <Language
                   activeSkill={skill?.activeSkill}
                   brandColor={skill?.brandColor.hex}
-                  category={skill?.category?.slug}
+                  category={skill?.category.slug}
                   key={skill._id}
                   icon={urlFor(skill?.logo).url()}
                   title={skill?.title}

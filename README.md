@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## General Tasks
+
+- Fix Skills Languages Category
+- Replace placeholder text in CMS for years
+- Experience section on mobile accordion style not for the first one
+- Get rid of background around icon when adding section background on About/Contact region
+
+## Section Tasks
+
+- Using `Add Section Color?` and `Section Color` for section colour
+- Add `Display in Navigation?`, `Menu Title` and `Menu Url` for Header Menu
+- Sanity icons added for section heading icon
+- Divider settings
+
 ## Next.js Setup
 
 Start building with Next.js with the following command:

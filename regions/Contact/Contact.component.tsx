@@ -105,6 +105,7 @@ export default function Contact({
             containerClassName={`flex items-center relative ${styles.container}`}
           >
             <Form
+              sitewide={sitewide}
               subText={subText}
             />
             <div className="flex flex-wrap items-center">
