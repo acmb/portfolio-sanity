@@ -9,6 +9,7 @@ import {
 import React, { useRef } from "react"
 
 import {
+  BaseImage,
   ContactMethod,
   Sitewide
 } from "@/typings"
@@ -25,21 +26,27 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./Contact.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   contacts: ContactMethod[]
   displayInNav: boolean
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage
   sitewide: Sitewide
   subText: string
+  title: string
 }
 
 export default function Contact({
+  addSectionColor,
   contacts,
   displayInNav,
   heading,
   menuUrl,
+  sectionBackground,
   sitewide,
-  subText
+  subText,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
@@ -61,8 +68,18 @@ export default function Contact({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
-        sectionClassName={`py-12 ${styles.wrapper}`}
+        sectionClassName={`relative overflow-hidden py-12 ${styles.wrapper}`}
       >
+        {!addSectionColor && sectionBackground && (
+          <Image
+            alt={`${title} region background image`}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            height={1080}
+            loading="lazy"
+            src={urlFor(sectionBackground.asset).url()}
+            width={1920}
+          />
+        )}
         <motion.div
           animate={isInViewWrapper ? {
             opacity: 1,
@@ -85,7 +102,7 @@ export default function Contact({
             title={heading}
           />
           <Container
-            containerClassName={`flex items-center ${styles.container}`}
+            containerClassName={`flex items-center relative ${styles.container}`}
           >
             <Form
               subText={subText}

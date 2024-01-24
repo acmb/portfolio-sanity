@@ -9,7 +9,10 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Sitewide } from "@/typings"
+import {
+  BaseImage,
+  Sitewide
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { LightBulbIcon } from "@heroicons/react/24/solid"
@@ -22,17 +25,23 @@ import Section from "@/components/App/Section/Section.component"
 import styles from "./About.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
   heading: string
   menuUrl: string
+  sectionBackground: BaseImage
   sitewide: Sitewide
+  title: string
 }
 
 export default function About({
+  addSectionColor,
   displayInNav,
   heading,
   menuUrl,
-  sitewide
+  sectionBackground,
+  sitewide,
+  title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
 
@@ -60,8 +69,18 @@ export default function About({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
-        sectionClassName={`pt-12 ${styles.wrapper}`}
+        sectionClassName={`relative overflow-hidden pt-12 ${styles.wrapper}`}
       >
+        {!addSectionColor && sectionBackground && (
+          <Image
+            alt={`${title} region background image`}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            height={1080}
+            loading="lazy"
+            src={urlFor(sectionBackground.asset).url()}
+            width={1920}
+          />
+        )}
         <motion.div
           animate={isInViewWrapper ? {
             opacity: 1,
@@ -83,7 +102,7 @@ export default function About({
             title={heading}
           />
           <Container
-            containerClassName={styles.containerWrapper}
+            containerClassName={`relative ${styles.containerWrapper}`}
           >
             <motion.div
               animate={isInViewWrapper ? {
