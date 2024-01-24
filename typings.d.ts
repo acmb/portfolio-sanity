@@ -105,9 +105,14 @@ export interface Section extends SanityBody {
   _type: "section"
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground?: boolean
+  dividerPattern?: boolean
+  dividerType?: string
   heading?: string
   menuTitle: string
   menuUrl: string
+  patternBottom: BaseImage | Image
+  patternTop: BaseImage | Image
   sectionBackground: BaseImage | Image
   sectionColor: Color
   subText?: string

@@ -70,6 +70,69 @@ export default defineType({
       title: "Menu Url",
       type: "string",
       validation: (Rule) => Rule.lowercase()
+    }),
+    defineField({
+      name: "dividerBackground",
+      title: "Divider Background?",
+      type: "boolean"
+    }),
+    defineField({
+      name: "dividerType",
+      title: "Divider Type?",
+      type: "string",
+      options: {
+        list: [
+          {
+            title: "Primary",
+            value: "primary"
+          },
+          {
+            title: "Secondary",
+            value: "secondary"
+          },
+          {
+            title: "Tertiary",
+            value: "tertiary"
+          }
+        ]
+      }
+    }),
+    defineField({
+      name: "dividerPattern",
+      title: "Divider Pattern?",
+      type: "boolean"
+    }),
+    defineField({
+      hidden: ({ document }) => document?.dividerPattern != true,
+      name: "patternTop",
+      title: "Pattern Top",
+      type: "image",
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
+    }),
+    defineField({
+      hidden: ({ document }) => document?.dividerPattern != true,
+      name: "patternBottom",
+      title: "Pattern Bottom",
+      type: "image",
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     })
   ]
 })
