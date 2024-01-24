@@ -142,7 +142,6 @@ export interface Skill extends SanityBody {
 
 export interface SkillCategory extends SanityBody {
   _type: "skillCategory"
-  slug: string
   title: string
 }
 

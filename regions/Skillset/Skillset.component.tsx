@@ -131,19 +131,19 @@ export default function Skillset({
                 />
                 {skillCategories.map((category: SkillCategory) => (
                   <FilterButton
-                    category={category?.slug}
-                    isActive={activeCategory === category?.slug}
+                    category={category?.title.toLowerCase()}
+                    isActive={activeCategory === category?.title.toLowerCase()}
                     key={category._id}
                     label={category?.title}
                     setActiveFilter={handleCategoryChange}
                   />
                 ))}
               </div>
-              {skills.map((skill: Skill) => (
+              {skills.filter((skill:Skill) => activeCategory === "all" || String(skill?.category).toLowerCase()=== activeCategory.toLowerCase()).map((skill: Skill) => (
                 <Language
                   activeSkill={skill?.activeSkill}
                   brandColor={skill?.brandColor.hex}
-                  category={skill?.category.slug}
+                  category={skill?.category.title}
                   key={skill._id}
                   icon={urlFor(skill?.logo).url()}
                   title={skill?.title}

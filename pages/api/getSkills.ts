@@ -9,7 +9,10 @@ import { sanityClient } from "../../sanity"
 import { Skill } from "@/typings"
 
 const query = groq`
-  *[_type == "skill"] | order(lower(title) asc)
+  *[_type == "skill"] {
+    ...,
+    "category": category[0] -> title
+  } | order(lower(title) asc)
 `
 
 type Data = {
