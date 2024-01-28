@@ -5,7 +5,7 @@ import {
   Education,
   Experience,
   Project,
-  Section,
+  SectionWrapper,
   Sitewide,
   Skill,
   SkillCategory,
@@ -40,7 +40,7 @@ export default async function Home() {
   const educations: Education[] = await fetchEducations()
   const experiences: Experience[] = await fetchExperiences()
   const projects: Project[] = await fetchProjects()
-  const sections: Section[] = await fetchSections()
+  const sections: SectionWrapper[] = await fetchSections()
   const sitewide: Sitewide = await fetchSitewide()
   const skillCategories: SkillCategory[] = await fetchSkillCategories()
   const skills: Skill[] = await fetchSkills()
@@ -55,7 +55,8 @@ export default async function Home() {
       displayInNav: section?.displayInNav || false,
       heading: section?.heading || "",
       menuUrl: section?.menuUrl || "",
-      sectionBackground: section?.sectionBackground || "",
+      sectionBackground: section?.sectionBackground,
+      sectionColor: section?.sectionColor,
       subText: section?.subText || "",
       title: section?.title || ""
     }

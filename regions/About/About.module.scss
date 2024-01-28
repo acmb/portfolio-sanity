@@ -1,9 +1,5 @@
 @use "../../styles/base.scss" as styles;
 
-.wrapper {
-  background-color: styles.$spanish-yellow;
-}
-
 .containerWrapper {
   @include styles.breakpoint(min-width, desktop) {
     display: flex;

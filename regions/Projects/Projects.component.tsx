@@ -10,6 +10,7 @@ import React, { useRef } from "react"
 
 import {
   BaseImage,
+  Color,
   Project
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -31,6 +32,7 @@ type Props = {
   menuUrl: string
   projects: Project[]
   sectionBackground: BaseImage
+  sectionColor?: Color
   subText: string
   title: string
 }
@@ -42,6 +44,7 @@ export default function Projects({
   menuUrl,
   projects,
   sectionBackground,
+  sectionColor,
   subText,
   title
 }: Props) {
@@ -58,7 +61,7 @@ export default function Projects({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
-        sectionClassName={styles.wrapper}
+        sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
         <HeadingDivider
           background

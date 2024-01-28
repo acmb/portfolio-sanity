@@ -11,6 +11,7 @@ import React, { useRef } from "react"
 
 import {
   BaseImage,
+  Color,
   Sitewide
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -30,6 +31,7 @@ type Props = {
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
+  sectionColor?: Color
   sitewide: Sitewide
   title: string
 }
@@ -40,6 +42,7 @@ export default function About({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   sitewide,
   title
 }: Props) {
@@ -69,7 +72,8 @@ export default function About({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
-        sectionClassName={`relative overflow-hidden pt-12 ${styles.wrapper}`}
+        sectionClassName="relative overflow-hidden pt-12"
+        sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
         {!addSectionColor && sectionBackground && (
           <Image

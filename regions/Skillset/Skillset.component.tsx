@@ -13,6 +13,7 @@ import React, {
 
 import {
   BaseImage,
+  Color,
   Skill,
   SkillCategory
 } from "@/typings"
@@ -35,6 +36,7 @@ type Props = {
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
+  sectionColor?: Color
   skills: Skill[]
   skillCategories: SkillCategory[]
   title: string
@@ -46,6 +48,7 @@ export default function Skillset({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   skills,
   skillCategories,
   title
@@ -90,6 +93,7 @@ export default function Skillset({
         />
         <InnerSection
           innerContentClass="relative overflow-hidden"
+          sectionColor={addSectionColor ? sectionColor?.hex : undefined}
         >
           {!addSectionColor && sectionBackground && (
             <Image

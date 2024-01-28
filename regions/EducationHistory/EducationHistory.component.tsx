@@ -23,6 +23,7 @@ import {
 
 import {
   BaseImage,
+  Color,
   Education
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -51,6 +52,7 @@ type Props = {
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
+  sectionColor?: Color
   title: string
 }
 
@@ -61,6 +63,7 @@ export default function EducationHistory({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
@@ -127,7 +130,8 @@ export default function EducationHistory({
           title={heading}
         />
         <InnerSection
-          innerContentClass={`relative overflow-hidden ${styles.wrapper}`}
+          innerContentClass="relative overflow-hidden"
+          sectionColor={addSectionColor ? sectionColor?.hex : undefined}
         >
           {!addSectionColor && sectionBackground && (
             <Image

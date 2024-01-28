@@ -1,4 +1,4 @@
-import { Section } from "@/typings"
+import { SectionWrapper } from "@/typings"
 
 export const fetchSections = async () => {
   const res = await fetch(
@@ -8,7 +8,7 @@ export const fetchSections = async () => {
   )
 
   const data = await res.json()
-  const sections: Section[] = data.sections
+  const sections: SectionWrapper[] = data.sections
 
   return sections
 }

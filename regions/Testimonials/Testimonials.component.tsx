@@ -21,6 +21,7 @@ import {
 
 import {
   BaseImage,
+  Color,
   Testimonial
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -46,6 +47,7 @@ type Props = {
   heading: string
   menuUrl: string
   sectionBackground: BaseImage,
+  sectionColor?: Color
   subText: string
   testimonials: Testimonial[]
   title: string
@@ -57,6 +59,7 @@ export default function Testimonials({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   subText,
   testimonials,
   title
@@ -88,6 +91,7 @@ export default function Testimonials({
         />
         <InnerSection
           innerContentClass="relative overflow-hidden"
+          sectionColor={addSectionColor ? sectionColor?.hex : undefined}
         >
           {!addSectionColor && sectionBackground && (
             <Image

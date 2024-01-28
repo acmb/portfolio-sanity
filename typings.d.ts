@@ -101,9 +101,9 @@ export interface Project extends SanityBody {
   title: string
 }
 
-export interface Section extends SanityBody {
+export interface SectionWrapper extends SanityBody {
   _type: "section"
-  addSectionColor: boolean
+  addSectionColor?: boolean
   displayInNav: boolean
   dividerBackground?: boolean
   dividerPattern?: boolean
@@ -113,10 +113,10 @@ export interface Section extends SanityBody {
   menuUrl: string
   patternBottom: BaseImage | Image
   patternTop: BaseImage | Image
-  sectionBackground: BaseImage | Image
-  sectionColor: Color
+  sectionBackground?: BaseImage | Image
+  sectionColor?: Color
   subText?: string
-  title: string
+  title?: string
 }
 
 export interface Sitewide extends SanityBody {
@@ -124,7 +124,6 @@ export interface Sitewide extends SanityBody {
   aboutContent: Block
   aboutImage: BaseImage | Image
   contactListText: string
-  heroBgColor: Color
   heroImage: BaseImage | Image
   locationArea: BaseImage | Image
   logo: BaseImage | Image

@@ -10,6 +10,7 @@ import React, { useRef } from "react"
 
 import {
   BaseImage,
+  Color,
   ContactMethod,
   Sitewide
 } from "@/typings"
@@ -32,6 +33,7 @@ type Props = {
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
+  sectionColor?: Color
   sitewide: Sitewide
   subText: string
   title: string
@@ -44,6 +46,7 @@ export default function Contact({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   sitewide,
   subText,
   title
@@ -68,7 +71,8 @@ export default function Contact({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
-        sectionClassName={`relative overflow-hidden py-12 ${styles.wrapper}`}
+        sectionClassName="relative overflow-hidden py-12"
+        sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
         {!addSectionColor && sectionBackground && (
           <Image

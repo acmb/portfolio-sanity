@@ -12,11 +12,6 @@ export default defineType({
   icon: EarthGlobeIcon,
   fields: [
     defineField({
-      name: "heroBgColor",
-      title: "Hero Bg Color",
-      type: "color"
-    }),
-    defineField({
       name: "heroImage",
       title: "Hero image",
       type: "image",

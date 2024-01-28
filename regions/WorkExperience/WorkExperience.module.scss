@@ -1,9 +1,5 @@
 @use "../../styles/base.scss" as styles;
 
-.wrapper {
-  background-color: styles.$seashell;
-}
-
 .container {
   &::before {
     @include styles.breakpoint(max-width, tablet) {

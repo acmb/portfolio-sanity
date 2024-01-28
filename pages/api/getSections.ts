@@ -6,21 +6,21 @@ import type {
 import { groq } from "next-sanity"
 import { sanityClient } from "../../sanity"
 
-import { Section } from "@/typings"
+import { SectionWrapper } from "@/typings"
 
 const query = groq`
   *[_type == "section"] | order(lower(title) asc)
 `
 
 type Data = {
-  sections: Section[]
+  sections: SectionWrapper[]
 }
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const sections: Section[] = await sanityClient.fetch(query)
+  const sections: SectionWrapper[] = await sanityClient.fetch(query)
 
   res.status(200).json({
     sections

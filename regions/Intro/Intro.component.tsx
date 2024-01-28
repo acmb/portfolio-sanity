@@ -9,6 +9,7 @@ import {
 
 import {
   BaseImage,
+  Color,
   Sitewide
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -27,6 +28,7 @@ type Props = {
   menuUrl: string
   sitewide: Sitewide
   sectionBackground: BaseImage
+  sectionColor?: Color
   subText: string
   title: string
 }
@@ -37,6 +39,7 @@ export default function Intro({
   heading,
   menuUrl,
   sectionBackground,
+  sectionColor,
   sitewide,
   subText,
   title
@@ -57,7 +60,7 @@ export default function Intro({
       <div
         className={`relative w-full overflow-hidden ${styles.introBg}`}
         style={{
-          backgroundColor: `${sitewide?.heroBgColor?.hex}`
+          backgroundColor: `${addSectionColor ? sectionColor?.hex : undefined}`
         }}
       >
         {!addSectionColor && sectionBackground && (
@@ -102,7 +105,11 @@ export default function Intro({
           width={916}
         />
         <div
-          className={`absolute w-full h-full top-0 left-0 ${styles.overlay}`}
+          className="absolute w-full h-full top-0 left-0 ${styles.overlay"
+          style={{
+            backgroundColor: `${addSectionColor ? sectionColor?.hex : undefined}`,
+            opacity: 0.2
+          }}
         />
         <div className={`absolute rotate-180 ${styles.shape}`}>
           <IntroShapeBottom />
