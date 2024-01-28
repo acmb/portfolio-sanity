@@ -44,6 +44,7 @@ import type SwiperCore from "swiper"
 type Props = {
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   heading: string
   menuUrl: string
   sectionBackground: BaseImage,
@@ -56,6 +57,7 @@ type Props = {
 export default function Testimonials({
   addSectionColor,
   displayInNav,
+  dividerBackground,
   heading,
   menuUrl,
   sectionBackground,
@@ -84,9 +86,9 @@ export default function Testimonials({
       >
         <HeadingDivider
           background
-          dividerLineBg="primary"
           icon={<HandThumbUpIcon />}
           pattern
+          sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
         <InnerSection

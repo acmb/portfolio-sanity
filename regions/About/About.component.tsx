@@ -28,6 +28,7 @@ import styles from "./About.module.scss"
 type Props = {
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
@@ -39,6 +40,7 @@ type Props = {
 export default function About({
   addSectionColor,
   displayInNav,
+  dividerBackground,
   heading,
   menuUrl,
   sectionBackground,
@@ -101,9 +103,9 @@ export default function About({
           }}
         >
           <HeadingDivider
-            dividerLineBg="secondary"
             icon={<LightBulbIcon />}
             title={heading}
+            sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           />
           <Container
             containerClassName={`relative ${styles.containerWrapper}`}

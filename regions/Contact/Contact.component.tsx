@@ -30,6 +30,7 @@ type Props = {
   addSectionColor: boolean
   contacts: ContactMethod[]
   displayInNav: boolean
+  dividerBackground: boolean
   heading: string
   menuUrl: string
   sectionBackground: BaseImage
@@ -43,6 +44,7 @@ export default function Contact({
   addSectionColor,
   contacts,
   displayInNav,
+  dividerBackground,
   heading,
   menuUrl,
   sectionBackground,
@@ -101,8 +103,8 @@ export default function Contact({
           }}
         >
           <HeadingDivider
-            dividerLineBg="tertiary"
             icon={<ChatBubbleOvalLeftEllipsisIcon />}
+            sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
             title={heading}
           />
           <Container

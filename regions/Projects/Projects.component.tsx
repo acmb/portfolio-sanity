@@ -28,6 +28,7 @@ import styles from "./Projects.module.scss"
 type Props = {
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   heading: string
   menuUrl: string
   projects: Project[]
@@ -40,6 +41,7 @@ type Props = {
 export default function Projects({
   addSectionColor,
   displayInNav,
+  dividerBackground,
   heading,
   menuUrl,
   projects,
@@ -65,8 +67,8 @@ export default function Projects({
       >
         <HeadingDivider
           background
-          dividerLineBg="primary"
           icon={<HashtagIcon />}
+          sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
         <InnerSection

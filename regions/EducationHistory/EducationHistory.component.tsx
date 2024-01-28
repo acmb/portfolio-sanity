@@ -48,6 +48,7 @@ import type SwiperCore from "swiper"
 type Props = {
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   educations: Education[]
   heading: string
   menuUrl: string
@@ -59,6 +60,7 @@ type Props = {
 export default function EducationHistory({
   addSectionColor,
   displayInNav,
+  dividerBackground,
   educations,
   heading,
   menuUrl,
@@ -125,8 +127,8 @@ export default function EducationHistory({
       >
         <HeadingDivider
           background
-          dividerLineBg="primary"
           icon={<BookOpenIcon />}
+          sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
         <InnerSection

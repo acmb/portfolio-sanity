@@ -28,6 +28,7 @@ import styles from "./WorkExperience.module.scss"
 type Props = {
   addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   experiences: Experience[]
   heading: string
   menuUrl: string
@@ -39,6 +40,7 @@ type Props = {
 export default function WorkExperience({
   addSectionColor,
   displayInNav,
+  dividerBackground,
   experiences,
   heading,
   menuUrl,
@@ -62,8 +64,8 @@ export default function WorkExperience({
       >
         <HeadingDivider
           background
-          dividerLineBg="primary"
           icon={<BuildingOffice2Icon />}
+          sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
         <InnerSection

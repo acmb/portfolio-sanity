@@ -53,6 +53,7 @@ export default async function Home() {
     return {
       addSectionColor: section?.addSectionColor || false,
       displayInNav: section?.displayInNav || false,
+      dividerBackground: section?.dividerBackground || false,
       heading: section?.heading || "",
       menuUrl: section?.menuUrl || "",
       sectionBackground: section?.sectionBackground,

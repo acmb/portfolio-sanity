@@ -13,35 +13,19 @@ import styles from "./HeadingDivider.module.scss"
 
 type HeadingDividerProps = {
   background?: boolean
-  dividerLineBg?: "primary" | "secondary" | "tertiary"
   icon?: ReactElement
   pattern?: boolean
+  sectionColor?: string
   title: string
 }
 
 export default function HeadingDivider({
   background,
-  dividerLineBg,
   icon,
   pattern,
+  sectionColor,
   title
 }: HeadingDividerProps) {
-  const getDividerLineBgClass = (
-    dividerLineBg: "primary" | "secondary" | "tertiary" | undefined
-  ) => {
-    const dividerBgClasses = {
-      primary: styles.dividerBgPrimary,
-      secondary: styles.dividerBgSecondary,
-      tertiary: styles.dividerBgTertiary
-    }
-
-    if (dividerLineBg && dividerBgClasses.hasOwnProperty(dividerLineBg)) {
-      return dividerBgClasses[dividerLineBg]
-    }
-
-    return ""
-  }
-
   return (
     <>
       {pattern && (
@@ -70,7 +54,10 @@ export default function HeadingDivider({
                   })
                 )}
                 <span
-                  className={`absolute w-11 h-7 left-1/2 z-10 ${styles.dividerBg} ${getDividerLineBgClass(dividerLineBg)}`}
+                  className={`absolute w-11 h-7 left-1/2 z-10 ${styles.dividerBg}`}
+                  style={{
+                    backgroundColor: sectionColor
+                  }}
                 />
               </span>
             </span>

@@ -4,7 +4,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Replace placeholder text in CMS for years
 - Experience section on mobile accordion style not for the first one
-- Get rid of background around icon when adding section background on About/Contact region
 
 ## Section Tasks
 

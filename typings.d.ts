@@ -107,7 +107,6 @@ export interface SectionWrapper extends SanityBody {
   displayInNav: boolean
   dividerBackground?: boolean
   dividerPattern?: boolean
-  dividerType?: string
   heading?: string
   menuTitle: string
   menuUrl: string

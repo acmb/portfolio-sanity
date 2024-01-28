@@ -31,18 +31,6 @@
   top: styles.px-to-rem(-8);
 }
 
-.dividerBgPrimary {
-  background-color: styles.$green-sheen;
-}
-
-.dividerBgSecondary {
-  background-color: styles.$spanish-yellow;
-}
-
-.dividerBgTertiary {
-  background-color: styles.$sky-blue;
-}
-
 .triangle {
   border-left: styles.px-to-rem(20) solid styles.$transparent;
   border-right: styles.px-to-rem(20) solid styles.$transparent;

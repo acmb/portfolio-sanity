@@ -7,7 +7,10 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Social } from "@/typings"
+import {
+  Color,
+  Social
+} from "@/typings"
 import { urlFor } from "@/sanity"
 
 import { UserGroupIcon } from "@heroicons/react/24/solid"
@@ -19,16 +22,22 @@ import SocialBox from "@/components/App/SocialBox/SocialBox.component"
 import styles from "./FollowMe.module.scss"
 
 type Props = {
+  addSectionColor: boolean
   displayInNav: boolean
+  dividerBackground: boolean
   heading: string
   menuUrl: string
+  sectionColor?: Color
   socials: Social[]
 }
 
 export default function FollowMe({
+  addSectionColor,
   displayInNav,
+  dividerBackground,
   heading,
   menuUrl,
+  sectionColor,
   socials
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
@@ -47,8 +56,8 @@ export default function FollowMe({
       >
         <HeadingDivider
           background
-          dividerLineBg="primary"
           icon={<UserGroupIcon />}
+          sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
         <motion.div

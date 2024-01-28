@@ -77,27 +77,6 @@ export default defineType({
       type: "boolean"
     }),
     defineField({
-      name: "dividerType",
-      title: "Divider Type?",
-      type: "string",
-      options: {
-        list: [
-          {
-            title: "Primary",
-            value: "primary"
-          },
-          {
-            title: "Secondary",
-            value: "secondary"
-          },
-          {
-            title: "Tertiary",
-            value: "tertiary"
-          }
-        ]
-      }
-    }),
-    defineField({
       name: "dividerPattern",
       title: "Divider Pattern?",
       type: "boolean"
