@@ -3,7 +3,10 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import React from "react"
 
-import { Sitewide } from "@/typings"
+import {
+  SectionWrapper,
+  Sitewide
+} from "@/typings"
 
 import useSticky from "@/hooks/useSticky"
 
@@ -15,10 +18,12 @@ import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.compone
 import styles from "./Header.module.scss"
 
 type Props = {
+  sections?: SectionWrapper[]
   sitewide: Sitewide
 }
 
 export default function Header({
+  sections,
   sitewide
 }: Props) {
   const { sticky, stickyRef } = useSticky()
@@ -36,10 +41,10 @@ export default function Header({
             sitewide={sitewide}
           />
           <HeaderMenu
-            sitewide={sitewide}
+            sections={sections}
           />
           <HeaderModal
-            sitewide={sitewide}
+            sections={sections}
           />
         </Container>
       </NavigationMenu.Root>

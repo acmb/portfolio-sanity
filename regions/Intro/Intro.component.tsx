@@ -10,6 +10,7 @@ import {
 import {
   BaseImage,
   Color,
+  SectionWrapper,
   Sitewide
 } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -29,6 +30,7 @@ type Props = {
   sitewide: Sitewide
   sectionBackground: BaseImage
   sectionColor?: Color
+  sections?: SectionWrapper[]
   subText: string
   title: string
 }
@@ -40,6 +42,7 @@ export default function Intro({
   menuUrl,
   sectionBackground,
   sectionColor,
+  sections,
   sitewide,
   subText,
   title
@@ -116,6 +119,7 @@ export default function Intro({
         </div>
       </div>
       <Header
+        sections={sections}
         sitewide={sitewide}
       />
     </Section>

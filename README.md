@@ -7,7 +7,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Section Tasks
 
-- Add `Display in Navigation?`, `Menu Title` and `Menu Url` for Header Menu
 - Sanity icons added for section heading icon
 - Divider settings
 

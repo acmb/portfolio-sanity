@@ -48,29 +48,6 @@ export default defineType({
       validation: (Rule) => Rule.lowercase()
     }),
     defineField({
-      name: "menu",
-      title: "Menu",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "menuName",
-              title: "Menu Name",
-              type: "string"
-            },
-            {
-              name: "slug",
-              title: "Slug",
-              type: "string",
-              validation: (Rule) => Rule.lowercase()
-            }
-          ]
-        }
-      ]
-    }),
-    defineField({
       name: "typingColor",
       title: "Typing Text Color",
       type: "color"

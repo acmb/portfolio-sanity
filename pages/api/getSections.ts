@@ -9,7 +9,7 @@ import { sanityClient } from "../../sanity"
 import { SectionWrapper } from "@/typings"
 
 const query = groq`
-  *[_type == "section"] | order(lower(title) asc)
+  *[_type == "section"] | order(_createdAt desc)
 `
 
 type Data = {

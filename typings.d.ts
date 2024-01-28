@@ -32,12 +32,6 @@ interface FileReference {
   _type: "reference"
 }
 
-interface MenuItem {
-  _key: string
-  menuName: string
-  slug: string
-}
-
 interface PDF {
   _type: "file"
   asset: FileReference
@@ -127,7 +121,6 @@ export interface Sitewide extends SanityBody {
   locationArea: BaseImage | Image
   logo: BaseImage | Image
   logoLink: string
-  menu: MenuItem[]
   successFormCopy: string
   successFormHeading: string
   typingColor: Color

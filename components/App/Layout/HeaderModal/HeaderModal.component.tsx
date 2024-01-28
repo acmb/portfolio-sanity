@@ -4,18 +4,18 @@ import * as Dialog from "@radix-ui/react-dialog"
 import { motion } from "framer-motion"
 import React, { useState } from "react"
 
-import { Sitewide } from "@/typings"
+import { SectionWrapper } from "@/typings"
 
 import HeaderMenu from "@/components/App/Layout/HeaderMenu/HeaderMenu.component"
 
 import styles from "./HeaderModal.module.scss"
 
 type Props = {
-  sitewide: Sitewide
+  sections?: SectionWrapper[]
 }
 
 export default function HeaderModal({
-  sitewide
+  sections
 }: Props) {
   const [open, setOpen] = useState(false)
 
@@ -47,8 +47,8 @@ export default function HeaderModal({
           className={`fixed flex top-0 right-0 h-screen z-50 ${styles.content}`}
         >
           <HeaderMenu
+            sections={sections}
             setOpen={setOpen}
-            sitewide={sitewide}
           />
           <Dialog.Close asChild>
             <button

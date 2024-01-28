@@ -77,6 +77,7 @@ export default async function Home() {
     <>
       <Intro
         {...homeProps}
+        sections={sections}
         sitewide={sitewide}
       />
       <About

@@ -6,19 +6,19 @@ import React, {
   useState
 } from "react"
 
-import { Sitewide } from "@/typings"
+import { SectionWrapper } from "@/typings"
 
 import modalStyles from "@/components/App/Layout/HeaderModal/HeaderModal.module.scss"
 import styles from "./HeaderMenu.module.scss"
 
 interface Props {
+  sections?: SectionWrapper[]
   setOpen?: (open: boolean) => void
-  sitewide: Sitewide
 }
 
 export default function HeaderMenu({
-  setOpen,
-  sitewide
+  sections,
+  setOpen
 } : Props) {
   const [activeSection, setActiveSection] = useState("home")
 
@@ -49,55 +49,46 @@ export default function HeaderMenu({
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        "home",
-        "about",
-        "education",
-        "experience",
-        "skillset",
-        "projects",
-        "testimonials",
-        "contact"
-      ]
+      const currentSection = sections?.find(section => {
+        if (section.displayInNav) {
+          const element = document.querySelector(`[data-position="${section.menuUrl}"]`)
 
-      const currentSection = sections.find(section => {
-        const element = document.querySelector(`[data-position="${section}"]`)
+          if (element) {
+            const rect = element.getBoundingClientRect()
 
-        if (element) {
-          const rect = element.getBoundingClientRect()
-
-          return rect.top >= 0 && rect.top <= window.innerHeight / 2
+            return rect.top >= 0 && rect.top <= window.innerHeight / 2
+          }
         }
 
         return false
       })
 
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection.menuUrl)
       }
     }
 
     window.addEventListener("scroll", handleScroll)
 
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [sections])
 
   return (
     <nav className={`${styles.navbar} ${modalStyles.navbar}`}>
       <ul className={`flex ${styles.list}`}>
         {
-          sitewide?.menu?.map((item) => (
+          sections?.filter(section => section.displayInNav).map((section) => (
             <li
               className={styles.listItem}
-              key={item._key}
+              key={section._id}
             >
             <Link
-              aria-label={`View ${item.menuName} section of page`}
-              className={`flex capitalize box-content ${styles.link} ${activeSection === item.slug ? styles.linkActive : ""}`.trim()}
-              href={`#${item.slug}`}
-              onClick={scrollToSection(`${item.slug}`)}
+              aria-label={`View ${section.title} section of page`}
+              className={`flex capitalize box-content ${styles.link} ${activeSection === section.menuUrl ? styles.linkActive : ""}`.trim()}
+              href={`#${section.menuUrl}`}
+              onClick={scrollToSection(`${section.menuUrl}`)}
             >
-              {item.menuName}
+              {section.title}
             </Link>
             </li>
           ))
