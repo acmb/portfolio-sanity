@@ -66,7 +66,7 @@ export default function Projects({
         sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
         <HeadingDivider
-          background
+          background={dividerBackground ? true : undefined}
           icon={<HashtagIcon />}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}

@@ -103,6 +103,7 @@ export default function Contact({
           }}
         >
           <HeadingDivider
+            background={dividerBackground ? true : undefined}
             icon={<ChatBubbleOvalLeftEllipsisIcon />}
             sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
             title={heading}

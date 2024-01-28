@@ -126,7 +126,7 @@ export default function EducationHistory({
         dataPosition={dataPosition}
       >
         <HeadingDivider
-          background
+          background={dividerBackground ? true : undefined}
           icon={<BookOpenIcon />}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}

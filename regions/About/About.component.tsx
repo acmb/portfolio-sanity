@@ -103,6 +103,7 @@ export default function About({
           }}
         >
           <HeadingDivider
+            background={dividerBackground ? true : undefined}
             icon={<LightBulbIcon />}
             title={heading}
             sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

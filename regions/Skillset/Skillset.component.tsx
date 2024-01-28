@@ -88,7 +88,7 @@ export default function Skillset({
         dataPosition={dataPosition}
       >
         <HeadingDivider
-          background
+          background={dividerBackground ? true : undefined}
           icon={<PaintBrushIcon />}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}

@@ -55,7 +55,7 @@ export default function FollowMe({
         dataPosition={dataPosition}
       >
         <HeadingDivider
-          background
+          background={dividerBackground ? true : undefined}
           icon={<UserGroupIcon />}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
