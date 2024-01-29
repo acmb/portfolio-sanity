@@ -45,8 +45,11 @@ type Props = {
   addSectionColor: boolean
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   sectionBackground: BaseImage,
   sectionColor?: Color
   subText: string
@@ -58,8 +61,11 @@ export default function Testimonials({
   addSectionColor,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   sectionBackground,
   sectionColor,
   subText,
@@ -87,7 +93,8 @@ export default function Testimonials({
         <HeadingDivider
           background={dividerBackground ? true : undefined}
           icon={<HandThumbUpIcon />}
-          pattern
+          patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+          patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />

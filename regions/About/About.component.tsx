@@ -29,8 +29,11 @@ type Props = {
   addSectionColor: boolean
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
   sitewide: Sitewide
@@ -41,8 +44,11 @@ export default function About({
   addSectionColor,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   sectionBackground,
   sectionColor,
   sitewide,
@@ -105,6 +111,8 @@ export default function About({
           <HeadingDivider
             background={dividerBackground ? true : undefined}
             icon={<LightBulbIcon />}
+            patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+            patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
             title={heading}
             sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           />

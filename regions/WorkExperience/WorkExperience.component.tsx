@@ -29,9 +29,12 @@ type Props = {
   addSectionColor: boolean
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   experiences: Experience[]
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
   title: string
@@ -41,9 +44,12 @@ export default function WorkExperience({
   addSectionColor,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   experiences,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   sectionBackground,
   sectionColor,
   title
@@ -61,10 +67,13 @@ export default function WorkExperience({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
+        sectionClassName="relative"
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
           icon={<BuildingOffice2Icon />}
+          patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+          patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />

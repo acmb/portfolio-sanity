@@ -31,8 +31,11 @@ type Props = {
   contacts: ContactMethod[]
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
   sitewide: Sitewide
@@ -45,8 +48,11 @@ export default function Contact({
   contacts,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   sectionBackground,
   sectionColor,
   sitewide,
@@ -105,6 +111,8 @@ export default function Contact({
           <HeadingDivider
             background={dividerBackground ? true : undefined}
             icon={<ChatBubbleOvalLeftEllipsisIcon />}
+            patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+            patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
             sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
             title={heading}
           />

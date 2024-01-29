@@ -6,15 +6,13 @@ import React, {
 
 import Container from "@/components/App/Container/Container.component"
 
-import PatternTop from "@/assets/images/pattern-top.png"
-import PatternBottom from "@/assets/images/pattern-bottom.png"
-
 import styles from "./HeadingDivider.module.scss"
 
 type HeadingDividerProps = {
   background?: boolean
   icon?: ReactElement
-  pattern?: boolean
+  patternBottom?: string
+  patternTop?: string
   sectionColor?: string
   title: string
 }
@@ -22,19 +20,20 @@ type HeadingDividerProps = {
 export default function HeadingDivider({
   background,
   icon,
-  pattern,
+  patternBottom,
+  patternTop,
   sectionColor,
   title
 }: HeadingDividerProps) {
   return (
     <>
-      {pattern && (
+      {patternTop && (
         <Image
           alt="Top pattern divider"
           className={`absolute w-full top-0 left-0 ${styles.dividerImage}`}
           height={32}
           loading="lazy"
-          src={PatternTop}
+          src={patternTop}
           width={1400}
         />
       )}
@@ -67,13 +66,13 @@ export default function HeadingDivider({
           <span className={`absolute w-0 h-0 left-1/2 z-10 ${styles.triangle}`} />
         )}
       </div>
-      {pattern && (
+      {patternBottom && (
         <Image
           alt="Bottom pattern divider"
           className={`absolute w-full bottom-0 left-0 ${styles.dividerImage}`}
           height={32}
           loading="lazy"
-          src={PatternBottom}
+          src={patternBottom}
           width={1400}
         />
       )}

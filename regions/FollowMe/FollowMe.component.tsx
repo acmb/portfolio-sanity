@@ -8,6 +8,7 @@ import {
 import React, { useRef } from "react"
 
 import {
+  BaseImage,
   Color,
   Social
 } from "@/typings"
@@ -25,8 +26,11 @@ type Props = {
   addSectionColor: boolean
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   sectionColor?: Color
   socials: Social[]
 }
@@ -35,8 +39,11 @@ export default function FollowMe({
   addSectionColor,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   sectionColor,
   socials
 }: Props) {
@@ -53,10 +60,13 @@ export default function FollowMe({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
+        sectionClassName="relative"
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
           icon={<UserGroupIcon />}
+          patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+          patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />

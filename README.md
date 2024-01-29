@@ -8,7 +8,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Section Tasks
 
 - Sanity icons added for section heading icon
-- Divider settings
 
 ## Next.js Setup
 

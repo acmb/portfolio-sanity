@@ -29,8 +29,11 @@ type Props = {
   addSectionColor: boolean
   displayInNav: boolean
   dividerBackground: boolean
+  dividerPattern: boolean
   heading: string
   menuUrl: string
+  patternBottom: BaseImage
+  patternTop: BaseImage
   projects: Project[]
   sectionBackground: BaseImage
   sectionColor?: Color
@@ -42,8 +45,11 @@ export default function Projects({
   addSectionColor,
   displayInNav,
   dividerBackground,
+  dividerPattern,
   heading,
   menuUrl,
+  patternBottom,
+  patternTop,
   projects,
   sectionBackground,
   sectionColor,
@@ -63,11 +69,14 @@ export default function Projects({
     <AnimatePresence>
       <Section
         dataPosition={dataPosition}
+        sectionClassName="relative"
         sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
           icon={<HashtagIcon />}
+          patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
+          patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}
           title={heading}
         />
