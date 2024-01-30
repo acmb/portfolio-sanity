@@ -6,14 +6,14 @@ import {
   motion,
   useInView
 } from "framer-motion"
-import React, {
-  useRef,
-  useState
-} from "react"
+import React, { useRef } from "react"
 
 import useMediaQuery from "@/hooks/useMediaQuery"
 
+import TopContent from "./TopContent/TopContent.component"
+
 import styles from "./ExperienceCard.module.scss"
+import BottomContent from "./BottomContent/BottomContent.component"
 
 type ExperienceCardProps = {
   animation?: {
@@ -52,9 +52,7 @@ export default function ExperienceCard({
   role,
   skills = []
 }: ExperienceCardProps) {
-  const [showContent, setShowContent] = useState(false)
   const isDesktop = useMediaQuery(`(min-width: 1025px)`)
-  const sortedSkills = skills.sort()
 
   const animatedCard = useRef(null)
   const isInViewCard = useInView(
@@ -68,38 +66,6 @@ export default function ExperienceCard({
     x,
     y
   } = animation
-
-  const renderParagraphs = () => {
-    return description.map((text, index) => {
-      if (index >= 2) {
-        return (
-          <div
-            className={`h-0 opacity-0 ${styles.hiddenContent} ${showContent ? styles.activeContent : ""}`.trim()}
-            key={index}
-          >
-            <p
-              className={`mb-4 font-light ${styles.description}`}
-            >
-              {text}
-            </p>
-          </div>
-        )
-      }
-
-      return (
-        <p
-          className={`mb-4 font-light ${styles.description}`}
-          key={index}
-        >
-          {text}
-        </p>
-      )
-    })
-  }
-
-  const toggleContent = () => {
-    setShowContent(!showContent)
-  }
 
   const formatDate = (dateString: string): string => {
     const options: Intl.DateTimeFormatOptions = {
@@ -137,65 +103,41 @@ export default function ExperienceCard({
         <div
           className={`relative p-4 rounded-lg ${styles.content}`}
         >
-          <Image
-            alt={companyName}
-            height={43}
-            loading="lazy"
-            src={companyLogo}
-            width={143}
-          />
-          <h4
-            className={`uppercase font-medium my-2.5 ${styles.heading}`}
-          >
-            {role}
-          </h4>
-          <h5
-            className={`uppercase font-medium my-2.5 ${styles.roleType}`}
-          >
-            {contractType ? "Contract Role" : "Full-Time Role"}
-          </h5>
-          {!isDesktop && (
-            <div
-              className={`relative uppercase min-w-max ${styles.date}`}
-            >
-              {formatDate(date.startDate)}
-              {" "}-{" "}
-              {date.current ? (
-                "current"
-              ) : (
-                <>
-                  {formatDate(date.endDate || "")}
-                </>
-              )}
+          {isDesktop ? (
+            <>
+              <TopContent
+                companyLogo={companyLogo}
+                companyName={companyName}
+                role={role}
+              />
+              <BottomContent
+                companyName={companyName}
+                contractType={contractType}
+                date={date}
+                description={description}
+                skills={skills}
+              />
+            </>
+          ) : (
+            <div className="accordion-item">
+              <div className="accordion-header">
+                <TopContent
+                  companyLogo={companyLogo}
+                  companyName={companyName}
+                  role={role}
+                />
+              </div>
+              <div className="accordion-body">
+                <BottomContent
+                  companyName={companyName}
+                  contractType={contractType}
+                  date={date}
+                  description={description}
+                  skills={skills}
+                />
+              </div>
             </div>
           )}
-          {skills.length > 0 && (
-            <ul className="flex flex-wrap mb-4">
-              {sortedSkills.map((skill, index) => (
-                <li
-                  className={`min-w-fit h-fit p-1 mt-1.5 mr-1.5 ${styles.listItem}`}
-                  key={index}
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          )}
-          <div className={styles.copy}>
-            {renderParagraphs()}
-          </div>
-          <button
-            aria-label={`Read more about role at ${companyName}`}
-            className={`flex relative items-center justify-center w-44 h-10 rounded-lg uppercase ${styles.button}`}
-            onClick={toggleContent}
-          >
-            {!showContent ? (
-              "Read more"
-            ) : (
-              "Read less"
-            )}
-            {" "}...
-          </button>
         </div>
         <div
           className={`flex items-start w-min ${styles.iconDate}`}
