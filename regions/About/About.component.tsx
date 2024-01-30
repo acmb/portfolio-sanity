@@ -9,6 +9,8 @@ import {
 } from "framer-motion"
 import React, { useRef } from "react"
 
+import useTotalExperience from "@/hooks/useTotalExperience"
+
 import {
   BaseImage,
   Color,
@@ -76,6 +78,20 @@ export default function About({
     }
   )
 
+  const years = useTotalExperience().toString()
+
+  const aboutContent = sitewide?.aboutContent ? sitewide.aboutContent.map((block) => {
+    if (block._type === "block" && block.children) {
+      block.children.forEach((child) => {
+        if (child.text) {
+          child.text = child.text.replace(/\[years_experience\]/g, years)
+        }
+      })
+    }
+
+    return block
+  }) : []
+
   return (
     <AnimatePresence>
       <Section
@@ -138,7 +154,7 @@ export default function About({
               }}
             >
               <PortableText
-                value={sitewide?.aboutContent}
+                value={aboutContent}
               />
             </motion.div>
             <div className={styles.right}>

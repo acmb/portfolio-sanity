@@ -2,7 +2,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## General Tasks
 
-- Replace placeholder text in CMS for years
 - Experience section on mobile accordion style not for the first one
 
 ## Section Tasks

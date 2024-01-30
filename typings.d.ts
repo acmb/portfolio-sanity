@@ -114,7 +114,7 @@ export interface SectionWrapper extends SanityBody {
 
 export interface Sitewide extends SanityBody {
   _type: "sitewide"
-  aboutContent: Block
+  aboutContent: Block[]
   aboutImage: BaseImage | Image
   contactListText: string
   heroImage: BaseImage | Image
