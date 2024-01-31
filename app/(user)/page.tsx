@@ -61,6 +61,7 @@ export default async function Home() {
       patternTop: section?.patternTop || "",
       sectionBackground: section?.sectionBackground,
       sectionColor: section?.sectionColor,
+      sectionIcon: section?.sectionIcon || "",
       subText: section?.subText || "",
       title: section?.title || ""
     }

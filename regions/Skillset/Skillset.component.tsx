@@ -19,8 +19,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { PaintBrushIcon } from "@heroicons/react/24/solid"
-
 import Container from "@/components/App/Container/Container.component"
 import FilterButton from "@/components/App/Language/FilterButton/FilterButton.component"
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
@@ -41,6 +39,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   skills: Skill[]
   skillCategories: SkillCategory[]
   title: string
@@ -57,6 +56,7 @@ export default function Skillset({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   skills,
   skillCategories,
   title
@@ -96,7 +96,7 @@ export default function Skillset({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<PaintBrushIcon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

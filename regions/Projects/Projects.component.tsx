@@ -15,8 +15,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { HashtagIcon } from "@heroicons/react/24/solid"
-
 import Container from "@/components/App/Container/Container.component"
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
 import InnerSection from "@/components/App/InnerSection/InnerSection.component"
@@ -37,6 +35,7 @@ type Props = {
   projects: Project[]
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   subText: string
   title: string
 }
@@ -53,6 +52,7 @@ export default function Projects({
   projects,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   subText,
   title
 }: Props) {
@@ -74,7 +74,7 @@ export default function Projects({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<HashtagIcon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

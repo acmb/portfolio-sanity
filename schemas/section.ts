@@ -27,6 +27,12 @@ export default defineType({
       type: "string"
     }),
     defineField({
+      description: "Get icon name from https://heroicons.com/",
+      name: "sectionIcon",
+      title: "Section Icon",
+      type: "string"
+    }),
+    defineField({
       name: "addSectionColor",
       title: "Add Section Color?",
       type: "boolean"

@@ -15,8 +15,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
-
 import Container from "@/components/App/Container/Container.component"
 import ExperienceCard from "@/components/App/Card/ExperienceCard/ExperienceCard.component"
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
@@ -37,6 +35,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   title: string
 }
 
@@ -52,6 +51,7 @@ export default function WorkExperience({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
@@ -71,7 +71,7 @@ export default function WorkExperience({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<BuildingOffice2Icon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

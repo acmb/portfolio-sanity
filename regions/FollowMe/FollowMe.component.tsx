@@ -14,8 +14,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { UserGroupIcon } from "@heroicons/react/24/solid"
-
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
 import Section from "@/components/App/Section/Section.component"
 import SocialBox from "@/components/App/SocialBox/SocialBox.component"
@@ -32,6 +30,7 @@ type Props = {
   patternBottom: BaseImage
   patternTop: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   socials: Social[]
 }
 
@@ -45,6 +44,7 @@ export default function FollowMe({
   patternBottom,
   patternTop,
   sectionColor,
+  sectionIcon,
   socials
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
@@ -64,7 +64,7 @@ export default function FollowMe({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<UserGroupIcon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

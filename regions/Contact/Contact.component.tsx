@@ -16,8 +16,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid"
-
 import ContactList from "@/components/App/ContactList/ContactList.component"
 import Container from "@/components/App/Container/Container.component"
 import Form from "@/components/App/Form/Form.component"
@@ -38,6 +36,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   sitewide: Sitewide
   subText: string
   title: string
@@ -55,6 +54,7 @@ export default function Contact({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   sitewide,
   subText,
   title
@@ -110,7 +110,7 @@ export default function Contact({
         >
           <HeadingDivider
             background={dividerBackground ? true : undefined}
-            icon={<ChatBubbleOvalLeftEllipsisIcon />}
+            icon={sectionIcon}
             patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
             patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
             sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

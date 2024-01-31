@@ -21,9 +21,18 @@
   background-color: styles.$british-racing-green;
 }
 
+.dividerIcon,
+.placeholderIcon {
+  top: styles.px-to-rem(-12);
+}
+
 .dividerIcon {
   margin-left: styles.px-to-rem(-14);
-  top: styles.px-to-rem(-12);
+}
+
+.placeholderIcon {
+  margin-left: styles.px-to-rem(-12);
+  background-color: styles.$british-racing-green;
 }
 
 .dividerBg {

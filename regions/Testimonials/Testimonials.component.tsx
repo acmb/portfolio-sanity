@@ -26,8 +26,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { HandThumbUpIcon } from "@heroicons/react/24/solid"
-
 import Container from "@/components/App/Container/Container.component"
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
 import InnerSection from "@/components/App/InnerSection/InnerSection.component"
@@ -52,6 +50,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage,
   sectionColor?: Color
+  sectionIcon?: string
   subText: string
   testimonials: Testimonial[]
   title: string
@@ -68,6 +67,7 @@ export default function Testimonials({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   subText,
   testimonials,
   title
@@ -92,7 +92,7 @@ export default function Testimonials({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<HandThumbUpIcon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

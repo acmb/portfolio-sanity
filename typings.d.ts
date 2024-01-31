@@ -108,6 +108,7 @@ export interface SectionWrapper extends SanityBody {
   patternTop?: BaseImage | Image
   sectionBackground?: BaseImage | Image
   sectionColor?: Color
+  sectionIcon?: string
   subText?: string
   title?: string
 }

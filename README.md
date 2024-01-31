@@ -4,10 +4,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Experience section on mobile accordion style not for the first one
 
-## Section Tasks
-
-- Sanity icons added for section heading icon
-
 ## Next.js Setup
 
 Start building with Next.js with the following command:

@@ -30,7 +30,6 @@ import { urlFor } from "@/sanity"
 
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
-import { BookOpenIcon } from "@heroicons/react/24/solid"
 
 import Container from "@/components/App/Container/Container.component"
 import EducationCard from "@/components/App/Card/EducationCard/EducationCard.component"
@@ -57,6 +56,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   title: string
 }
 
@@ -72,6 +72,7 @@ export default function EducationHistory({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   title
 }: Props) {
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null
@@ -134,7 +135,7 @@ export default function EducationHistory({
       >
         <HeadingDivider
           background={dividerBackground ? true : undefined}
-          icon={<BookOpenIcon />}
+          icon={sectionIcon}
           patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
           patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
           sectionColor={addSectionColor && !dividerBackground ? sectionColor?.hex : "#74c197"}

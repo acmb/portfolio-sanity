@@ -18,8 +18,6 @@ import {
 } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import { LightBulbIcon } from "@heroicons/react/24/solid"
-
 import Badge from "@/components/App/Badge/Badge.component"
 import Container from "@/components/App/Container/Container.component"
 import HeadingDivider from "@/components/App/HeadingDivider/HeadingDivider.component"
@@ -38,6 +36,7 @@ type Props = {
   patternTop: BaseImage
   sectionBackground: BaseImage
   sectionColor?: Color
+  sectionIcon?: string
   sitewide: Sitewide
   title: string
 }
@@ -53,6 +52,7 @@ export default function About({
   patternTop,
   sectionBackground,
   sectionColor,
+  sectionIcon,
   sitewide,
   title
 }: Props) {
@@ -126,7 +126,7 @@ export default function About({
         >
           <HeadingDivider
             background={dividerBackground ? true : undefined}
-            icon={<LightBulbIcon />}
+            icon={sectionIcon}
             patternBottom={dividerPattern ? urlFor(patternBottom.asset).url() : undefined}
             patternTop={dividerPattern ? urlFor(patternTop.asset).url() : undefined}
             title={heading}
