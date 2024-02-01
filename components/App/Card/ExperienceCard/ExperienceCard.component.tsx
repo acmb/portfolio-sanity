@@ -136,9 +136,9 @@ export default function ExperienceCard({
               />
             </>
           ) : (
-            <div className="accordion-item">
+            <div className={styles.accordion}>
               <div
-                className={`accordion-header ${setActive ? "active-accordion" : ""}`.trim()}
+                className={`${styles.accordionHeader} ${setActive ? styles.activeAccordion : ""}`.trim()}
                 onClick={toggleAccordion}
               >
                 <TopContent
