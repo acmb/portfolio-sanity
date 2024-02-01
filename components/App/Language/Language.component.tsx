@@ -58,7 +58,7 @@ export default function Language({
           y
         } : {}}
         aria-label={title}
-        className={`relative w-full px-4 ${styles.language}`}
+        className={`relative w-full ${styles.language}`}
         data-category={category}
         initial={{
           opacity: 0,
