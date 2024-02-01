@@ -1,11 +1,11 @@
 @use "../../../styles/base.scss" as styles;
 
 .language {
-  @include styles.breakpoint(max-width, mobile) {
+  @include styles.breakpoint(max-width, tablet) {
     flex: 0 0 calc(50% - styles.$global-spacing-xs);
   }
 
-  @media screen and (min-width: 576px) and (max-width: 991px) {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
     flex: 0 0 calc(33.33% - styles.$global-spacing-l);
   }
 
@@ -19,7 +19,7 @@
 }
 
 .circle {
-  @include styles.breakpoint(max-width, mobile) {
+  @include styles.breakpoint(max-width, tablet) {
     width: styles.px-to-rem(130);
     height: styles.px-to-rem(130);
     border: styles.px-to-rem(2) solid styles.$seashell;
@@ -29,7 +29,7 @@
     }
   }
 
-  @include styles.breakpoint(min-width, mobile) {
+  @include styles.breakpoint(min-width, tablet) {
     width: styles.px-to-rem(180);
     height: styles.px-to-rem(180);
     border: styles.px-to-rem(5) solid styles.$seashell;
@@ -43,19 +43,19 @@
 }
 
 .background {
-  @include styles.breakpoint(max-width, mobile) {
+  @include styles.breakpoint(max-width, tablet) {
     width: styles.px-to-rem(126);
     height: styles.px-to-rem(126);
   }
 
-  @include styles.breakpoint(min-width, mobile) {
+  @include styles.breakpoint(min-width, tablet) {
     width: styles.px-to-rem(170);
     height: styles.px-to-rem(170);
   }
 }
 
 .label {
-  @include styles.breakpoint(max-width, mobile) {
+  @include styles.breakpoint(max-width, tablet) {
     margin: {
       top: styles.px-to-rem(-15);
       right: styles.px-to-rem(5);
@@ -63,13 +63,17 @@
     }
   }
 
-  @include styles.breakpoint(min-width, mobile) {
-    margin-top: styles.px-to-rem(-35);
+  @include styles.breakpoint(min-width, tablet) {
+    margin: {
+      top: styles.px-to-rem(-35);
+      right: styles.px-to-rem(10);
+      left: styles.px-to-rem(10);
+    }
   }
 }
 
 .text {
-  @include styles.breakpoint(max-width, mobile) {
+  @include styles.breakpoint(max-width, tablet) {
     font-size: styles.px-to-rem(14);
   }
 
