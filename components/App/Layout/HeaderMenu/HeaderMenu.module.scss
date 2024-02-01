@@ -1,5 +1,8 @@
 @use "../../../../styles/base.scss" as styles;
 
+$mobile-nav-height: styles.px-to-rem(54);
+$mobile-link-spacing: styles.px-to-rem(30);
+
 .navbar {
   @include styles.breakpoint(max-width, desktop) {
     display: none;
@@ -13,6 +16,8 @@
     border-top: styles.px-to-rem(1) solid styles.$amaranth-pink;
     flex-flow: column;
     width: 100%;
+    height: calc(100vh - $mobile-nav-height);
+    overflow-y: auto;
   }
 
   @include styles.breakpoint(min-width, desktop) {
@@ -30,7 +35,7 @@
   @include styles.breakpoint(max-width, desktop) {
     padding: {
       top: styles.px-to-rem(15);
-      right: styles.px-to-rem(20);
+      right: styles.px-to-rem(10);
       bottom: styles.px-to-rem(15);
       left: styles.px-to-rem(10);
     }
@@ -39,7 +44,7 @@
       left: styles.px-to-rem(10) solid styles.$amaranth-pink;
     }
     justify-content: center;
-    width: 100%;
+    width: calc(100% - $mobile-link-spacing);
   }
 
   @include styles.breakpoint(min-width, desktop) {
