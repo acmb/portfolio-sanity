@@ -24,7 +24,7 @@ export default function TopContent({
         width={143}
       />
       <h4
-        className={`uppercase font-medium my-2.5 ${styles.heading}`}
+        className={`uppercase font-medium mt-2.5 ${styles.heading}`}
       >
         {role}
       </h4>

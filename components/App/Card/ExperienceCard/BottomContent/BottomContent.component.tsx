@@ -76,7 +76,7 @@ export default function BottomContent({
   return (
     <>
       <h5
-        className={`uppercase font-medium my-2.5 ${styles.roleType}`}
+        className={`uppercase font-medium mt-5 mb-2.5 ${styles.roleType}`}
       >
         {contractType ? "Contract Role" : "Full-Time Role"}
       </h5>

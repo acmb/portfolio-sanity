@@ -123,9 +123,17 @@
 }
 
 .heading {
+  @include styles.breakpoint(max-width, smallMobile) {
+    font-size: styles.px-to-rem(18);
+    line-height: styles.px-to-rem(23);
+  }
+
+  @include styles.breakpoint(min-width, smallMobile + 1px) {
+    font-size: styles.px-to-rem(25);
+    line-height: styles.px-to-rem(30);
+  }
+
   font-family: styles.$font-ubuntu;
-  font-size: styles.px-to-rem(25);
-  line-height: styles.px-to-rem(30);
 }
 
 .roleType {
@@ -183,4 +191,9 @@
 .activeContent {
   height: auto;
   opacity: 1;
+}
+
+.accordionContent {
+  overflow: hidden;
+  transition: max-height 0.6s ease;
 }

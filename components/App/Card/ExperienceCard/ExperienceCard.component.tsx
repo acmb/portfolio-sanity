@@ -6,7 +6,12 @@ import {
   motion,
   useInView
 } from "framer-motion"
-import React, { useRef } from "react"
+import React, {
+  useRef,
+  useState
+} from "react"
+
+import { ChevronDownIcon } from "@heroicons/react/24/solid"
 
 import useMediaQuery from "@/hooks/useMediaQuery"
 
@@ -52,6 +57,11 @@ export default function ExperienceCard({
   role,
   skills = []
 }: ExperienceCardProps) {
+  const [setActive, setActiveState] = useState("")
+  const [setHeight, setHeightState] = useState("0px")
+
+  const accordionContent = useRef<HTMLDivElement | null>(null)
+
   const isDesktop = useMediaQuery(`(min-width: 1025px)`)
 
   const animatedCard = useRef(null)
@@ -77,6 +87,13 @@ export default function ExperienceCard({
     const formattedDate = date.toLocaleDateString(undefined, options)
 
     return `${formattedDate.toUpperCase()}`
+  }
+
+  const toggleAccordion = () => {
+    setActiveState(setActive === "" ? "active" : "")
+    setHeightState(
+      setActive === "active" ? "0px" : `${(accordionContent.current as HTMLElement).scrollHeight}px`
+    )
   }
 
   return (
@@ -120,14 +137,24 @@ export default function ExperienceCard({
             </>
           ) : (
             <div className="accordion-item">
-              <div className="accordion-header">
+              <div
+                className={`accordion-header ${setActive ? "active-accordion" : ""}`.trim()}
+                onClick={toggleAccordion}
+              >
                 <TopContent
                   companyLogo={companyLogo}
                   companyName={companyName}
                   role={role}
                 />
+                <ChevronDownIcon
+                  className={`absolute w-8 h-8 top-4 right-4 ${styles.button}`}
+                />
               </div>
-              <div className="accordion-body">
+              <div
+                className={styles.accordionContent}
+                ref={accordionContent}
+                style={{ maxHeight: `${setHeight}` }}
+              >
                 <BottomContent
                   companyName={companyName}
                   contractType={contractType}
