@@ -150,6 +150,7 @@ export default function Testimonials({
                   clickable: true
                 }}
                 slidesPerView="auto"
+                speed={700}
               >
                 {testimonials.map((testimonial: Testimonial) => (
                   <SwiperSlide

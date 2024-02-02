@@ -185,6 +185,7 @@ export default function EducationHistory({
                 }}
                 pagination={false}
                 slidesPerView="auto"
+                speed={700}
               >
                 <div
                   className="flex justify-between items-center"
