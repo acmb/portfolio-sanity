@@ -15,23 +15,37 @@
   }
 }
 
+.pagination {
+  @include styles.breakpoint(max-width, tablet) {
+    width: calc(100% - 128px);
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.paginationWrapper {
+  @include styles.breakpoint(max-width, tablet) {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .paginationDot {
   @include styles.breakpoint(max-width, tablet) {
-    width: styles.px-to-rem(30);
-    height: styles.px-to-rem(30);
-    margin: {
-      right: styles.px-to-rem(15);
-      left: styles.px-to-rem(15);
-    }
+    opacity: 0;
   }
 
-  @include styles.breakpoint(min-width, tablet) {
-    width: styles.px-to-rem(50);
-    height: styles.px-to-rem(50);
-    margin: {
-      right: styles.px-to-rem(25);
-      left: styles.px-to-rem(25);
-    }
+  width: styles.px-to-rem(50);
+  height: styles.px-to-rem(50);
+  margin: {
+    right: styles.px-to-rem(25);
+    left: styles.px-to-rem(25);
   }
 
   cursor: pointer;
@@ -39,6 +53,10 @@
 }
 
 .paginationActive {
+  @include styles.breakpoint(max-width, tablet) {
+    opacity: 1;
+  }
+
   transform: scale(1.25);
 }
 

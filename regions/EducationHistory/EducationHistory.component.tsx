@@ -191,22 +191,26 @@ export default function EducationHistory({
                 >
                   {renderPrevButton()}
                   <div
-                    className="flex"
+                    className={`flex ${styles.pagination}`}
                     data-id={id}
                   >
                     {educations.map((education: Education, index: number) => (
                       <span
                         key={education._id}
-                        className={`rounded-full ${styles.paginationDot} ${
-                          index === activeSlideIndex ? styles.paginationActive : ""
-                        }`.trim()}
-                        style={{
-                          backgroundColor: `${education.brandColor.hex}`
-                        }}
-                        onClick={() => {
-                          swiperRef.current?.slideTo(index)
-                        }}
-                      />
+                        className={styles.paginationWrapper}
+                      >
+                        <span
+                          className={`flex rounded-full ${styles.paginationDot} ${
+                            index === activeSlideIndex ? `relative z-10 ${styles.paginationActive}` : ""
+                          }`.trim()}
+                          style={{
+                            backgroundColor: `${education.brandColor.hex}`
+                          }}
+                          onClick={() => {
+                            swiperRef.current?.slideTo(index)
+                          }}
+                        />
+                      </span>
                     ))}
                   </div>
                   {renderNextButton()}
