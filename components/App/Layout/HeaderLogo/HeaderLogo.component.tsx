@@ -5,7 +5,7 @@ import React from "react"
 import { Sitewide } from "@/typings"
 import { urlFor } from "@/sanity"
 
-import styles from "./Headerlogo.module.scss"
+import styles from "./HeaderLogo.module.scss"
 
 type Props = {
   sitewide: Sitewide
