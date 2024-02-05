@@ -19,7 +19,7 @@ type Props = {
   subText: string
 }
 
-export default function Contact({
+export default function Form({
   sitewide,
   subText
 }: Props) {

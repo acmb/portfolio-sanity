@@ -16,7 +16,7 @@ type Data = {
   testimonials: Testimonial[]
 }
 
-export default async function handler(
+export async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
