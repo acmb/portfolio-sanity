@@ -6,9 +6,9 @@
 
 .popup {
   @include styles.breakpoint(max-width, mobile) {
-    height: px-to-rem(475);
+    height: styles.px-to-rem(475);
     width: calc(100% - styles.$global-spacing-m * 2);
-    left: px-to-rem(15);
+    left: styles.px-to-rem(15);
     top: calc(styles.$global-spacing-s * 5 + styles.$global-spacing-xxs + styles.$global-spacing-m);
   }
 

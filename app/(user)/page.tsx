@@ -35,6 +35,8 @@ import Skillset from "@/regions/Skillset/Skillset.component"
 import Testimonials from "@/regions/Testimonials/Testimonials.component"
 import WorkExperience from "@/regions/WorkExperience/WorkExperience.component"
 
+export const revalidate = 30
+
 export default async function Home() {
   const contacts: ContactMethod[] = await fetchContact()
   const educations: Education[] = await fetchEducations()

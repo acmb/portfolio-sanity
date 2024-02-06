@@ -1,0 +1,61 @@
+@use "../styles/base.scss" as styles;
+
+$mobile-spacing-width: styles.px-to-rem(30);
+$desktop-spacing-width: styles.px-to-rem(100);
+
+.container {
+  flex-flow: column;
+  padding: {
+    top: styles.px-to-rem(30);
+    bottom: styles.px-to-rem(30);
+  }
+
+  @include styles.breakpoint(max-width, mobile) {
+    width: calc(100% - $mobile-spacing-width);
+  }
+
+  @include styles.breakpoint(min-width, mobile) {
+    height: 100vh;
+    width: calc(100% - $desktop-spacing-width);
+  }
+}
+
+.heading {
+  font-size: styles.px-to-rem(150);
+  line-height: styles.px-to-rem(156);
+}
+
+.text {
+  font-size: styles.px-to-rem(22);
+  line-height: styles.px-to-rem(30);
+}
+
+.buttonWrapper {
+  @include styles.breakpoint(max-width, mobile) {
+    flex-flow: column;
+  }
+}
+
+.button {
+  border: 1px solid styles.$vivid-cerise;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    color: styles.$white;
+    background-color: styles.$vivid-cerise;
+
+    .icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  &:first-child {
+    @include styles.breakpoint(min-width, mobile) {
+      margin-right: styles.px-to-rem(20);
+    }
+  }
+
+  .icon {
+    transition: transform 0.3s ease-in-out;
+  }
+}
