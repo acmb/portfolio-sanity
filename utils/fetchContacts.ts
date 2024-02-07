@@ -1,14 +1,20 @@
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
+
 import { ContactMethod } from "@/typings"
 
-export const fetchContact = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getContact
-    `
-  )
+const query = groq`
+*[_type == "contact"] {
+  ...,
+  icon {
+    ...,
+    asset->{
+      ...
+    }
+  }
+} | order(_createdAt desc)
+`
 
-  const data = await res.json()
-  const contact: ContactMethod[] = data.contact
-
-  return contact
+export async function fetchContact(): Promise<ContactMethod[]> {
+  return sanityClient.fetch(query)
 }

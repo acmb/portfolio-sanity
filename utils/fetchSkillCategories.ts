@@ -1,14 +1,12 @@
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
+
 import { SkillCategory } from "@/typings"
 
-export const fetchSkillCategories = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkillCategories
-    `
-  )
+const query = groq`
+  *[_type == "skillCategory"] | order(_createdAt desc)
+`
 
-  const data = await res.json()
-  const skillCategories: SkillCategory[] = data.skillCategories
-
-  return skillCategories
+export async function fetchSkillCategories(): Promise<SkillCategory[]> {
+  return sanityClient.fetch(query)
 }

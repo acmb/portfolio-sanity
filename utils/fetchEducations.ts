@@ -1,14 +1,12 @@
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
+
 import { Education } from "@/typings"
 
-export const fetchEducations = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getEducation
-    `
-  )
+const query = groq`
+  *[_type == "education"] | order(_createdAt desc)
+`
 
-  const data = await res.json()
-  const educations: Education[] = data.educations
-
-  return educations
+export async function fetchEducations(): Promise<Education[]> {
+  return sanityClient.fetch(query)
 }

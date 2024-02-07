@@ -1,14 +1,12 @@
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
+
 import { SectionWrapper } from "@/typings"
 
-export const fetchSections = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getSections
-    `
-  )
+const query = groq`
+  *[_type == "section"] | order(_createdAt desc)
+`
 
-  const data = await res.json()
-  const sections: SectionWrapper[] = data.sections
-
-  return sections
+export async function fetchSections(): Promise<SectionWrapper[]> {
+  return sanityClient.fetch(query)
 }

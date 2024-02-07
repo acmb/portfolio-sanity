@@ -1,14 +1,12 @@
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
+
 import { Testimonial } from "@/typings"
 
-export const fetchTestimonials = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getTestimonial
-    `
-  )
+const query = groq`
+  *[_type == "testimonial"] | order(_createdAt desc)
+`
 
-  const data = await res.json()
-  const testimonials: Testimonial[] = data.testimonials
-
-  return testimonials
+export async function fetchTestimonials(): Promise<Testimonial[]> {
+  return sanityClient.fetch(query)
 }

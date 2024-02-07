@@ -1,14 +1,12 @@
-import { Sitewide} from "@/typings"
+import { groq } from "next-sanity"
+import { sanityClient } from "../sanity"
 
-export const fetchSitewide = async () => {
-  const res = await fetch(
-    `
-      ${process.env.NEXT_PUBLIC_BASE_URL}/api/getSitewide
-    `
-  )
+import { Sitewide } from "@/typings"
 
-  const data = await res.json()
-  const sitewide: Sitewide = data.sitewide
+const query = groq`
+  *[_type == "sitewide"][0]
+`
 
-  return sitewide
+export async function fetchSitewide(): Promise<Sitewide> {
+  return sanityClient.fetch(query)
 }
