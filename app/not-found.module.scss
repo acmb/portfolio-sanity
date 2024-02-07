@@ -3,6 +3,10 @@
 $mobile-spacing-width: styles.px-to-rem(30);
 $desktop-spacing-width: styles.px-to-rem(100);
 
+.wrapper {
+  background-color: styles.$onyx;
+}
+
 .container {
   flex-flow: column;
   padding: {
@@ -20,12 +24,19 @@ $desktop-spacing-width: styles.px-to-rem(100);
   }
 }
 
+.heading,
+.text {
+  color: styles.$white;
+}
+
 .heading {
+  font-family: styles.$font-sketch-bold;
   font-size: styles.px-to-rem(150);
   line-height: styles.px-to-rem(156);
 }
 
 .text {
+  font-family: styles.$font-ubuntu;
   font-size: styles.px-to-rem(22);
   line-height: styles.px-to-rem(30);
 }
@@ -38,12 +49,11 @@ $desktop-spacing-width: styles.px-to-rem(100);
 
 .button {
   border: 1px solid styles.$vivid-cerise;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: styles.$white;
+  background-color: styles.$vivid-cerise;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: styles.$white;
-    background-color: styles.$vivid-cerise;
-
     .icon {
       transform: rotate(45deg);
     }

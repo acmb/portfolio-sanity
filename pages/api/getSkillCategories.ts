@@ -16,7 +16,7 @@ type Data = {
   skillCategories: SkillCategory[]
 }
 
-export async function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
