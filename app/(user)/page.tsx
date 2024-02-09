@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactElement, Suspense, lazy } from "react"
 
 import {
   ContactMethod,
@@ -79,13 +79,8 @@ export default async function Home() {
   const contactProps = extractPropsFromSection("Contact")
   const followMeProps = extractPropsFromSection("Follow Me")
 
-  return (
+  const Lazy = lazy(() => Promise.resolve({ default: () => (
     <>
-      <Intro
-        {...homeProps}
-        sections={sections}
-        sitewide={sitewide}
-      />
       <About
         {...aboutProps}
         sitewide={sitewide}
@@ -121,6 +116,20 @@ export default async function Home() {
         socials={socials}
       />
       <BackToTop />
+  </>
+)}))
+
+  return (
+    <>
+      <Intro
+        {...homeProps}
+        sections={sections}
+        sitewide={sitewide}
+      />
+      <Suspense>
+        {/* {lazy(() => Promise.resolve({ default: () => (<></>) }))} */}
+        <Lazy />
+      </Suspense>
     </>
   )
 }
